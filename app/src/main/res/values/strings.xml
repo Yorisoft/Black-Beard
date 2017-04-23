@@ -1,0 +1,72 @@
+<resources xmlns:android="http://schemas.android.com/tools"
+   xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Black Beard</string>
+    <string name="PetName">Draco</string>
+    <string name="petAge">9</string>
+    <string name="petWeight">1.5</string>
+    <string name="petLenght">24</string>
+    <string name="ageUnit">months</string>
+    <string name="weightUnit">lb</string>
+    <string name="lengthUnit">in</string>
+    <string name="newBath">3/5</string>
+    <string name="newFeeding">3/7</string>
+    <string name="lastShed">2/15</string>
+    <string name="lastBath">2/27</string>
+    <string name="oldFood">2/28</string>
+    <string name="avrgShed">32 days</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="drawer_care_guide">Care Guide!</string>
+    <string name="petDragons">PET DRAGONS!</string>
+    <string name="firstBttn">Enclosure</string>
+    <string name="secondBttn"><![CDATA[Food & Diet]]></string>
+    <string name="thirdBttn">Handling</string>
+    <string name="fourthBttn">Behavior</string>
+    <string name="fithBttn">General info.</string>
+
+    <string name="enclosureIntro">\t\t\tSetting up the appropriate enclosure is often considered the most difficult and expensive aspect of Bearded dragon care.
+        Once in place however, a suitable enclosure will be the place your pet calls home for the entirety its life.</string>
+
+    <string name="about_us_Intro">\t\t\tThis is a timer or schedule assistant of sorts. This isn\'t a fucking care guide , so don\'t
+    complain to me about how there isn\'t enough information on a certain subject or that you want to see more care tips. to bad - so sad. </string>
+
+
+    <string name="sizeFirst">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
+
+    <string name="lightingOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
+
+    <string name="heatingTempOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n   </string>
+
+    <string name="humidityOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
+
+    <string name="substrateOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
+
+    <string name="accessoriesOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
+
+</resources>

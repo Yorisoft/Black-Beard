@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerMain"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareGuideSelect">
+
+    <LinearLayout
+        android:id="@+id/guideLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/desert02"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+
+            <RelativeLayout
+                android:id="@+id/mainGuide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <Button
+                    android:id="@+id/enclosureButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="8dp"
+                    android:background="@color/Buttons"
+                    android:gravity="center"
+                    android:onClick="guideClick"
+                    android:singleLine="false"
+                    android:text="@string/firstBttn"
+                    android:textAlignment="inherit"
+                    android:textColor="@color/colorWhiteText"
+                    android:textSize="36sp" />
+
+                <Button
+                    android:id="@+id/foodButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/enclosureButton"
+                    android:layout_margin="8dp"
+                    android:background="@color/Buttons"
+                    android:gravity="fill_vertical"
+                    android:onClick="guideClick"
+                    android:text="@string/secondBttn"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhiteText"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+
+                <Button
+                    android:id="@+id/handlingButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/foodButton"
+                    android:layout_margin="8dp"
+                    android:background="@color/Buttons"
+                    android:onClick="guideClick"
+                    android:paddingTop="8dp"
+                    android:text="@string/thirdBttn"
+                    android:textColor="@color/colorWhiteText"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/behaviorButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/handlingButton"
+                    android:layout_margin="8dp"
+                    android:background="@color/Buttons"
+                    android:onClick="guideClick"
+                    android:paddingTop="8dp"
+                    android:text="@string/fourthBttn"
+                    android:textColor="@color/colorWhiteText"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/generalInfoButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_below="@id/behaviorButton"
+                    android:layout_margin="8dp"
+                    android:background="@color/Buttons"
+                    android:onClick="guideClick"
+                    android:paddingTop="8dp"
+                    android:text="@string/fithBttn"
+                    android:textColor="@color/colorWhiteText"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/navigation_menu" android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header">
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

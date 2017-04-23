@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainEdit">
+
+<RelativeLayout
+    android:id="@+id/editLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLayout"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/editInfoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:text="Edit Info"
+        android:textSize="18sp" />
+
+    <ImageButton android:id="@+id/imgEditBttn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/editInfoText"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/image_select"
+        android:onClick="pickImage"/>
+
+    //this is a dummy element to stop auto focus//
+
+
+    <LinearLayout
+        android:id="@+id/dummy"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <TextView
+        android:id="@+id/imgFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editInfoText"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@id/imgEditBttn"
+        android:hint="Selected_File.ex"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/nameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgEditBttn"
+        android:hint="Pet Name"
+        android:imeOptions="actionDone"
+        android:paddingLeft="8dp"
+        android:singleLine="true"
+        android:nextFocusUp="@id/nameEdit"
+        android:nextFocusLeft="@id/nameEdit"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/agePreUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editDivide"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:hint="Birthdate"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/ageEditBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editDivide"
+        android:layout_alignRight="@+id/editDivide"
+        android:layout_below="@+id/nameEdit"
+        android:background="@android:color/transparent"
+        android:text="Change"
+        android:textColor="@color/colorAccent"
+        android:onClick="DatePickerMethod"/>
+
+    <!--   android:onClick="DatePickerMethod" -->
+
+    <View
+        android:id="@+id/editDivide"
+        style="@style/editDivider"
+        android:layout_below="@+id/ageEditBttn" />
+
+    <TextView android:id="@+id/ageSmall"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_below="@+id/editDivide"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/weightEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ageSmall"
+        android:hint="Length &amp; unit (ex.2 lb, 2 kg etc.."
+        android:imeOptions="actionDone"
+        android:singleLine="true" />
+
+
+    <EditText
+        android:id="@+id/lengthEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/weightEdit"
+        android:layout_marginTop="8dp"
+        android:hint="Length &amp; unit (ex.2 ft, 2 in etc.."
+        android:imeOptions="actionDone"
+        android:singleLine="true" />
+
+
+    <TextView android:id="@+id/bathView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bathEditBttn"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:hint="Last Bathed!"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="24sp"
+        />
+
+    <Button android:id="@+id/bathEditBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lengthEdit"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="edit"
+        android:textColor="@color/colorAccent"
+        android:background="@android:color/transparent"
+        android:onClick="DatePickerMethod"
+        />
+
+    <View android:id="@+id/divider4"
+        style="@style/editDivider"
+        android:layout_below="@id/bathView"
+        />
+    <TextView android:id="@+id/bathSmall"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_below="@+id/divider4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:id="@+id/veggiesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Greens!"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="24sp"
+        android:layout_alignBottom="@+id/veggieEdit"
+        android:layout_alignLeft="@+id/bathView"
+        android:layout_alignStart="@+id/bathView" />
+
+    <Button android:id="@+id/veggieEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bathSmall"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="edit"
+        android:textColor="@color/colorAccent"
+        android:background="@android:color/transparent"
+        />
+
+    <View android:id="@+id/divider5"
+        style="@style/editDivider"
+        android:layout_below="@id/veggiesView"
+
+        />
+    <TextView android:id="@+id/vegSmall"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_below="@+id/divider5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:id="@+id/sheddingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sheddingEdit"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:hint="Shedding day!"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="24sp"
+        />
+
+    <Button android:id="@+id/sheddingEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vegSmall"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="edit"
+        android:textColor="@color/colorAccent"
+        android:background="@android:color/transparent"
+        />
+
+    <View android:id="@+id/divider6"
+        style="@style/editDivider"
+        android:layout_below="@id/sheddingView"
+
+        />
+    <TextView android:id="@+id/shedSmall"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_below="@+id/divider6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView android:id="@+id/BMView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bmEdit"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:hint="Previous BM"
+        android:textSize="24sp"
+        />
+
+    <Button android:id="@+id/bmEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shedSmall"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="edit"
+        android:textColor="@color/colorAccent"
+        android:background="@android:color/transparent"
+        />
+
+    <View android:id="@+id/divider3"
+        style="@style/editDivider"
+        android:layout_below="@id/BMView"
+        />
+    <TextView android:id="@+id/bmSmall"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_below="@+id/divider3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/UVBEditView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="UVB Pluged In"
+        android:textSize="24sp"
+        android:layout_alignBottom="@+id/UVBEditBttn"
+        android:layout_alignLeft="@+id/vetVisitView"
+        android:layout_alignStart="@+id/vetVisitView" />
+
+    <Button android:id="@+id/UVBEditBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/bmSmall"
+        android:background="@android:color/transparent"
+        android:text="edit"
+        android:textColor="@color/colorAccent"/>
+
+    <View
+        android:id="@+id/divider1"
+        style="@style/editDivider"
+        android:layout_below="@+id/UVBEditView"
+        />
+    <TextView android:id="@+id/uvbSmall"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_below="@+id/divider1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/vetVisitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Next Vet. Appointment"
+        android:textSize="24sp"
+        android:layout_alignBottom="@+id/vetVisitEdit"
+        android:layout_alignLeft="@+id/agePreUpdate"
+        android:layout_alignStart="@+id/agePreUpdate" />
+
+    <Button android:id="@+id/vetVisitEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/uvbSmall"
+        android:background="@android:color/transparent"
+        android:text="edit"
+        android:textColor="@color/colorAccent"/>
+
+    <View
+        android:id="@+id/divider0"
+        style="@style/editDivider"
+        android:layout_below="@+id/vetVisitView"
+        />
+    <TextView android:id="@+id/visitSmall"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_below="@+id/divider0"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/bttnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/visitSmall"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhiteText"
+        android:onClick="saveInfo"/>
+
+
+</RelativeLayout>
+</ScrollView>

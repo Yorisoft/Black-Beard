@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yorisoft.blackbeard4278.blackbeardalpha" >
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+
+        <activity android:name=".Splash"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.MAINACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".MainEdit"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.MAINEDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+
+
+        <activity android:name=".CareGuideSelect"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.GUIDESELECT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".FoodGuide"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CareGuideSelect"/>
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.FOODGUIDE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".EnclosureGuide"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CareGuideSelect"/>
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.ENCLOSUREGUIDE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+
+
+        <activity android:name=".Handling"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CareGuideSelect"/>
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.HANDLING" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".Behavior"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CareGuideSelect"/>
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.BEHAVIOR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".GenInformation"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CareGuideSelect"/>
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.GENERALINFO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".Settings"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.MAINSETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AboutUs"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.ABOUTUS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+    </application>
+
+
+
+</manifest>
