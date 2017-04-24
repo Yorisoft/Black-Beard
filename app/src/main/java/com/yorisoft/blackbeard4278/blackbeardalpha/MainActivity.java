@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Base64;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,8 @@ import org.w3c.dom.Text;
 
 import java.io.File;
 import java.util.prefs.PreferenceChangeListener;
+
+import static android.R.attr.tag;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -59,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        age=new AgeCalculation();
+
         ageOne = (TextView) findViewById(R.id.ageOne);
         weightOne = (TextView) findViewById(R.id.weightOne);
         lengthOne = (TextView) findViewById(R.id.lengthOne);
@@ -74,9 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String profile = prefs.getString("image_path","choose image");
         String name= prefs.getString("dragon_name","add name!");
+      //  int birth_month = prefs.getInt("birth_month",1);
+      //  int birth_day = prefs.getInt("birth_day",1);
+       // int birth_year = prefs.getInt("birth_year",1);
         String savedAge = prefs.getString("dragon_age","");
         String weight = prefs.getString("dragon_weight","");
         String length = prefs.getString("dragon_length","");
@@ -85,8 +94,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        //  age.setDateOfBirth(birth_year, birth_month, birth_day);
 
-     //  byte[] imageAsBytes = Base64.decode(profile, Base64.DEFAULT);
+    //    calculateAge();
+
+
+
+        //  byte[] imageAsBytes = Base64.decode(profile, Base64.DEFAULT);
       // Bitmap bitmapPre = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
 
       //  BitmapDrawable bitToImage = new BitmapDrawable(getResources(),bitmapPre);
@@ -211,6 +225,17 @@ public class MainActivity extends AppCompatActivity {
                 popUp.show();
 
             }
+
+    private void calculateAge()
+    {
+
+        age.calculateYear();
+        age.calculateMonth();
+        age.calculateDay();
+        age.calculateWeek();
+        Toast.makeText(getBaseContext(), "set to"+age.getResult() , Toast.LENGTH_SHORT).show();
+        ageOne.setText(age.getResult());
+    }
 
 
 }

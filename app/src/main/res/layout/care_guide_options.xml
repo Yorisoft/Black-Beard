@@ -14,6 +14,7 @@
         android:background="@drawable/desert02"
         android:orientation="vertical">
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -37,6 +38,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_margin="8dp"
+                    android:autoText="false"
                     android:background="@color/Buttons"
                     android:gravity="center"
                     android:onClick="guideClick"
@@ -44,7 +46,7 @@
                     android:text="@string/firstBttn"
                     android:textAlignment="inherit"
                     android:textColor="@color/colorWhiteText"
-                    android:textSize="36sp" />
+                    android:textSize="60sp" />
 
                 <Button
                     android:id="@+id/foodButton"
@@ -58,7 +60,7 @@
                     android:text="@string/secondBttn"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhiteText"
-                    android:textSize="36sp"
+                    android:textSize="60sp"
                     android:textStyle="bold" />
 
 
@@ -73,7 +75,7 @@
                     android:paddingTop="8dp"
                     android:text="@string/thirdBttn"
                     android:textColor="@color/colorWhiteText"
-                    android:textSize="36sp"
+                    android:textSize="60sp"
                     android:textStyle="bold" />
 
                 <Button
@@ -87,7 +89,7 @@
                     android:paddingTop="8dp"
                     android:text="@string/fourthBttn"
                     android:textColor="@color/colorWhiteText"
-                    android:textSize="36sp"
+                    android:textSize="60sp"
                     android:textStyle="bold" />
 
                 <Button
@@ -101,13 +103,15 @@
                     android:paddingTop="8dp"
                     android:text="@string/fithBttn"
                     android:textColor="@color/colorWhiteText"
-                    android:textSize="36sp"
+                    android:textSize="50sp"
                     android:textStyle="bold" />
 
 
             </RelativeLayout>
 
         </ScrollView>
+
+
 
     </LinearLayout>
 

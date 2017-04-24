@@ -143,6 +143,14 @@ public class MainEdit extends AppCompatActivity {
             bDay =selectedDay;
             age.setDateOfBirth(bYear, bMonth, bDay);
             agePreUpdate.setText((bMonth+1) +"/"+bDay+"/"+bYear);
+
+       //     SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+       //     SharedPreferences.Editor prefEdit = prefs.edit();
+       //     prefEdit.putInt("birth_month",Integer.valueOf(bMonth));
+      //      prefEdit.putInt("birth_day",Integer.valueOf(bDay));
+       //     prefEdit.putInt("birth_year", Integer.valueOf(bYear));
+      //      prefEdit.apply();
+//
             calculateAge();
 
         }

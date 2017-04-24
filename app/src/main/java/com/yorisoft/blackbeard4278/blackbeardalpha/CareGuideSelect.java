@@ -1,17 +1,36 @@
 package com.yorisoft.blackbeard4278.blackbeardalpha;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.ViewTarget;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
 
 public class CareGuideSelect extends AppCompatActivity {
 
@@ -19,6 +38,8 @@ public class CareGuideSelect extends AppCompatActivity {
     ActionBarDrawerToggle nToggle;
     NavigationView nNavigation;
     LinearLayout guideLayout;
+
+    Bitmap BM;
 
     Button enclosure,food,handling,behavior,genInfo ;
 
@@ -43,6 +64,11 @@ public class CareGuideSelect extends AppCompatActivity {
         behavior.setTypeface(coffee_tea);
         genInfo =(Button)findViewById(R.id.generalInfoButton);
         genInfo.setTypeface(coffee_tea);
+
+
+
+        guideLayout = (LinearLayout)findViewById(R.id.guideLayout);
+
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
