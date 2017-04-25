@@ -41,6 +41,7 @@
         android:id="@+id/dummy"
         android:layout_width="0px"
         android:layout_height="0px"
+        android:orientation="horizontal"
         android:focusable="true"
         android:focusableInTouchMode="true" />
 
@@ -186,6 +187,7 @@
         android:text="edit"
         android:textColor="@color/colorAccent"
         android:background="@android:color/transparent"
+        android:onClick="DatePickerMethod"
         />
 
     <View android:id="@+id/divider5"
@@ -221,6 +223,7 @@
         android:text="edit"
         android:textColor="@color/colorAccent"
         android:background="@android:color/transparent"
+        android:onClick="DatePickerMethod"
         />
 
     <View android:id="@+id/divider6"
@@ -250,13 +253,13 @@
     <Button android:id="@+id/bmEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/shedSmall"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:text="edit"
         android:textColor="@color/colorAccent"
         android:background="@android:color/transparent"
-        />
+        android:onClick="DatePickerMethod"
+        android:layout_below="@+id/shedSmall"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <View android:id="@+id/divider3"
         style="@style/editDivider"
@@ -287,7 +290,8 @@
         android:layout_below="@+id/bmSmall"
         android:background="@android:color/transparent"
         android:text="edit"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorAccent"
+        android:onClick="DatePickerMethod"/>
 
     <View
         android:id="@+id/divider1"
@@ -320,7 +324,8 @@
         android:layout_below="@+id/uvbSmall"
         android:background="@android:color/transparent"
         android:text="edit"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorAccent"
+        android:onClick="DatePickerMethod"/>
 
     <View
         android:id="@+id/divider0"

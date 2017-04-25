@@ -94,4 +94,12 @@ public class Schedules {
         return futureDate +"days";
     }
 
+    public String getFutureVegg () {
+        int i = sDay + 4;
+
+        int futureDate = i - cDay;
+
+        return futureDate +"days";
+    }
+
 }

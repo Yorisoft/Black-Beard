@@ -39,6 +39,7 @@ public class MainEdit extends AppCompatActivity {
     public static final int IMAGE_GALLERY_REQUEST = 20;
     static final int ageDatepicker = 0;
     static final int scheduleDatepicker = 1;
+    static final int veggieDatepicker = 2;
     private AgeCalculation age = null;
     private Schedules schd = null;
     private int bYear = 2017;
@@ -48,9 +49,9 @@ public class MainEdit extends AppCompatActivity {
     private int sMonth = 0;
     private int sDay = 1;
     private String futureDay;
-    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView;
+    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView,veggieView,veggSmallView;
     EditText nameEdit, weightEdit, lengthEdit;
-    Button bttnSave, ageEditBttn, bathEditBttn;
+    Button bttnSave, ageEditBttn, bathEditBttn,veggieEdit,sheddingEdit,bmEdit,UVBEditBttn,vetVisitEdit;
     ImageButton imgEditBttn;
 
 
@@ -73,12 +74,19 @@ public class MainEdit extends AppCompatActivity {
         imgFile = (TextView) findViewById(R.id.imgFile);
         bathSmall = (TextView) findViewById(R.id.bathSmall);
         bathView = (TextView) findViewById(R.id.bathView);
+        veggSmallView = (TextView) findViewById(R.id.vegSmall);
+        veggieView = (TextView) findViewById(R.id.veggiesView);
 
 
-        bathEditBttn = (Button) findViewById(R.id.bathEditBttn);
-        bttnSave = (Button) findViewById(R.id.bttnSave);
-        ageEditBttn = (Button) findViewById(R.id.ageEditBttn);
         imgEditBttn = (ImageButton) findViewById(R.id.imgEditBttn);
+        ageEditBttn = (Button) findViewById(R.id.ageEditBttn);
+        bathEditBttn = (Button) findViewById(R.id.bathEditBttn);
+        veggieEdit = (Button) findViewById(R.id.veggieEdit);
+
+
+        bttnSave = (Button) findViewById(R.id.bttnSave);
+
+
 
         getValues();
 
@@ -95,7 +103,10 @@ public class MainEdit extends AppCompatActivity {
         String weightHint = prefs.getString("dragon_weight", "weight");
         String lengthHint = prefs.getString("dragon_length", "length");
         String bathingHint = prefs.getString("bathed_date", "Last Bathed?");
+        String veggHint = prefs.getString("veggies_date", "Greens!");
+
         String upcomingBathHint = prefs.getString("bath_future", "Last bathed");
+
 
         if (nameHint.equals("Pet name!")) {
 
@@ -128,6 +139,11 @@ public class MainEdit extends AppCompatActivity {
         } else {
             bathView.setText(bathingHint);
         }
+        if(veggHint.equals("Greens!")){
+
+        } else {
+            veggieView.setText(veggHint);
+        }
 
     }
 
@@ -157,6 +173,10 @@ public class MainEdit extends AppCompatActivity {
                         schdDateSetListener,
                         sYear, sMonth, sDay);
 
+            case veggieDatepicker:
+                return new DatePickerDialog(this,
+                        veggieDateSetListener,
+                        sYear, sMonth, sDay);
 
         }
         return null;
@@ -202,7 +222,29 @@ public class MainEdit extends AppCompatActivity {
             prefEdit.putInt("bath_year", sYear); //  Integer.valueOf(bYear));
             prefEdit.apply();
 
-            calculateDate();
+            calculateBath();
+
+        }
+    };
+//Veggies
+    private DatePickerDialog.OnDateSetListener veggieDateSetListener
+            = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            sYear = selectedYear;
+            sMonth = selectedMonth;
+            sDay = selectedDay;
+            veggieView.setText((sMonth + 1) + "/" + sDay);
+            schd.setSelectedDate(sYear, sMonth, sDay);
+
+            SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+            SharedPreferences.Editor prefEdit = prefs.edit();
+            prefEdit.putInt("vegg_month", sMonth); // Integer.valueOf(bMonth));
+            prefEdit.putInt("vegg_day", sDay); // Integer.valueOf(bDay));
+            prefEdit.putInt("vegg_year", sYear); //  Integer.valueOf(bYear));
+            prefEdit.apply();
+
+            calculateVegg();
 
         }
     };
@@ -216,6 +258,11 @@ public class MainEdit extends AppCompatActivity {
             case R.id.bathEditBttn:
                 showDialog(scheduleDatepicker);
                 schd.getCurrentDate();
+                break;
+            case R.id.veggieEdit:
+                showDialog(veggieDatepicker);
+                schd.getCurrentDate();
+                break;
 
             default:
                 break;
@@ -233,12 +280,21 @@ public class MainEdit extends AppCompatActivity {
     }
 
     // Bath
-    private void calculateDate() {
+    private void calculateBath() {
         schd.calculateMonth();
         schd.calculateDay();
         schd.calculateWeek();
         Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
         bathSmall.setText(schd.getResult());
+
+    }
+    // Veggies
+    private void calculateVegg() {
+        schd.calculateMonth();
+        schd.calculateDay();
+        schd.calculateWeek();
+        Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
+        veggSmallView.setText(schd.getResult());
 
     }
 
@@ -252,6 +308,7 @@ public class MainEdit extends AppCompatActivity {
         prefEdit.putString("dragon_length", lengthEdit.getText().toString());
         prefEdit.putString("birth_date", agePreUpdate.getText().toString());
         prefEdit.putString("bathed_date", bathView.getText().toString());
+        prefEdit.putString("veggies_date", veggieView.getText().toString());
 
 
         prefEdit.apply();
