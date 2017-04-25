@@ -42,6 +42,7 @@ import static android.R.attr.tag;
 public class MainActivity extends AppCompatActivity {
 
     private AgeCalculation age = null;
+    private Schedules bath = null;
 
     Button editBttn;
     Button saveButton;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         age=new AgeCalculation();
+        bath= new Schedules();
 
         ageOne = (TextView) findViewById(R.id.ageOne);
         weightOne = (TextView) findViewById(R.id.weightOne);
@@ -83,30 +85,24 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String profile = prefs.getString("image_path","choose image");
-        String name= prefs.getString("dragon_name","add name!");
-
         int birth_month = prefs.getInt("birth_month",1);
         int birth_day = prefs.getInt("birth_day",1);
         int birth_year = prefs.getInt("birth_year",1);
 
-        String savedAge = prefs.getString("dragon_age","");
-
-        String weight = prefs.getString("dragon_weight","");
-        String length = prefs.getString("dragon_length","");
-        String bath = prefs.getString("bath_future","");
-        String old_bath = prefs.getString("bathed_date","");
+        int bathMonth = prefs.getInt("bath_month", 1); // Integer.valueOf(bMonth));
+        int bathDay = prefs.getInt("bath_day", 1); // Integer.valueOf(bDay));
+        int bathYear = prefs.getInt("bath_year", 1);
 
 
+        age.setDateOfBirth(birth_year, birth_month, birth_day);
 
-         age.setDateOfBirth(birth_year, birth_month, birth_day);
-        if (birth_year == 1 ){
+        bath.setSelectedDate(bathYear, bathMonth, bathDay);
 
-        } else {
-            calculateAge();
-        }
-
+            getValues();
+//populating views with values. if statements in case they are empty.
 
 
+        //lastBath.setText(old_bath);
 
         //  byte[] imageAsBytes = Base64.decode(profile, Base64.DEFAULT);
       // Bitmap bitmapPre = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
@@ -129,12 +125,6 @@ public class MainActivity extends AppCompatActivity {
                 .centerCrop()
                 .into(petPicture);
 
-        petName.setText(name);
-     //   ageOne.setText(savedAge);
-        weightOne.setText(weight);
-        lengthOne.setText(length);
-        newBath.setText(bath);
-        lastBath.setText(old_bath);
 
 
 
@@ -200,6 +190,67 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void getValues() {
+
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        String name = prefs.getString("dragon_name", "add name!");
+
+        int birth_year = prefs.getInt("birth_year", 1);
+
+
+        String savedAge = prefs.getString("dragon_age", "");
+
+        String weight = prefs.getString("dragon_weight", "");
+        String length = prefs.getString("dragon_length", "");
+
+        String new_bath = prefs.getString("bathed_future", "Last bathed");
+        String old_bath = prefs.getString("bathed_date", "");
+
+
+        if (birth_year == 1) {
+            //Keep Hint
+        } else {
+            calculateAge();
+        }
+
+        if (old_bath.equals("Last Bathed?")) {
+            //Keep Hint
+        } else {
+            lastBath.setText(old_bath);
+        }
+
+        if (name.equals("Pet name!")) {
+            //Keep Hint
+        } else {
+            petName.setText(name);
+        }
+
+        if (weight.equals("weight")) {
+            //Keep Hint
+        } else {
+            weightOne.setText(weight);
+        }
+
+        if (length.equals("length")) {
+            //Keep Hint
+        } else {
+            lengthOne.setText(length);
+        }
+
+        if (new_bath.equals("Last bathed")) {
+            bath.setCurrentDate();
+            Log.i("calculateAge: ", age.toString());
+            bath.calculateMonth();
+            bath.calculateDay();
+            bath.calculateWeek();
+            bath.getFutureDate();
+            newBath.setText(bath.getFutureDate());
+        } else {
+            newBath.setText(new_bath);
+
+        }
+    }
+
 
     @Override
             public boolean onOptionsItemSelected(MenuItem item) {
@@ -245,6 +296,18 @@ public class MainActivity extends AppCompatActivity {
         age.calculateWeek();
         ageOne.setText(age.getResult());
     }
+
+ //   private void calculateBath()
+    //   {
+//
+    //       bath.setCurrentDate();
+    //       Log.i("calculateAge: ", age.toString());
+    //       bath.calculateMonth();
+    //       bath.calculateDay();
+    //      bath.calculateWeek();
+    //      bath.getFutureDate();
+    //     newBath.setText(bath.getFutureDate());
+    // }
 
 
 }

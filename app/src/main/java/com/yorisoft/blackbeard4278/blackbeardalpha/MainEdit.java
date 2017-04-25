@@ -80,6 +80,14 @@ public class MainEdit extends AppCompatActivity {
         ageEditBttn = (Button) findViewById(R.id.ageEditBttn);
         imgEditBttn = (ImageButton) findViewById(R.id.imgEditBttn);
 
+        getValues();
+
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    private void getValues() {
 
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String nameHint = prefs.getString("dragon_name", "Pet name!");
@@ -90,16 +98,38 @@ public class MainEdit extends AppCompatActivity {
         String bathingHint = prefs.getString("bathed_date", "Last Bathed?");
         String upcomingBathHint = prefs.getString("bath_future", "Last bathed");
 
-        nameEdit.setText(nameHint);
-        agePreUpdate.setText(ageHint);
+        if(nameHint.equals("Pet name!")){
+
+        } else {
+            nameEdit.setText(nameHint);
+        }
+
+        if(ageHint.equals("Birthday")){
+
+        } else {
+            agePreUpdate.setText(ageHint);
+        }
+
         ageSmall.setText(birthHint);
         bathSmall.setText(upcomingBathHint);
-        weightEdit.setText(weightHint);
-        lengthEdit.setText(lengthHint);
-        bathView.setText(bathingHint);
 
+        if(weightHint.equals("weight")){
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }else {
+            weightEdit.setText(weightHint);
+        }
+
+        if(lengthHint.equals("length")){
+
+        } else {
+            lengthEdit.setText(lengthHint);
+        }
+        if (bathingHint.equals("Last Bathed?")){
+
+        } else {
+            bathView.setText(bathingHint);
+        }
+
     }
 
 
@@ -133,6 +163,7 @@ public class MainEdit extends AppCompatActivity {
         return null;
     }
 
+// Age
     private DatePickerDialog.OnDateSetListener ageDateSetListener
             = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int selectedYear,
@@ -154,7 +185,7 @@ public class MainEdit extends AppCompatActivity {
 
         }
     };
-
+// Bath
     private DatePickerDialog.OnDateSetListener schdDateSetListener
             = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int selectedYear,
@@ -164,6 +195,14 @@ public class MainEdit extends AppCompatActivity {
             sDay = selectedDay;
             bathView.setText((sMonth + 1) + "/" + sDay);
             schd.setSelectedDate(sYear, sMonth, sDay);
+
+            SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+            SharedPreferences.Editor prefEdit = prefs.edit();
+            prefEdit.putInt("bath_month", sMonth); // Integer.valueOf(bMonth));
+            prefEdit.putInt("bath_day", sDay); // Integer.valueOf(bDay));
+            prefEdit.putInt("bath_year", sYear); //  Integer.valueOf(bYear));
+            prefEdit.apply();
+
             calculateDate();
 
         }
@@ -183,7 +222,7 @@ public class MainEdit extends AppCompatActivity {
                 break;
         }
     }
-
+// Age
     private void calculateAge() {
         age.calculateYear();
         age.calculateMonth();
@@ -192,7 +231,7 @@ public class MainEdit extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "set to" + age.getResult(), Toast.LENGTH_SHORT).show();
         ageSmall.setText(age.getResult());
     }
-
+// Bath
     private void calculateDate() {
         schd.calculateMonth();
         schd.calculateDay();

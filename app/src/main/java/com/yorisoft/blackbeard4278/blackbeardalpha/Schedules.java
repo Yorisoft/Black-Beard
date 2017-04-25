@@ -25,6 +25,14 @@ public class Schedules {
         cDay = c.get(Calendar.DAY_OF_MONTH);
         return cDay + ":" + cMonth + ":" + cYear;
     }
+    public void setCurrentDate() {
+        Calendar c = Calendar.getInstance();
+        cYear = c.get(Calendar.YEAR);
+        cMonth = c.get(Calendar.MONTH);
+        cMonth++;
+        cDay = c.get(Calendar.DAY_OF_MONTH);
+    }
+
     public void setSelectedDate(int nYear, int nMonth, int nDay) {
         sDay = nYear;
         sMonth = nMonth;
