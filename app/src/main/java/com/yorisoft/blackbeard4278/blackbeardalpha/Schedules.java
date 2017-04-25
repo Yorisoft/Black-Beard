@@ -1,6 +1,8 @@
 package com.yorisoft.blackbeard4278.blackbeardalpha;
 
 
+import android.util.Log;
+
 import java.util.Calendar;
 
 public class Schedules {
@@ -26,6 +28,7 @@ public class Schedules {
         return cDay + ":" + cMonth + ":" + cYear;
     }
     public void setCurrentDate() {
+        Log.i("calculatebath",sMonth + "/" + sDay+ "/"+sYear);
         Calendar c = Calendar.getInstance();
         cYear = c.get(Calendar.YEAR);
         cMonth = c.get(Calendar.MONTH);

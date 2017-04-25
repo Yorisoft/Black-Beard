@@ -83,7 +83,6 @@ public class MainEdit extends AppCompatActivity {
         getValues();
 
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -98,13 +97,13 @@ public class MainEdit extends AppCompatActivity {
         String bathingHint = prefs.getString("bathed_date", "Last Bathed?");
         String upcomingBathHint = prefs.getString("bath_future", "Last bathed");
 
-        if(nameHint.equals("Pet name!")){
+        if (nameHint.equals("Pet name!")) {
 
         } else {
             nameEdit.setText(nameHint);
         }
 
-        if(ageHint.equals("Birthday")){
+        if (ageHint.equals("Birthday")) {
 
         } else {
             agePreUpdate.setText(ageHint);
@@ -113,18 +112,18 @@ public class MainEdit extends AppCompatActivity {
         ageSmall.setText(birthHint);
         bathSmall.setText(upcomingBathHint);
 
-        if(weightHint.equals("weight")){
+        if (weightHint.equals("weight")) {
 
-        }else {
+        } else {
             weightEdit.setText(weightHint);
         }
 
-        if(lengthHint.equals("length")){
+        if (lengthHint.equals("length")) {
 
         } else {
             lengthEdit.setText(lengthHint);
         }
-        if (bathingHint.equals("Last Bathed?")){
+        if (bathingHint.equals("Last Bathed?")) {
 
         } else {
             bathView.setText(bathingHint);
@@ -163,7 +162,7 @@ public class MainEdit extends AppCompatActivity {
         return null;
     }
 
-// Age
+    // Age
     private DatePickerDialog.OnDateSetListener ageDateSetListener
             = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int selectedYear,
@@ -185,7 +184,7 @@ public class MainEdit extends AppCompatActivity {
 
         }
     };
-// Bath
+    // Bath
     private DatePickerDialog.OnDateSetListener schdDateSetListener
             = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int selectedYear,
@@ -222,7 +221,8 @@ public class MainEdit extends AppCompatActivity {
                 break;
         }
     }
-// Age
+
+    // Age
     private void calculateAge() {
         age.calculateYear();
         age.calculateMonth();
@@ -231,7 +231,8 @@ public class MainEdit extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "set to" + age.getResult(), Toast.LENGTH_SHORT).show();
         ageSmall.setText(age.getResult());
     }
-// Bath
+
+    // Bath
     private void calculateDate() {
         schd.calculateMonth();
         schd.calculateDay();
@@ -239,7 +240,7 @@ public class MainEdit extends AppCompatActivity {
         schd.getFutureDate();
         Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
         bathSmall.setText(schd.getResult());
-        futureDay = schd.getFutureDate();
+
     }
 
     public void saveInfo(View view) {
@@ -252,7 +253,7 @@ public class MainEdit extends AppCompatActivity {
         prefEdit.putString("dragon_length", lengthEdit.getText().toString());
         prefEdit.putString("birth_date", agePreUpdate.getText().toString());
         prefEdit.putString("bathed_date", bathView.getText().toString());
-        prefEdit.putString("bath_future", futureDay);
+
 
         prefEdit.apply();
 

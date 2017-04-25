@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     Button saveButton;
     ImageButton moreEdits;
 
-    TextView ageOne, weightOne, lengthOne, petName,newBath,lastBath;
+    TextView ageOne, weightOne, lengthOne, petName, newBath, lastBath;
 
     ImageView petPicture;
 
@@ -58,14 +58,13 @@ public class MainActivity extends AppCompatActivity {
     NavigationView newNavigation;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        age=new AgeCalculation();
-        bath= new Schedules();
+        age = new AgeCalculation();
+        bath = new Schedules();
 
         ageOne = (TextView) findViewById(R.id.ageOne);
         weightOne = (TextView) findViewById(R.id.weightOne);
@@ -81,13 +80,11 @@ public class MainActivity extends AppCompatActivity {
         petPicture = (ImageView) findViewById(R.id.imageView2);
 
 
-
-
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
-        String profile = prefs.getString("image_path","choose image");
-        int birth_month = prefs.getInt("birth_month",1);
-        int birth_day = prefs.getInt("birth_day",1);
-        int birth_year = prefs.getInt("birth_year",1);
+        String profile = prefs.getString("image_path", "choose image");
+        int birth_month = prefs.getInt("birth_month", 1);
+        int birth_day = prefs.getInt("birth_day", 1);
+        int birth_year = prefs.getInt("birth_year", 1);
 
         int bathMonth = prefs.getInt("bath_month", 1); // Integer.valueOf(bMonth));
         int bathDay = prefs.getInt("bath_day", 1); // Integer.valueOf(bDay));
@@ -96,29 +93,28 @@ public class MainActivity extends AppCompatActivity {
 
         age.setDateOfBirth(birth_year, birth_month, birth_day);
 
-        bath.setSelectedDate(bathYear, bathMonth, bathDay);
 
-            getValues();
+        getValues();
 //populating views with values. if statements in case they are empty.
 
 
         //lastBath.setText(old_bath);
 
         //  byte[] imageAsBytes = Base64.decode(profile, Base64.DEFAULT);
-      // Bitmap bitmapPre = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+        // Bitmap bitmapPre = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
 
-      //  BitmapDrawable bitToImage = new BitmapDrawable(getResources(),bitmapPre);
-      //  petPicture.setBackground(bitToImage);
-                                                            //no need to decode bitmap, Using Picasso!
+        //  BitmapDrawable bitToImage = new BitmapDrawable(getResources(),bitmapPre);
+        //  petPicture.setBackground(bitToImage);
+        //no need to decode bitmap, Using Picasso!
 
 
         Uri picturePath = Uri.parse(profile);
 
-      // Picasso.with(this)
-       //         .load(picturePath)
-       //         .fit()
-       //         .into(petPicture);
-                                                            //Picasso sucks, all hail Glide (better  with portrait images and at c).
+        // Picasso.with(this)
+        //         .load(picturePath)
+        //         .fit()
+        //         .into(petPicture);
+        //Picasso sucks, all hail Glide (better  with portrait images and at c).
 
         Glide.with(this)
                 .load(picturePath)
@@ -126,16 +122,11 @@ public class MainActivity extends AppCompatActivity {
                 .into(petPicture);
 
 
-
-
-
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
-        newDrawerLayout = (DrawerLayout)findViewById(R.id.drawerMain);
-        newToggle = new ActionBarDrawerToggle(this,newDrawerLayout,R.string.open,R.string.close);
+        newDrawerLayout = (DrawerLayout) findViewById(R.id.drawerMain);
+        newToggle = new ActionBarDrawerToggle(this, newDrawerLayout, R.string.open, R.string.close);
         newDrawerLayout.addDrawerListener(newToggle);
 
         newNavigation = (NavigationView) findViewById(R.id.navView);
@@ -152,21 +143,21 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.careTips:
                         //Do some thing here
                         newDrawerLayout.closeDrawers();
-                        Intent careGuide = new Intent(MainActivity.this,CareGuideSelect.class);
+                        Intent careGuide = new Intent(MainActivity.this, CareGuideSelect.class);
                         startActivity(careGuide);
 
                         break;
 
                     case R.id.settings:
                         newDrawerLayout.closeDrawers();
-                        Intent nSetting = new Intent(MainActivity.this,Settings.class);
+                        Intent nSetting = new Intent(MainActivity.this, Settings.class);
                         startActivity(nSetting);
 
                         break;
 
                     case R.id.aboutUS:
                         newDrawerLayout.closeDrawers();
-                        Intent aboutUs = new Intent(MainActivity.this,AboutUs.class);
+                        Intent aboutUs = new Intent(MainActivity.this, AboutUs.class);
                         startActivity(aboutUs);
 
                         break;
@@ -193,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
     private void getValues() {
 
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
-        String name = prefs.getString("dragon_name", "add name!");
+        String name = prefs.getString("dragon_name", "Pet name!");
 
         int birth_year = prefs.getInt("birth_year", 1);
 
@@ -203,7 +194,9 @@ public class MainActivity extends AppCompatActivity {
         String weight = prefs.getString("dragon_weight", "");
         String length = prefs.getString("dragon_length", "");
 
-        String new_bath = prefs.getString("bathed_future", "Last bathed");
+        int bathMonth = prefs.getInt("bath_month", 1);
+        int bathDay = prefs.getInt("bath_day", 1);
+
         String old_bath = prefs.getString("bathed_date", "");
 
 
@@ -237,58 +230,71 @@ public class MainActivity extends AppCompatActivity {
             lengthOne.setText(length);
         }
 
-        if (new_bath.equals("Last bathed")) {
-            bath.setCurrentDate();
-            Log.i("calculateAge: ", age.toString());
-            bath.calculateMonth();
-            bath.calculateDay();
-            bath.calculateWeek();
-            bath.getFutureDate();
-            newBath.setText(bath.getFutureDate());
+        if (bathDay == 0 && bathMonth == 0) {
+
+            newBath.setText("cake");
+
         } else {
-            newBath.setText(new_bath);
+
+            calculateBath();
 
         }
     }
 
+    private void calculateBath() {
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        int bathMonth = prefs.getInt("bath_month", 1); // Integer.valueOf(bMonth));
+        int bathDay = prefs.getInt("bath_day", 1); // Integer.valueOf(bDay));
+        int bathYear = prefs.getInt("bath_year", 1);
+
+        bath.setSelectedDate(bathYear, bathMonth, bathDay);
+        Log.i("calculateBath1: ", bath.toString());
+        bath.setCurrentDate();
+        Log.i("calculateBath1: ", bath.toString());
+        bath.calculateMonth();
+        bath.calculateDay();
+        bath.calculateWeek();
+        bath.getFutureDate();
+
+        newBath.setText(bath.getFutureDate());
+    }
+
 
     @Override
-            public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-                if(newToggle.onOptionsItemSelected(item)){
-                    return true;
+        if (newToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    public void imageAndNameEdit(View v) {
+
+        PopupMenu popUp = new PopupMenu(MainActivity.this, moreEdits);
+        popUp.getMenuInflater().inflate(R.menu.popup_img_name, popUp.getMenu());
+
+
+        popUp.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.imaNameEdit:
+                        Intent img_name_edit = new Intent(MainActivity.this, MainEdit.class);
+                        startActivity(img_name_edit);
+                        break;
                 }
-
-                return super.onOptionsItemSelected(item);
-
+                return true;
             }
+        });
+        popUp.show();
 
-            public void imageAndNameEdit (View v) {
+    }
 
-                PopupMenu popUp = new PopupMenu(MainActivity.this, moreEdits);
-                popUp.getMenuInflater().inflate(R.menu.popup_img_name, popUp.getMenu());
+    private void calculateAge() {
 
-
-
-                popUp.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch(item.getItemId()) {
-                            case R.id.imaNameEdit:
-                                Intent img_name_edit = new Intent(MainActivity.this,MainEdit.class);
-                                startActivity(img_name_edit);
-                                break;
-                        }
-                        return true;
-                    }
-                });
-                popUp.show();
-
-            }
-
-    private void calculateAge()
-    {
-
-         age.setCurrentDate();
+        age.setCurrentDate();
         Log.i("calculateAge: ", age.toString());
         age.calculateYear();
         age.calculateMonth();
@@ -296,18 +302,6 @@ public class MainActivity extends AppCompatActivity {
         age.calculateWeek();
         ageOne.setText(age.getResult());
     }
-
- //   private void calculateBath()
-    //   {
-//
-    //       bath.setCurrentDate();
-    //       Log.i("calculateAge: ", age.toString());
-    //       bath.calculateMonth();
-    //       bath.calculateDay();
-    //      bath.calculateWeek();
-    //      bath.getFutureDate();
-    //     newBath.setText(bath.getFutureDate());
-    // }
 
 
 }
