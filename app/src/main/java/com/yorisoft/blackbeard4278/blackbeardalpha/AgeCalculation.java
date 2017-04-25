@@ -2,6 +2,8 @@ package com.yorisoft.blackbeard4278.blackbeardalpha;
 
 
 
+import android.util.Log;
+
 import java.util.Calendar;
 
 public class AgeCalculation {
@@ -17,6 +19,14 @@ public class AgeCalculation {
     private int resWeek;
 
 
+    public void setCurrentDate() { // set up currentYear, Month, and Day for calculations
+        Log.i("calculateAge","Calculate age... setting current date");
+        Calendar c = Calendar.getInstance();
+        currentYear = c.get(Calendar.YEAR);
+        currentMonth = c.get(Calendar.MONTH);
+        currentMonth++;
+        currentDay = c.get(Calendar.DAY_OF_MONTH);
+        }
     public String getCurrentDate() {
         Calendar c = Calendar.getInstance();
         currentYear = c.get(Calendar.YEAR);
@@ -60,6 +70,9 @@ public class AgeCalculation {
 
         }
     }
+    public String toString() {
+        return " " + birthMonth + "/"+birthDay+"/"+birthYear + "(now: "+currentMonth +"/"+currentDay+"/"+currentYear+")";
+    }
     public void calculateWeek() {
         resWeek = endDay / 7;
     }
@@ -85,7 +98,5 @@ public class AgeCalculation {
         }
     }
 }
-
-
 
 

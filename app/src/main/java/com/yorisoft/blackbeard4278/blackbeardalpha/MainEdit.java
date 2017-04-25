@@ -41,18 +41,17 @@ public class MainEdit extends AppCompatActivity {
     static final int scheduleDatepicker = 1;
     private AgeCalculation age = null;
     private Schedules schd = null;
-    private int bYear =2017;
-    private int bMonth =0;
-    private int bDay =1;
-    private int sYear =2017;
-    private int sMonth =0;
-    private int sDay =1;
+    private int bYear = 2017;
+    private int bMonth = 0;
+    private int bDay = 1;
+    private int sYear = 2017;
+    private int sMonth = 0;
+    private int sDay = 1;
     private String futureDay;
-    TextView ageSmall,agePreUpdate,imgFile,bathSmall,bathView;
-    EditText nameEdit,weightEdit,lengthEdit;
-    Button bttnSave,ageEditBttn,bathEditBttn;
+    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView;
+    EditText nameEdit, weightEdit, lengthEdit;
+    Button bttnSave, ageEditBttn, bathEditBttn;
     ImageButton imgEditBttn;
-
 
 
     @Override
@@ -61,35 +60,35 @@ public class MainEdit extends AppCompatActivity {
         setContentView(R.layout.main_edit_01);
 
 
-        age=new AgeCalculation();
-        schd=new Schedules();
+        age = new AgeCalculation();
+        schd = new Schedules();
 
-        nameEdit = (EditText)findViewById(R.id.nameEdit);
+        nameEdit = (EditText) findViewById(R.id.nameEdit);
         weightEdit = (EditText) findViewById(R.id.weightEdit);
         lengthEdit = (EditText) findViewById(R.id.lengthEdit);
 
 
-        ageSmall = (TextView)findViewById(R.id.ageSmall);
-        agePreUpdate = (TextView)findViewById(R.id.agePreUpdate);
+        ageSmall = (TextView) findViewById(R.id.ageSmall); // label with age calculation
+        agePreUpdate = (TextView) findViewById(R.id.agePreUpdate);
         imgFile = (TextView) findViewById(R.id.imgFile);
-        bathSmall = (TextView)findViewById(R.id.bathSmall);
-        bathView =(TextView)findViewById(R.id.bathView);
+        bathSmall = (TextView) findViewById(R.id.bathSmall);
+        bathView = (TextView) findViewById(R.id.bathView);
 
 
         bathEditBttn = (Button) findViewById(R.id.bathEditBttn);
-        bttnSave = (Button)findViewById(R.id.bttnSave);
-        ageEditBttn = (Button)findViewById(R.id.ageEditBttn);
-        imgEditBttn = (ImageButton)findViewById(R.id.imgEditBttn);
+        bttnSave = (Button) findViewById(R.id.bttnSave);
+        ageEditBttn = (Button) findViewById(R.id.ageEditBttn);
+        imgEditBttn = (ImageButton) findViewById(R.id.imgEditBttn);
 
 
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
-        String nameHint = prefs.getString("dragon_name","Pet name!");
-        String ageHint = prefs.getString("birth_date","Birthday");
-        String birthHint = prefs.getString("dragon_age","Age");
-        String weightHint = prefs.getString("dragon_weight","weight");
-        String lengthHint = prefs.getString("dragon_length","length");
-        String bathingHint = prefs.getString("bathed_date","Last Bathed?");
-        String upcomingBathHint = prefs.getString("bath_future","Last bathed");
+        String nameHint = prefs.getString("dragon_name", "Pet name!");
+        String ageHint = prefs.getString("birth_date", "Birthday");
+        String birthHint = prefs.getString("dragon_age", "Age");
+        String weightHint = prefs.getString("dragon_weight", "weight");
+        String lengthHint = prefs.getString("dragon_length", "length");
+        String bathingHint = prefs.getString("bathed_date", "Last Bathed?");
+        String upcomingBathHint = prefs.getString("bath_future", "Last bathed");
 
         nameEdit.setText(nameHint);
         agePreUpdate.setText(ageHint);
@@ -127,7 +126,7 @@ public class MainEdit extends AppCompatActivity {
             case scheduleDatepicker:
                 return new DatePickerDialog(this,
                         schdDateSetListener,
-                        sYear,sMonth,sDay);
+                        sYear, sMonth, sDay);
 
 
         }
@@ -138,18 +137,18 @@ public class MainEdit extends AppCompatActivity {
             = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int selectedYear,
                               int selectedMonth, int selectedDay) {
-            bYear =selectedYear;
-            bMonth =selectedMonth;
-            bDay =selectedDay;
+            bYear = selectedYear;
+            bMonth = selectedMonth;
+            bDay = selectedDay;
             age.setDateOfBirth(bYear, bMonth, bDay);
-            agePreUpdate.setText((bMonth+1) +"/"+bDay+"/"+bYear);
+            agePreUpdate.setText((bMonth + 1) + "/" + bDay + "/" + bYear);
 
-       //     SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
-       //     SharedPreferences.Editor prefEdit = prefs.edit();
-       //     prefEdit.putInt("birth_month",Integer.valueOf(bMonth));
-      //      prefEdit.putInt("birth_day",Integer.valueOf(bDay));
-       //     prefEdit.putInt("birth_year", Integer.valueOf(bYear));
-      //      prefEdit.apply();
+            SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+            SharedPreferences.Editor prefEdit = prefs.edit();
+            prefEdit.putInt("birth_month", bMonth); // Integer.valueOf(bMonth));
+            prefEdit.putInt("birth_day", bDay); // Integer.valueOf(bDay));
+            prefEdit.putInt("birth_year", bYear); //  Integer.valueOf(bYear));
+            prefEdit.apply();
 //
             calculateAge();
 
@@ -160,17 +159,17 @@ public class MainEdit extends AppCompatActivity {
             = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int selectedYear,
                               int selectedMonth, int selectedDay) {
-            sYear =selectedYear;
-            sMonth =selectedMonth;
-            sDay =selectedDay;
-            bathView.setText((sMonth+1) +"/"+sDay);
+            sYear = selectedYear;
+            sMonth = selectedMonth;
+            sDay = selectedDay;
+            bathView.setText((sMonth + 1) + "/" + sDay);
             schd.setSelectedDate(sYear, sMonth, sDay);
             calculateDate();
 
         }
     };
 
-    public void DatePickerMethod (View v) {
+    public void DatePickerMethod(View v) {
         switch (v.getId()) {
             case R.id.ageEditBttn:
                 showDialog(ageDatepicker);
@@ -184,13 +183,13 @@ public class MainEdit extends AppCompatActivity {
                 break;
         }
     }
-    private void calculateAge()
-    {
+
+    private void calculateAge() {
         age.calculateYear();
         age.calculateMonth();
         age.calculateDay();
         age.calculateWeek();
-        Toast.makeText(getBaseContext(), "set to"+age.getResult() , Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "set to" + age.getResult(), Toast.LENGTH_SHORT).show();
         ageSmall.setText(age.getResult());
     }
 
@@ -199,7 +198,7 @@ public class MainEdit extends AppCompatActivity {
         schd.calculateDay();
         schd.calculateWeek();
         schd.getFutureDate();
-        Toast.makeText(getBaseContext(), "set to"+schd.getResult() , Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
         bathSmall.setText(schd.getResult());
         futureDay = schd.getFutureDate();
     }
@@ -213,16 +212,15 @@ public class MainEdit extends AppCompatActivity {
         prefEdit.putString("dragon_weight", weightEdit.getText().toString());
         prefEdit.putString("dragon_length", lengthEdit.getText().toString());
         prefEdit.putString("birth_date", agePreUpdate.getText().toString());
-        prefEdit.putString("bathed_date",bathView.getText().toString());
-        prefEdit.putString("bath_future",futureDay);
-
+        prefEdit.putString("bathed_date", bathView.getText().toString());
+        prefEdit.putString("bath_future", futureDay);
 
         prefEdit.apply();
 
         Intent update = new Intent(this, MainActivity.class);
         startActivity(update);
 
-        Toast.makeText(this,"Saved",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
     }
 
     public void pickImage(View view) {
@@ -240,14 +238,14 @@ public class MainEdit extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
 
         }
-        if(requestCode == IMAGE_GALLERY_REQUEST) {
+        if (requestCode == IMAGE_GALLERY_REQUEST) {
 
             Uri imgUri = data.getData();
-            String path= imgUri.getPath();
-            String fileName=path.substring(path.lastIndexOf("/")+1);
+            String path = imgUri.getPath();
+            String fileName = path.substring(path.lastIndexOf("/") + 1);
             imgFile.setText(fileName);
 
             try {
@@ -257,11 +255,11 @@ public class MainEdit extends AppCompatActivity {
 
                 String picturePath = String.valueOf(imgUri);
 
-    //            Picasso.with(this)
-      //                  .load(imgUri)
-       //                 .centerCrop()
-        //                .fit()
-         //               .into(imgEditBttn);
+                //            Picasso.with(this)
+                //                  .load(imgUri)
+                //                 .centerCrop()
+                //                .fit()
+                //               .into(imgEditBttn);
 
                 Glide.with(this)
                         .load(imgUri)
@@ -270,29 +268,28 @@ public class MainEdit extends AppCompatActivity {
 
 //Picasso as workaround.
                 //BitmapDrawable bitToImage = new BitmapDrawable(getResources(),nImage);
-               // imgEditBttn.setBackground(bitToImage);
+                // imgEditBttn.setBackground(bitToImage);
 
 
 //bitmap into byteArray base64 in order to save into prefs.
                 ByteArrayOutputStream bToS = new ByteArrayOutputStream();
-                nImage.compress(Bitmap.CompressFormat.PNG,100, bToS);
-                byte [] b=bToS.toByteArray();
-                String temp= Base64.encodeToString(b, Base64.DEFAULT);
+                nImage.compress(Bitmap.CompressFormat.PNG, 100, bToS);
+                byte[] b = bToS.toByteArray();
+                String temp = Base64.encodeToString(b, Base64.DEFAULT);
                 Log.d("Image Log:", temp);
 
                 SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
                 SharedPreferences.Editor prefEdit = prefs.edit();
-                prefEdit.putString("image_path",picturePath);
+                prefEdit.putString("image_path", picturePath);
                 prefEdit.apply();
 
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                Toast.makeText(this, "Unable to open",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Unable to open", Toast.LENGTH_LONG).show();
             }
         }
     }
 
 
 }
-

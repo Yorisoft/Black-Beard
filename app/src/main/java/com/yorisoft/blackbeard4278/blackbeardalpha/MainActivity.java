@@ -1,3 +1,4 @@
+
 package com.yorisoft.blackbeard4278.blackbeardalpha;
 
 import android.content.Context;
@@ -83,20 +84,27 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String profile = prefs.getString("image_path","choose image");
         String name= prefs.getString("dragon_name","add name!");
-      //  int birth_month = prefs.getInt("birth_month",1);
-      //  int birth_day = prefs.getInt("birth_day",1);
-       // int birth_year = prefs.getInt("birth_year",1);
+
+        int birth_month = prefs.getInt("birth_month",1);
+        int birth_day = prefs.getInt("birth_day",1);
+        int birth_year = prefs.getInt("birth_year",1);
+
         String savedAge = prefs.getString("dragon_age","");
+
         String weight = prefs.getString("dragon_weight","");
         String length = prefs.getString("dragon_length","");
-        String bath = prefs.getString("bath_future"," ");
-        String old_bath = prefs.getString("bathed_date"," ");
+        String bath = prefs.getString("bath_future","");
+        String old_bath = prefs.getString("bathed_date","");
 
 
 
-        //  age.setDateOfBirth(birth_year, birth_month, birth_day);
+         age.setDateOfBirth(birth_year, birth_month, birth_day);
+        if (birth_year == 1 ){
 
-    //    calculateAge();
+        } else {
+            calculateAge();
+        }
+
 
 
 
@@ -122,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 .into(petPicture);
 
         petName.setText(name);
-        ageOne.setText(savedAge);
+     //   ageOne.setText(savedAge);
         weightOne.setText(weight);
         lengthOne.setText(length);
         newBath.setText(bath);
@@ -229,11 +237,12 @@ public class MainActivity extends AppCompatActivity {
     private void calculateAge()
     {
 
+         age.setCurrentDate();
+        Log.i("calculateAge: ", age.toString());
         age.calculateYear();
         age.calculateMonth();
         age.calculateDay();
         age.calculateWeek();
-        Toast.makeText(getBaseContext(), "set to"+age.getResult() , Toast.LENGTH_SHORT).show();
         ageOne.setText(age.getResult());
     }
 
