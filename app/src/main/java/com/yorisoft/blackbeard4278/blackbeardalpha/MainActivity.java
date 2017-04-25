@@ -193,12 +193,12 @@ public class MainActivity extends AppCompatActivity {
         String weight = prefs.getString("dragon_weight", "");
         String length = prefs.getString("dragon_length", "");
 
-        int bathMonth = prefs.getInt("bath_month", 1);
-        int bathDay = prefs.getInt("bath_day", 1);
+        int bathMonth = prefs.getInt("bath_month", 0);
+        int bathDay = prefs.getInt("bath_day", 0);
         String old_bath = prefs.getString("bathed_date", "Last Bathed?");
 
-        int veggMonth = prefs.getInt("vegg_month", 1);
-        int veggDay = prefs.getInt("vegg_day", 1);
+        int veggMonth = prefs.getInt("vegg_month", 0);
+        int veggDay = prefs.getInt("vegg_day", 0);
         String old_vegg = prefs.getString("veggies_date","oldVegg");
 
 
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (bathDay == 0 && bathMonth == 0) {
 
-            newBath.setText("cake");
+
 
         } else {
 
