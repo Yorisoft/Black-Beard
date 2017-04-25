@@ -86,7 +86,7 @@ public class Schedules {
         }
     }
 
-    public String getFutureDate () {
+    public String getFutureBath () {
         int i = sDay + 7;
 
         int futureDate = i - cDay;

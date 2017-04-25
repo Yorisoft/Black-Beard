@@ -241,23 +241,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void calculateBath() {
-        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
-        int bathMonth = prefs.getInt("bath_month", 1); // Integer.valueOf(bMonth));
-        int bathDay = prefs.getInt("bath_day", 1); // Integer.valueOf(bDay));
-        int bathYear = prefs.getInt("bath_year", 1);
-
-        bath.setSelectedDate(bathYear, bathMonth, bathDay);
-        Log.i("calculateBath1: ", bath.toString());
-        bath.setCurrentDate();
-        Log.i("calculateBath1: ", bath.toString());
-        bath.calculateMonth();
-        bath.calculateDay();
-        bath.calculateWeek();
-        bath.getFutureDate();
-
-        newBath.setText(bath.getFutureDate());
-    }
 
 
     @Override
@@ -301,6 +284,24 @@ public class MainActivity extends AppCompatActivity {
         age.calculateDay();
         age.calculateWeek();
         ageOne.setText(age.getResult());
+    }
+
+    private void calculateBath() {
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        int bathMonth = prefs.getInt("bath_month", 1); // Integer.valueOf(bMonth));
+        int bathDay = prefs.getInt("bath_day", 1); // Integer.valueOf(bDay));
+        int bathYear = prefs.getInt("bath_year", 1);
+
+        bath.setSelectedDate(bathYear, bathMonth, bathDay);
+        Log.i("calculateBath1: ", bath.toString());
+        bath.setCurrentDate();
+        Log.i("calculateBath1: ", bath.toString());
+        bath.calculateMonth();
+        bath.calculateDay();
+        bath.calculateWeek();
+        bath.getFutureBath();
+
+        newBath.setText(bath.getFutureBath());
     }
 
 

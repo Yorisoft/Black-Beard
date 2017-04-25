@@ -237,7 +237,6 @@ public class MainEdit extends AppCompatActivity {
         schd.calculateMonth();
         schd.calculateDay();
         schd.calculateWeek();
-        schd.getFutureDate();
         Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
         bathSmall.setText(schd.getResult());
 
