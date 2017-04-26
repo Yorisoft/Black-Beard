@@ -40,6 +40,7 @@ public class MainEdit extends AppCompatActivity {
     static final int ageDatepicker = 0;
     static final int scheduleDatepicker = 1;
     static final int veggieDatepicker = 2;
+    static final int sheddingDatepicker = 3;
     private AgeCalculation age = null;
     private Schedules schd = null;
     private int bYear = 2017;
@@ -49,7 +50,7 @@ public class MainEdit extends AppCompatActivity {
     private int sMonth = 0;
     private int sDay = 1;
     private String futureDay;
-    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView,veggieView,veggSmallView;
+    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView,veggieView,veggSmallView,sheddingView,shedSmall;
     EditText nameEdit, weightEdit, lengthEdit;
     Button bttnSave, ageEditBttn, bathEditBttn,veggieEdit,sheddingEdit,bmEdit,UVBEditBttn,vetVisitEdit;
     ImageButton imgEditBttn;
@@ -76,12 +77,14 @@ public class MainEdit extends AppCompatActivity {
         bathView = (TextView) findViewById(R.id.bathView);
         veggSmallView = (TextView) findViewById(R.id.vegSmall);
         veggieView = (TextView) findViewById(R.id.veggiesView);
-
+        sheddingView = (TextView) findViewById(R.id.sheddingView);
+        shedSmall = (TextView) findViewById(R.id.shedSmall);
 
         imgEditBttn = (ImageButton) findViewById(R.id.imgEditBttn);
         ageEditBttn = (Button) findViewById(R.id.ageEditBttn);
         bathEditBttn = (Button) findViewById(R.id.bathEditBttn);
         veggieEdit = (Button) findViewById(R.id.veggieEdit);
+        sheddingEdit = (Button) findViewById(R.id.sheddingEdit);
 
 
         bttnSave = (Button) findViewById(R.id.bttnSave);
@@ -104,8 +107,12 @@ public class MainEdit extends AppCompatActivity {
         String lengthHint = prefs.getString("dragon_length", "length");
         String bathingHint = prefs.getString("bathed_date", "Last Bathed?");
         String veggHint = prefs.getString("veggies_date", "Greens!");
+        String sheddingHint = prefs.getString("shedding_date", "Shedding Day!");
 
-        String upcomingBathHint = prefs.getString("bath_future", "Last bathed");
+        String lastBathHint = prefs.getString("bath_future", "Last bathed");
+        String smallVeggHint = prefs.getString("veggies_small", "Last veggie feeding");
+        String smallSheddHint = prefs.getString("Shedd_small", "Shedding Start-date");
+
 
 
         if (nameHint.equals("Pet name!")) {
@@ -121,7 +128,9 @@ public class MainEdit extends AppCompatActivity {
         }
 
         ageSmall.setText(birthHint);
-        bathSmall.setText(upcomingBathHint);
+        bathSmall.setText(lastBathHint);
+        veggSmallView.setText(smallVeggHint);
+        shedSmall.setText(smallSheddHint);
 
         if (weightHint.equals("weight")) {
 
@@ -143,6 +152,11 @@ public class MainEdit extends AppCompatActivity {
 
         } else {
             veggieView.setText(veggHint);
+        }
+        if(sheddingHint.equals("Shedding Day!")){
+
+        } else {
+            sheddingView.setText(sheddingHint);
         }
 
     }
@@ -176,6 +190,11 @@ public class MainEdit extends AppCompatActivity {
             case veggieDatepicker:
                 return new DatePickerDialog(this,
                         veggieDateSetListener,
+                        sYear, sMonth, sDay);
+
+            case sheddingDatepicker:
+                return new DatePickerDialog(this,
+                        sheddingDateSetListener,
                         sYear, sMonth, sDay);
 
         }
@@ -248,6 +267,28 @@ public class MainEdit extends AppCompatActivity {
 
         }
     };
+//Shedding
+private DatePickerDialog.OnDateSetListener sheddingDateSetListener
+        = new DatePickerDialog.OnDateSetListener() {
+    public void onDateSet(DatePicker view, int selectedYear,
+                          int selectedMonth, int selectedDay) {
+        sYear = selectedYear;
+        sMonth = selectedMonth;
+        sDay = selectedDay;
+        sheddingView.setText((sMonth + 1) + "/" + sDay);
+        schd.setSelectedDate(sYear, sMonth, sDay);
+
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefEdit = prefs.edit();
+        prefEdit.putInt("shedd_month", sMonth); // Integer.valueOf(bMonth));
+        prefEdit.putInt("shedd_day", sDay); // Integer.valueOf(bDay));
+        prefEdit.putInt("shedd_year", sYear); //  Integer.valueOf(bYear));
+        prefEdit.apply();
+
+        calculateShedd();
+
+    }
+};
 
     public void DatePickerMethod(View v) {
         switch (v.getId()) {
@@ -261,6 +302,10 @@ public class MainEdit extends AppCompatActivity {
                 break;
             case R.id.veggieEdit:
                 showDialog(veggieDatepicker);
+                schd.getCurrentDate();
+                break;
+            case R.id.sheddingEdit:
+                showDialog(sheddingDatepicker);
                 schd.getCurrentDate();
                 break;
 
@@ -297,6 +342,15 @@ public class MainEdit extends AppCompatActivity {
         veggSmallView.setText(schd.getResult());
 
     }
+    //Shedding
+    private void calculateShedd() {
+        schd.calculateMonth();
+        schd.calculateDay();
+        schd.calculateWeek();
+        Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
+        shedSmall.setText(schd.getResult());
+
+    }
 
     public void saveInfo(View view) {
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
@@ -309,6 +363,7 @@ public class MainEdit extends AppCompatActivity {
         prefEdit.putString("birth_date", agePreUpdate.getText().toString());
         prefEdit.putString("bathed_date", bathView.getText().toString());
         prefEdit.putString("veggies_date", veggieView.getText().toString());
+        prefEdit.putString("shedding_date", sheddingView.getText().toString());
 
 
         prefEdit.apply();

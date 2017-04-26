@@ -70,19 +70,19 @@ public class Schedules {
     public String getResult() {
 
         if(resMonth<=0 && resWeek<=0){
-            return  resDay +" "+ "days";
+            return  resDay+":days";
         }
         if(resMonth<=0) {
             if(resDay >= 7){
-                return (resDay-(resWeek*7)) +" "+ "days"+resWeek+"weeks";
+                return (resDay-(resWeek*7)) +":days"+resWeek+":weeks";
             }
-            return resWeek+"weeks";
+            return resWeek+":weeks";
         }
         if (resWeek>0 && resDay<=0){
-            return resWeek + " " + "weeks";
+            return resWeek +":weeks";
         }
         else {
-            return (resDay-(resWeek*7))+"days"+" "+resWeek+"weeks"+" "+resMonth+"months";
+            return (resDay-(resWeek*7))+":days"+" "+resWeek+":weeks"+" "+resMonth+":months";
         }
     }
 
@@ -91,7 +91,7 @@ public class Schedules {
 
         int futureDate = i - cDay;
 
-        return futureDate +"days";
+        return futureDate+":days";
     }
 
     public String getFutureVegg () {
@@ -99,7 +99,23 @@ public class Schedules {
 
         int futureDate = i - cDay;
 
-        return futureDate +"days";
+        return futureDate+":days";
+    }
+
+    public String getFutureShedd () {
+
+        if (resYear<=0) {
+            if(resMonth<=0){
+                if(resWeek<=0){
+                    return  resDay+":days";
+                }
+                return resWeek + ":weeks";
+            }
+            return resMonth + ":months";
+        } else {
+            return (resDay+":days");
+        }
+
     }
 
 }

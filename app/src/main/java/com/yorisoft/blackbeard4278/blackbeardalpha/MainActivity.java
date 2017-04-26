@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     Button saveButton;
     ImageButton moreEdits;
 
-    TextView ageOne, weightOne, lengthOne, petName, newBath, lastBath,newVeggie,oldVeggie;
+    TextView ageOne, weightOne, lengthOne, petName, newBath, lastBath,newVeggie,oldVeggie, newShedd, oldShedd;
 
     ImageView petPicture;
 
@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         lastBath = (TextView) findViewById(R.id.lastBath);
         newVeggie = (TextView)findViewById(R.id.newFood);
         oldVeggie = (TextView)findViewById(R.id.lastFood);
+        newShedd = (TextView)findViewById(R.id.newShed);
+        oldShedd = (TextView)findViewById(R.id.oldShed);
 
         editBttn = (Button) findViewById(R.id.editBttn);
         saveButton = (Button) findViewById(R.id.saveButton);
@@ -97,23 +99,7 @@ public class MainActivity extends AppCompatActivity {
 //populating views with values. if statements in case they are empty.
 
 
-        //lastBath.setText(old_bath);
-
-        //  byte[] imageAsBytes = Base64.decode(profile, Base64.DEFAULT);
-        // Bitmap bitmapPre = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
-
-        //  BitmapDrawable bitToImage = new BitmapDrawable(getResources(),bitmapPre);
-        //  petPicture.setBackground(bitToImage);
-        //no need to decode bitmap, Using Picasso!
-
-
         Uri picturePath = Uri.parse(profile);
-
-        // Picasso.with(this)
-        //         .load(picturePath)
-        //         .fit()
-        //         .into(petPicture);
-        //Picasso sucks, all hail Glide (better  with portrait images and at c).
 
         Glide.with(this)
                 .load(picturePath)
@@ -192,14 +178,19 @@ public class MainActivity extends AppCompatActivity {
 
         String weight = prefs.getString("dragon_weight", "");
         String length = prefs.getString("dragon_length", "");
-
+//Bath
         int bathMonth = prefs.getInt("bath_month", 0);
         int bathDay = prefs.getInt("bath_day", 0);
         String old_bath = prefs.getString("bathed_date", "Last Bathed?");
-
+//Vegg
         int veggMonth = prefs.getInt("vegg_month", 0);
         int veggDay = prefs.getInt("vegg_day", 0);
         String old_vegg = prefs.getString("veggies_date","oldVegg");
+//Shedd
+        int sheddMonth = prefs.getInt("shedd_month", 0);
+        int sheddDay = prefs.getInt("shedd_day", 0);
+        int sheddYear = prefs.getInt("shedd_year", 0);
+        String old_Shedd = prefs.getString("shedding_date","oldShedd");
 
 
         if (birth_year == 1) {
@@ -234,8 +225,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (bathDay == 0 && bathMonth == 0) {
 
-
-
         } else {
 
             calculateBath();
@@ -247,11 +236,25 @@ public class MainActivity extends AppCompatActivity {
 
             calculateVegg();
         }
+
         if (old_vegg.equals("oldVegg")){
 
         } else {
             oldVeggie.setText(old_vegg);
         }
+
+        if(sheddDay == 0 && sheddMonth == 0){
+
+        } else {
+            newShedd.setText(sheddMonth+"/"+sheddDay+"/"+sheddYear);
+        }
+
+        if (old_Shedd.equals("oldShedd")){
+
+        } else {
+           calculateShedd();
+        }
+
     }
 
 
@@ -336,5 +339,24 @@ public class MainActivity extends AppCompatActivity {
         Log.i("vegg:",newVeggie.getText().toString());
     }
 
+    private void calculateShedd(){
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        int sheddMonth = prefs.getInt("shedd_month", 1); // Integer.valueOf(bMonth));
+        int sheddDay = prefs.getInt("shedd_day", 1); // Integer.valueOf(bDay));
+        int sheddYear = prefs.getInt("shedd_year", 1);
+
+        bath.setSelectedDate(sheddYear, sheddMonth, sheddDay);
+        Log.i("calculateShedd1: ", bath.toString());
+        bath.setCurrentDate();
+        Log.i("calculateShedd1: ", bath.toString());
+        bath.calculateMonth();
+        bath.calculateDay();
+        bath.calculateWeek();
+        bath.getFutureShedd();
+
+        oldShedd.setText(bath.getFutureShedd());
+        newShedd.setText(sheddMonth+"/"+sheddDay+"/"+sheddYear);
+
+    }
 
 }

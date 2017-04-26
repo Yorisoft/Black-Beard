@@ -348,7 +348,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/shedView"
-                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
                     android:textAlignment="center"
                     android:hint="Last Shedding"
                     android:textColor="@color/colorPrimary"
@@ -356,15 +359,15 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/avrgShed"
+                    android:id="@+id/oldShed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/newShed"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginRight="32dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
 
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp" />

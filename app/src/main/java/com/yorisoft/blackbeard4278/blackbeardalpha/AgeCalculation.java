@@ -80,18 +80,18 @@ public class AgeCalculation {
     public String getResult() {
         if(endYear <=0 && endMonth > 0) {
             if(resWeek<=0) {
-                return endMonth + "Months";
+                return endMonth+":Months";
             }
-            return endMonth + "Months" + " " +  " " + resWeek + "Weeks";
+            return endMonth + ":Months" + " " +  " " + resWeek + ":Weeks";
         }
         if (endYear <= 0 && endMonth <=0 && resWeek <=0 ) {
-            return  endDay + "Days";
+            return  endDay+":Days";
         }
         if(endYear <=0 && endMonth <= 0 && resWeek > 0) {
-            return resWeek + "Weeks" + " " + " " + (endDay-(resWeek*7)) + "Days" ;
+            return resWeek + ":Weeks" + " " + " " + (endDay-(resWeek*7)) + ":Days" ;
         }
         if (endYear > 0) {
-            return endYear + " " + "Years"+ " " + " " + endMonth + " " + "Months";
+            return endYear +":Years"+ " " + " " + endMonth +":Months";
         }
         else {
             return endDay + "d" + " " + endMonth + "m" + " " + endYear + "y";
