@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     Button saveButton;
     ImageButton moreEdits;
 
-    TextView ageOne, weightOne, lengthOne, petName, newBath, lastBath,newVeggie,oldVeggie, newShedd, oldShedd;
+    TextView ageOne, weightOne, lengthOne, petName, newBath, lastBath,newVeggie,oldVeggie, newShedd, oldShedd,newBM,lastBM;
 
     ImageView petPicture;
 
@@ -76,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         oldVeggie = (TextView)findViewById(R.id.lastFood);
         newShedd = (TextView)findViewById(R.id.newShed);
         oldShedd = (TextView)findViewById(R.id.oldShed);
+        newBM =(TextView)findViewById(R.id.newBM);
+        lastBM =(TextView)findViewById(R.id.lastBM);
 
         editBttn = (Button) findViewById(R.id.editBttn);
         saveButton = (Button) findViewById(R.id.saveButton);
@@ -191,6 +193,11 @@ public class MainActivity extends AppCompatActivity {
         int sheddDay = prefs.getInt("shedd_day", 0);
         int sheddYear = prefs.getInt("shedd_year", 0);
         String old_Shedd = prefs.getString("shedding_date","oldShedd");
+//BM
+        int bmMonth = prefs.getInt("bm_month", 0);
+        int bmDay = prefs.getInt("bm_day", 0);
+        int bmYear = prefs.getInt("bm_year", 0);
+        String old_BM = prefs.getString("BM_date","oldBM");
 
 
         if (birth_year == 1) {
@@ -254,6 +261,16 @@ public class MainActivity extends AppCompatActivity {
         } else {
            calculateShedd();
         }
+        if(bmDay == 0 & bmMonth == 0){
+
+        } else {
+            calculateBM();
+        }
+        if(old_BM.equals("oldBM")){
+
+        } else {
+            lastBM.setText(old_BM);
+        }
 
     }
 
@@ -290,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
         popUp.show();
 
     }
-
+//Age
     private void calculateAge() {
 
         age.setCurrentDate();
@@ -301,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
         age.calculateWeek();
         ageOne.setText(age.getResult());
     }
-
+//Bath
     private void calculateBath() {
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         int bathMonth = prefs.getInt("bath_month", 1); // Integer.valueOf(bMonth));
@@ -319,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
 
         newBath.setText(bath.getFutureBath());
     }
-
+//Veggies
     private void calculateVegg() {
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         int veggMonth = prefs.getInt("vegg_month", 1); // Integer.valueOf(bMonth));
@@ -338,7 +355,7 @@ public class MainActivity extends AppCompatActivity {
         newVeggie.setText(bath.getFutureVegg());
         Log.i("vegg:",newVeggie.getText().toString());
     }
-
+//Shedding
     private void calculateShedd(){
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         int sheddMonth = prefs.getInt("shedd_month", 1); // Integer.valueOf(bMonth));
@@ -355,8 +372,28 @@ public class MainActivity extends AppCompatActivity {
         bath.getFutureShedd();
 
         oldShedd.setText(bath.getFutureShedd());
-        newShedd.setText(sheddMonth+"/"+sheddDay+"/"+sheddYear);
+  //      newShedd.setText(sheddMonth+"/"+sheddDay+"/"+sheddYear);
 
     }
+//B.M.
+    private void calculateBM(){
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        int bmMonth = prefs.getInt("bm_month", 0);
+        int bmDay = prefs.getInt("bm_day", 0);
+        int bmYear = prefs.getInt("bm_year", 0);
+
+        bath.setSelectedDate(bmYear, bmMonth, bmDay);
+        Log.i("calculateBath1: ", bath.toString());
+        bath.setCurrentDate();
+        Log.i("calculateBath1: ", bath.toString());
+        bath.calculateMonth();
+        bath.calculateDay();
+        bath.calculateWeek();
+        bath.getFutureBM();
+
+        newBM.setText(bath.getFutureBM());
+
+    }
+
 
 }

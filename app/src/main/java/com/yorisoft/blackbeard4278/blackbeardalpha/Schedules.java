@@ -109,11 +109,27 @@ public class Schedules {
                 if(resWeek<=0){
                     return  resDay+":days";
                 }
-                return resWeek + ":weeks";
+                return (resDay-(resWeek*7))+":days" +" "+ resWeek + ":weeks";
             }
-            return resMonth + ":months";
+            return resMonth + ":months"+" "+resWeek+":weeks";
         } else {
-            return (resDay+":days");
+            return resYear+":years"+" "+resMonth+":months";
+        }
+
+    }
+
+    public String getFutureBM () {
+
+        if (resYear<=0) {
+            if(resMonth<=0){
+                if(resWeek<=0){
+                    return  resDay+":days";
+                }
+                return (resDay-(resWeek*7))+":days" +" "+ resWeek + ":weeks";
+            }
+            return resMonth + ":months"+" "+resWeek+":weeks";
+        } else {
+            return resYear+":years"+" "+resMonth+":months";
         }
 
     }

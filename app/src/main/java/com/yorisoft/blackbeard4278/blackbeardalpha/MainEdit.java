@@ -41,6 +41,7 @@ public class MainEdit extends AppCompatActivity {
     static final int scheduleDatepicker = 1;
     static final int veggieDatepicker = 2;
     static final int sheddingDatepicker = 3;
+    static final int BMDatepicker = 4;
     private AgeCalculation age = null;
     private Schedules schd = null;
     private int bYear = 2017;
@@ -50,7 +51,7 @@ public class MainEdit extends AppCompatActivity {
     private int sMonth = 0;
     private int sDay = 1;
     private String futureDay;
-    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView,veggieView,veggSmallView,sheddingView,shedSmall;
+    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView,veggieView,veggSmallView,sheddingView,shedSmall,BMView,bmSmall;
     EditText nameEdit, weightEdit, lengthEdit;
     Button bttnSave, ageEditBttn, bathEditBttn,veggieEdit,sheddingEdit,bmEdit,UVBEditBttn,vetVisitEdit;
     ImageButton imgEditBttn;
@@ -66,8 +67,11 @@ public class MainEdit extends AppCompatActivity {
         schd = new Schedules();
 
         nameEdit = (EditText) findViewById(R.id.nameEdit);
+        nameEdit.setSelectAllOnFocus(true);
         weightEdit = (EditText) findViewById(R.id.weightEdit);
+        weightEdit.setSelectAllOnFocus(true);
         lengthEdit = (EditText) findViewById(R.id.lengthEdit);
+        lengthEdit.setSelectAllOnFocus(true);
 
 
         ageSmall = (TextView) findViewById(R.id.ageSmall); // label with age calculation
@@ -79,12 +83,15 @@ public class MainEdit extends AppCompatActivity {
         veggieView = (TextView) findViewById(R.id.veggiesView);
         sheddingView = (TextView) findViewById(R.id.sheddingView);
         shedSmall = (TextView) findViewById(R.id.shedSmall);
+        BMView =(TextView)findViewById(R.id.BMView);
+        bmSmall =(TextView)findViewById(R.id.bmSmall);
 
         imgEditBttn = (ImageButton) findViewById(R.id.imgEditBttn);
         ageEditBttn = (Button) findViewById(R.id.ageEditBttn);
         bathEditBttn = (Button) findViewById(R.id.bathEditBttn);
         veggieEdit = (Button) findViewById(R.id.veggieEdit);
         sheddingEdit = (Button) findViewById(R.id.sheddingEdit);
+        bmEdit = (Button) findViewById(R.id.bmEdit);
 
 
         bttnSave = (Button) findViewById(R.id.bttnSave);
@@ -112,6 +119,7 @@ public class MainEdit extends AppCompatActivity {
         String lastBathHint = prefs.getString("bath_future", "Last bathed");
         String smallVeggHint = prefs.getString("veggies_small", "Last veggie feeding");
         String smallSheddHint = prefs.getString("Shedd_small", "Shedding Start-date");
+        String smallBmHint = prefs.getString("bm_small", "Last B.M.");
 
 
 
@@ -131,6 +139,7 @@ public class MainEdit extends AppCompatActivity {
         bathSmall.setText(lastBathHint);
         veggSmallView.setText(smallVeggHint);
         shedSmall.setText(smallSheddHint);
+        bmSmall.setText(smallBmHint);
 
         if (weightHint.equals("weight")) {
 
@@ -197,6 +206,10 @@ public class MainEdit extends AppCompatActivity {
                         sheddingDateSetListener,
                         sYear, sMonth, sDay);
 
+            case BMDatepicker:
+                return new DatePickerDialog(this,
+                        BmDateSetListener,
+                        sYear, sMonth, sDay);
         }
         return null;
     }
@@ -268,8 +281,8 @@ public class MainEdit extends AppCompatActivity {
         }
     };
 //Shedding
-private DatePickerDialog.OnDateSetListener sheddingDateSetListener
-        = new DatePickerDialog.OnDateSetListener() {
+    private DatePickerDialog.OnDateSetListener sheddingDateSetListener
+            = new DatePickerDialog.OnDateSetListener() {
     public void onDateSet(DatePicker view, int selectedYear,
                           int selectedMonth, int selectedDay) {
         sYear = selectedYear;
@@ -289,6 +302,29 @@ private DatePickerDialog.OnDateSetListener sheddingDateSetListener
 
     }
 };
+//BM
+    private DatePickerDialog.OnDateSetListener BmDateSetListener
+            = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                          int selectedMonth, int selectedDay) {
+        sYear = selectedYear;
+        sMonth = selectedMonth;
+        sDay = selectedDay;
+        BMView.setText((sMonth + 1) + "/" + sDay);
+        schd.setSelectedDate(sYear, sMonth, sDay);
+
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefEdit = prefs.edit();
+        prefEdit.putInt("bm_month", sMonth); // Integer.valueOf(bMonth));
+        prefEdit.putInt("bm_day", sDay); // Integer.valueOf(bDay));
+        prefEdit.putInt("bm_year", sYear); //  Integer.valueOf(bYear));
+        prefEdit.apply();
+
+        calculateBM();
+
+    }
+};
+
 
     public void DatePickerMethod(View v) {
         switch (v.getId()) {
@@ -306,6 +342,10 @@ private DatePickerDialog.OnDateSetListener sheddingDateSetListener
                 break;
             case R.id.sheddingEdit:
                 showDialog(sheddingDatepicker);
+                schd.getCurrentDate();
+                break;
+            case R.id.bmEdit:
+                showDialog(BMDatepicker);
                 schd.getCurrentDate();
                 break;
 
@@ -348,7 +388,16 @@ private DatePickerDialog.OnDateSetListener sheddingDateSetListener
         schd.calculateDay();
         schd.calculateWeek();
         Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
-        shedSmall.setText(schd.getResult());
+        shedSmall.setText(schd.getFutureShedd());
+
+    }
+    //BM
+    private void calculateBM() {
+        schd.calculateMonth();
+        schd.calculateDay();
+        schd.calculateWeek();
+        Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
+        bmSmall.setText(schd.getFutureBM());
 
     }
 
@@ -364,6 +413,7 @@ private DatePickerDialog.OnDateSetListener sheddingDateSetListener
         prefEdit.putString("bathed_date", bathView.getText().toString());
         prefEdit.putString("veggies_date", veggieView.getText().toString());
         prefEdit.putString("shedding_date", sheddingView.getText().toString());
+        prefEdit.putString("BM_date", BMView.getText().toString());
 
 
         prefEdit.apply();
@@ -406,21 +456,10 @@ private DatePickerDialog.OnDateSetListener sheddingDateSetListener
 
                 String picturePath = String.valueOf(imgUri);
 
-                //            Picasso.with(this)
-                //                  .load(imgUri)
-                //                 .centerCrop()
-                //                .fit()
-                //               .into(imgEditBttn);
-
                 Glide.with(this)
                         .load(imgUri)
                         .centerCrop()
                         .into(imgEditBttn);
-
-//Picasso as workaround.
-                //BitmapDrawable bitToImage = new BitmapDrawable(getResources(),nImage);
-                // imgEditBttn.setBackground(bitToImage);
-
 
 //bitmap into byteArray base64 in order to save into prefs.
                 ByteArrayOutputStream bToS = new ByteArrayOutputStream();
