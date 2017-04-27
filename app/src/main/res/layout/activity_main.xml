@@ -328,6 +328,25 @@
                     style="@style/editDivider"
                     android:layout_below="@id/newFood" />
 
+                <TextView android:id="@+id/top_bar_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/div4"
+                    android:hint="Time:"
+                    />
+
+                <TextView android:id="@+id/top_bar_since"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/div4"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:hint="Since:"
+                    />
+
                 <TextView
                     android:id="@+id/shedView"
                     android:layout_width="wrap_content"
@@ -350,12 +369,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/shedView"
                     android:layout_centerHorizontal="true"
-                    android:paddingRight="32dp"
-                    android:paddingEnd="32dp"
                     android:textAlignment="center"
                     android:hint="Last Shedding"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:textStyle="italic" />
 
               //  android:layout_alignParentLeft="true"
@@ -369,8 +386,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="32dp"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp" />
 

@@ -42,6 +42,8 @@ public class MainEdit extends AppCompatActivity {
     static final int veggieDatepicker = 2;
     static final int sheddingDatepicker = 3;
     static final int BMDatepicker = 4;
+    static final int UVBDatePicker = 5;
+    static final int VetDatePicker = 6;
     private AgeCalculation age = null;
     private Schedules schd = null;
     private int bYear = 2017;
@@ -51,7 +53,7 @@ public class MainEdit extends AppCompatActivity {
     private int sMonth = 0;
     private int sDay = 1;
     private String futureDay;
-    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView,veggieView,veggSmallView,sheddingView,shedSmall,BMView,bmSmall;
+    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView,veggieView,veggSmallView,sheddingView,shedSmall,BMView,bmSmall,UVBEditView,uvbSmall,vetVisitView,visitSmall;
     EditText nameEdit, weightEdit, lengthEdit;
     Button bttnSave, ageEditBttn, bathEditBttn,veggieEdit,sheddingEdit,bmEdit,UVBEditBttn,vetVisitEdit;
     ImageButton imgEditBttn;
@@ -85,6 +87,10 @@ public class MainEdit extends AppCompatActivity {
         shedSmall = (TextView) findViewById(R.id.shedSmall);
         BMView =(TextView)findViewById(R.id.BMView);
         bmSmall =(TextView)findViewById(R.id.bmSmall);
+        UVBEditView =(TextView)findViewById(R.id.UVBEditView);
+        uvbSmall = (TextView)findViewById(R.id.uvbSmall);
+        vetVisitView =(TextView)findViewById(R.id.vetVisitView);
+        visitSmall =(TextView)findViewById(R.id.visitSmall);
 
         imgEditBttn = (ImageButton) findViewById(R.id.imgEditBttn);
         ageEditBttn = (Button) findViewById(R.id.ageEditBttn);
@@ -92,6 +98,8 @@ public class MainEdit extends AppCompatActivity {
         veggieEdit = (Button) findViewById(R.id.veggieEdit);
         sheddingEdit = (Button) findViewById(R.id.sheddingEdit);
         bmEdit = (Button) findViewById(R.id.bmEdit);
+        UVBEditBttn = (Button)findViewById(R.id.UVBEditBttn);
+        vetVisitEdit= (Button)findViewById(R.id.vetVisitEdit);
 
 
         bttnSave = (Button) findViewById(R.id.bttnSave);
@@ -115,11 +123,16 @@ public class MainEdit extends AppCompatActivity {
         String bathingHint = prefs.getString("bathed_date", "Last Bathed?");
         String veggHint = prefs.getString("veggies_date", "Greens!");
         String sheddingHint = prefs.getString("shedding_date", "Shedding Day!");
+        String bmHint = prefs.getString("BM_date", "Bowel Movement");
+        String uvbHint = prefs.getString("UVB_date", "UVB Light Change");
+        String vetHint = prefs.getString("VET_date", "Last Vet Visit");
 
-        String lastBathHint = prefs.getString("bath_future", "Last bathed");
-        String smallVeggHint = prefs.getString("veggies_small", "Last veggie feeding");
+        String lastBathHint = prefs.getString("bath_future", "Last bathed:Every 7 days");
+        String smallVeggHint = prefs.getString("veggies_small", "Last veggie feeding:Every 4 days");
         String smallSheddHint = prefs.getString("Shedd_small", "Shedding Start-date");
         String smallBmHint = prefs.getString("bm_small", "Last B.M.");
+        String smallUvbHint = prefs.getString("uvb_small", "Date First Used");
+        String smallVetHint = prefs.getString("vet_small", "Last Vet Visit");
 
 
 
@@ -140,6 +153,8 @@ public class MainEdit extends AppCompatActivity {
         veggSmallView.setText(smallVeggHint);
         shedSmall.setText(smallSheddHint);
         bmSmall.setText(smallBmHint);
+        uvbSmall.setText(smallUvbHint);
+        visitSmall.setText(smallVetHint);
 
         if (weightHint.equals("weight")) {
 
@@ -166,6 +181,21 @@ public class MainEdit extends AppCompatActivity {
 
         } else {
             sheddingView.setText(sheddingHint);
+        }
+        if(bmHint.equals("Bowel Movement")){
+
+        }else{
+            BMView.setText(bmHint);
+        }
+        if(uvbHint.equals("Date First Used")){
+
+        } else {
+            UVBEditView.setText(uvbHint);
+        }
+        if(vetHint.equals("Last Vet Visit")){
+
+        } else {
+            vetVisitView.setText(uvbHint);
         }
 
     }
@@ -209,6 +239,16 @@ public class MainEdit extends AppCompatActivity {
             case BMDatepicker:
                 return new DatePickerDialog(this,
                         BmDateSetListener,
+                        sYear, sMonth, sDay);
+
+            case UVBDatePicker:
+                return new DatePickerDialog(this,
+                        UVBDateSetListener,
+                        sYear, sMonth, sDay);
+
+            case VetDatePicker:
+                return new DatePickerDialog(this,
+                        VetDateSetListener,
                         sYear, sMonth, sDay);
         }
         return null;
@@ -324,7 +364,51 @@ public class MainEdit extends AppCompatActivity {
 
     }
 };
+//UVB
+    private DatePickerDialog.OnDateSetListener UVBDateSetListener
+            = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            sYear = selectedYear;
+            sMonth = selectedMonth;
+            sDay = selectedDay;
+            UVBEditView.setText((sMonth + 1) + "/" + sDay);
+            schd.setSelectedDate(sYear, sMonth, sDay);
 
+            SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+            SharedPreferences.Editor prefEdit = prefs.edit();
+            prefEdit.putInt("uvb_month", sMonth); // Integer.valueOf(bMonth));
+            prefEdit.putInt("uvb_day", sDay); // Integer.valueOf(bDay));
+            prefEdit.putInt("uvb_year", sYear); //  Integer.valueOf(bYear));
+            prefEdit.apply();
+
+            calculateUVB();
+
+        }
+
+    };
+//VetVisit
+    private DatePickerDialog.OnDateSetListener VetDateSetListener
+            = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            sYear = selectedYear;
+            sMonth = selectedMonth;
+            sDay = selectedDay;
+            vetVisitView.setText((sMonth + 1) + "/" + sDay);
+            schd.setSelectedDate(sYear, sMonth, sDay);
+
+            SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+            SharedPreferences.Editor prefEdit = prefs.edit();
+            prefEdit.putInt("vet_month", sMonth); // Integer.valueOf(bMonth));
+            prefEdit.putInt("vet_day", sDay); // Integer.valueOf(bDay));
+            prefEdit.putInt("vet_year", sYear); //  Integer.valueOf(bYear));
+            prefEdit.apply();
+
+            calculateVET();
+
+        }
+    };
 
     public void DatePickerMethod(View v) {
         switch (v.getId()) {
@@ -348,6 +432,15 @@ public class MainEdit extends AppCompatActivity {
                 showDialog(BMDatepicker);
                 schd.getCurrentDate();
                 break;
+            case R.id.UVBEditBttn:
+                showDialog(UVBDatePicker);
+                schd.getCurrentDate();
+                break;
+            case R.id.vetVisitEdit:
+                showDialog(VetDatePicker);
+                schd.getCurrentDate();
+                break;
+
 
             default:
                 break;
@@ -400,6 +493,24 @@ public class MainEdit extends AppCompatActivity {
         bmSmall.setText(schd.getFutureBM());
 
     }
+    //UVB
+    private void calculateUVB() {
+        schd.calculateMonth();
+        schd.calculateDay();
+        schd.calculateWeek();
+        Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
+        uvbSmall.setText(schd.getFutureUVB());
+
+    }
+    //VETVisit
+    private void calculateVET() {
+        schd.calculateMonth();
+        schd.calculateDay();
+        schd.calculateWeek();
+        Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
+        visitSmall.setText(schd.getFutureVET());
+
+    }
 
     public void saveInfo(View view) {
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
@@ -414,6 +525,8 @@ public class MainEdit extends AppCompatActivity {
         prefEdit.putString("veggies_date", veggieView.getText().toString());
         prefEdit.putString("shedding_date", sheddingView.getText().toString());
         prefEdit.putString("BM_date", BMView.getText().toString());
+        prefEdit.putString("UVB_date", UVBEditView.getText().toString());
+        prefEdit.putString("VET_date", vetVisitView.getText().toString());
 
 
         prefEdit.apply();

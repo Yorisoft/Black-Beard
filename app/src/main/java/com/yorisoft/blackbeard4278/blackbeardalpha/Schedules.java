@@ -69,20 +69,19 @@ public class Schedules {
 
     public String getResult() {
 
-        if(resMonth<=0 && resWeek<=0){
-            return  resDay+":days";
-        }
-        if(resMonth<=0) {
-            if(resDay >= 7){
-                return (resDay-(resWeek*7)) +":days"+resWeek+":weeks";
+        if (resYear<=0) {
+            if(resMonth<=0){
+                if(resWeek<=0){
+                    return  resDay+":days";
+                }
+                if(resDay-(resWeek*7) == 0){
+                    return resWeek+":weeks";
+                }
+                return (resDay-(resWeek*7))+":days" +" "+ resWeek + ":weeks";
             }
-            return resWeek+":weeks";
-        }
-        if (resWeek>0 && resDay<=0){
-            return resWeek +":weeks";
-        }
-        else {
-            return (resDay-(resWeek*7))+":days"+" "+resWeek+":weeks"+" "+resMonth+":months";
+            return resMonth + ":months"+" "+resWeek+":weeks";
+        } else {
+            return resYear+":years"+" "+resMonth+":months";
         }
     }
 
@@ -109,29 +108,72 @@ public class Schedules {
                 if(resWeek<=0){
                     return  resDay+":days";
                 }
-                return (resDay-(resWeek*7))+":days" +" "+ resWeek + ":weeks";
+                if(resDay-(resWeek*7) == 0){
+                    return resWeek+":weeks";
+                }
+                    return resWeek + ":weeks";
             }
-            return resMonth + ":months"+" "+resWeek+":weeks";
+            return resMonth + ":months";
         } else {
-            return resYear+":years"+" "+resMonth+":months";
+            return resYear+":years";
         }
 
     }
 
     public String getFutureBM () {
 
-        if (resYear<=0) {
-            if(resMonth<=0){
-                if(resWeek<=0){
-                    return  resDay+":days";
+        if (resYear <= 0) {
+            if (resMonth <= 0) {
+                if (resWeek <= 0) {
+                    return resDay + ":days";
                 }
-                return (resDay-(resWeek*7))+":days" +" "+ resWeek + ":weeks";
+                if (resDay - (resWeek * 7) == 0) {
+                    return resWeek + ":weeks";
+                }
+                return resWeek + ":weeks";
             }
-            return resMonth + ":months"+" "+resWeek+":weeks";
+            return resMonth + ":months";
         } else {
-            return resYear+":years"+" "+resMonth+":months";
+            return resYear + ":years";
         }
-
     }
+
+    public String getFutureUVB () {
+
+        if (resYear <= 0) {
+            if (resMonth <= 0) {
+                if (resWeek <= 0) {
+                    return resDay + ":days";
+                }
+                if (resDay - (resWeek * 7) == 0) {
+                    return resWeek + ":weeks";
+                }
+                return resWeek + ":weeks";
+            }
+            return resMonth + ":months";
+        } else {
+            return resYear + ":years";
+        }
+    }
+
+    public String getFutureVET () {
+
+        if (resYear <= 0) {
+            if (resMonth <= 0) {
+                if (resWeek <= 0) {
+                    return resDay + ":days";
+                }
+                if (resDay - (resWeek * 7) == 0) {
+                    return resWeek + ":weeks";
+                }
+                return resWeek + ":weeks";
+            }
+            return resMonth + ":months";
+        } else {
+            return resYear + ":years";
+        }
+    }
+
+
 
 }
