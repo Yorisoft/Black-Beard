@@ -25,7 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -124,7 +124,7 @@ public class MainEdit extends AppCompatActivity {
         String veggHint = prefs.getString("veggies_date", "Greens!");
         String sheddingHint = prefs.getString("shedding_date", "Shedding Day!");
         String bmHint = prefs.getString("BM_date", "Bowel Movement");
-        String uvbHint = prefs.getString("UVB_date", "UVB Light Change");
+        String uvbHint = prefs.getString("UVB_date", "UVB Last Change");
         String vetHint = prefs.getString("VET_date", "Last Vet Visit");
 
         String lastBathHint = prefs.getString("bath_future", "Last bathed:Every 7 days");
@@ -187,7 +187,7 @@ public class MainEdit extends AppCompatActivity {
         }else{
             BMView.setText(bmHint);
         }
-        if(uvbHint.equals("Date First Used")){
+        if(uvbHint.equals("UVB Last Change")){
 
         } else {
             UVBEditView.setText(uvbHint);

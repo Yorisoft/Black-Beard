@@ -14,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.text.InputType;
 import android.util.Base64;
 import android.util.Log;
@@ -28,8 +29,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 import org.w3c.dom.Text;
 
@@ -41,6 +43,8 @@ import static android.R.attr.tag;
 
 public class MainActivity extends AppCompatActivity {
 
+    NotificationCompat.Builder notific;
+    private static final int notificID = 26535346;
     private AgeCalculation age = null;
     private Schedules bath = null;
 
@@ -52,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             newVisit,oldVisit;
 
     ImageView petPicture;
-
 
     DrawerLayout newDrawerLayout;
     ActionBarDrawerToggle newToggle;
@@ -66,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
         age = new AgeCalculation();
         bath = new Schedules();
+        notific = new NotificationCompat.Builder(this);
+        notific.setAutoCancel(true);
 
         ageOne = (TextView) findViewById(R.id.ageOne);
         weightOne = (TextView) findViewById(R.id.weightOne);
@@ -91,18 +96,12 @@ public class MainActivity extends AppCompatActivity {
         petPicture = (ImageView) findViewById(R.id.imageView2);
 
 
+//
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String profile = prefs.getString("image_path", "choose image");
-        int birth_month = prefs.getInt("birth_month", 1);
-        int birth_day = prefs.getInt("birth_day", 1);
-        int birth_year = prefs.getInt("birth_year", 1);
 
-
-        age.setDateOfBirth(birth_year, birth_month, birth_day);
-
-
-        getValues();
 //populating views with values. if statements in case they are empty.
+        getValues();
 
 
         Uri picturePath = Uri.parse(profile);
@@ -160,6 +159,17 @@ public class MainActivity extends AppCompatActivity {
         newToggle.syncState();
 
 
+
+
+        AdView adView =  (AdView)this.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adView.loadAd(adRequest);
+
+        DrawerLayout.LayoutParams params = new DrawerLayout.LayoutParams(DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.MATCH_PARENT);
+      //  newDrawerLayout.addView(adView);
+
         editBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,15 +182,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     private void getValues() {
 
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String name = prefs.getString("dragon_name", "Pet name!");
+//Age
+        int birth_month = prefs.getInt("birth_month", 0);
+        int birth_day = prefs.getInt("birth_day", 0);
+        int birth_year = prefs.getInt("birth_year", 0);
 
-        int birth_year = prefs.getInt("birth_year", 1);
-
-
-        String savedAge = prefs.getString("dragon_age", "");
+        //String savedAge = prefs.getString("dragon_age", "");
 
         String weight = prefs.getString("dragon_weight", "");
         String length = prefs.getString("dragon_length", "");
@@ -214,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
         String old_VET = prefs.getString("VET_date", "oldVET");
 
 
-        if (birth_year == 1) {
+        if (birth_day == 0 && birth_month == 0) {
             //Keep Hint
         } else {
             calculateAge();
@@ -308,7 +321,11 @@ public class MainActivity extends AppCompatActivity {
         } else {
             oldVisit.setText(old_VET);
         }
+
+
     }
+
+
 
 
     @Override
@@ -345,7 +362,12 @@ public class MainActivity extends AppCompatActivity {
 
     //Age
     private void calculateAge() {
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        int ageMonth = prefs.getInt("birth_month", 1); // Integer.valueOf(bMonth));
+        int ageDay = prefs.getInt("birth_day", 1); // Integer.valueOf(bDay));
+        int ageYear = prefs.getInt("birth_year", 1);
 
+        age.setDateOfBirth(ageYear, ageMonth, ageDay);
         age.setCurrentDate();
         Log.i("calculateAge: ", age.toString());
         age.calculateYear();

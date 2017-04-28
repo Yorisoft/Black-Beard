@@ -11,7 +11,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/desert02"
+        android:background="?attr/colorButtonNormal"
         android:scrollbars="none">
 
         <LinearLayout
@@ -31,20 +31,98 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="36sp"
                 android:textStyle="bold" />
+
             <View
                 android:id="@+id/about_divider"
                 style="@style/Divider"
                 android:layout_marginBottom="8dp" />
-            <TextView
-                android:id="@+id/enclosureSumm"
+
+            <RelativeLayout
+                android:id="@+id/aboutDev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorLayout"
+                android:elevation="4dp">
+
+                <TextView
+                    android:id="@+id/devIfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:paddingLeft="8dp"
+                    android:text="About the Dev"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="36sp" />
+
+
+                <TextView
+                    android:id="@+id/enclosureSumm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/devIfo"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="@string/about_us_Intro"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/aboutSources"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:gravity="start"
-                android:text="@string/about_us_Intro"
-                android:textAlignment="textStart"
-                android:textColor="@color/colorLayout"
-                android:textSize="14sp" />
+                android:layout_marginTop="16dp"
+                android:background="@color/colorLayout"
+
+                android:elevation="4dp">
+
+                <TextView
+                    android:id="@+id/sourceInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:paddingLeft="8dp"
+                    android:text="Credits &amp; Sources"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="36sp"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/sourceSumm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sourceInfo"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="@string/about_us_Intro"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
+
+
+            </RelativeLayout>
+
 
         </LinearLayout>
 

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "466564918715",
+    "firebase_url": "https://moneymoneymoneymoneyyyy.firebaseio.com",
+    "project_id": "moneymoneymoneymoneyyyy",
+    "storage_bucket": "moneymoneymoneymoneyyyy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466564918715:android:c6ee9fc992b43dc7",
+        "android_client_info": {
+          "package_name": "com.yorisoft.blackbeard4278.blackbeardalpha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466564918715-413gn3v4unhekhphhlnu09agtd0hjebe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2kwjPPS8jpdbkvuheWyV-D-weuw5ks74"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

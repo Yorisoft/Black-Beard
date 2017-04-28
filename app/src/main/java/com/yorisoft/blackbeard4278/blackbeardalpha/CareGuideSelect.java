@@ -24,8 +24,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.ViewTarget;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
+
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
