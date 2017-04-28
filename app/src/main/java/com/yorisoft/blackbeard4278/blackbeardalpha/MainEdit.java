@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Path;
@@ -12,6 +13,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.OpenableColumns;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
@@ -552,23 +554,27 @@ public class MainEdit extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-
+        if (resultCode == RESULT_CANCELED) {
+            return ;
         }
         if (requestCode == IMAGE_GALLERY_REQUEST) {
 
             Uri imgUri = data.getData();
-            String path = imgUri.getPath();
-            String fileName = path.substring(path.lastIndexOf("/") + 1);
-            imgFile.setText(fileName);
+            File path = new File (imgUri.getPath());
+
+            String imgName = path.getName();
+            imgFile.setText(imgName);
+
+          //  String path = imgUri.getPath();
+          //  String fileName = path.substring(path.lastIndexOf("/") + 1);
+          //  imgFile.setText(fileName);
 
             try {
                 InputStream nInputStream = getContentResolver().openInputStream(imgUri);
-
                 Bitmap nImage = BitmapFactory.decodeStream(nInputStream);
-
                 String picturePath = String.valueOf(imgUri);
 
+//Using Glide to size and position image.
                 Glide.with(this)
                         .load(imgUri)
                         .centerCrop()
