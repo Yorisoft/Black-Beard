@@ -10,12 +10,14 @@
     android:fillViewport="true"
     android:screenOrientation="portrait"
     tools:context="com.yorisoft.blackbeard4278.blackbeardalpha.MainActivity"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    android:background="@android:color/transparent">
 
     //bake //
 <RelativeLayout android:id="@+id/relContainer"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
 
 
 
@@ -23,7 +25,7 @@
         android:id="@+id/mainScroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
+
         android:scrollbars="none">
 
 
@@ -546,13 +548,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/newShed"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="50dp"
                 android:background="@android:color/transparent"
                 android:text="Edit"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                android:visibility="visible"
+                />
 
 
 
@@ -572,7 +575,8 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-4542204585673533/6066052007"
         googleads:loadAdOnCreate="true"
-        googleads:testDevices="TEST_EMULATOR" />
+        googleads:testDevices="TEST_EMULATOR"
+        android:background="@android:color/transparent"/>
 
 
 </RelativeLayout>

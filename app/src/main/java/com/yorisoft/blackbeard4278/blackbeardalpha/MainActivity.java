@@ -95,6 +95,12 @@ public class MainActivity extends AppCompatActivity {
 
         petPicture = (ImageView) findViewById(R.id.imageView2);
 
+        AdView adView =  (AdView)this.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adView.loadAd(adRequest);
+
 
 //
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
@@ -160,12 +166,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        AdView adView =  (AdView)this.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-        adView.loadAd(adRequest);
 
         DrawerLayout.LayoutParams params = new DrawerLayout.LayoutParams(DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.MATCH_PARENT);
       //  newDrawerLayout.addView(adView);

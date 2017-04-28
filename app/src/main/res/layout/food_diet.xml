@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/scrollAndEnclosure"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:googleads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
 <ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -192,3 +200,18 @@
 
     </LinearLayout>
 </ScrollView>
+
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:descendantFocusability="blocksDescendants"
+        android:elevation="10dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-4542204585673533/6066052007"
+        googleads:loadAdOnCreate="true"
+        googleads:testDevices="TEST_EMULATOR" />
+
+    </RelativeLayout>
