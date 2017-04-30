@@ -313,7 +313,7 @@
         android:id="@+id/vetVisitView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Next Vet. Appointment"
+        android:hint="Previous Checkup"
         android:textSize="24sp"
         android:textColor="@color/colorPrimaryText"
         android:layout_alignBottom="@+id/vetVisitEdit"
