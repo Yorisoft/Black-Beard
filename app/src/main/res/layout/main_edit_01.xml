@@ -2,7 +2,8 @@
 <ScrollView android:layout_height="match_parent" android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainEdit">
+    tools:context=".MainEdit"
+    android:scrollbars="none">
 
 <RelativeLayout
     android:id="@+id/editLayout"
@@ -34,6 +35,43 @@
         android:background="@drawable/image_select"
         android:onClick="pickImage"/>
 
+
+    <LinearLayout
+        android:id="@+id/bttnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/editInfoText"
+        android:layout_toRightOf="@+id/imgEditBttn"
+        android:layout_toEndOf="@+id/imgEditBttn">
+
+
+        <Button
+            android:id="@+id/genBttnF"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:onClick="genderOnClick"
+            android:text="Female"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/genBttnM"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:onClick="genderOnClick"
+            android:text="Male"
+            android:textAlignment="center" />
+
+
+    </LinearLayout>
+
+
+
     //this is a dummy element to stop auto focus//
 
 
@@ -44,16 +82,6 @@
         android:orientation="horizontal"
         android:focusable="true"
         android:focusableInTouchMode="true" />
-
-    <TextView
-        android:id="@+id/imgFile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editInfoText"
-        android:layout_marginTop="40dp"
-        android:layout_toRightOf="@id/imgEditBttn"
-        android:hint="Selected_File.ex"
-        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/nameEdit"
@@ -354,6 +382,8 @@
         android:textAllCaps="false"
         android:textColor="@color/colorWhiteText"
         android:onClick="saveInfo"/>
+
+
 
 
 </RelativeLayout>

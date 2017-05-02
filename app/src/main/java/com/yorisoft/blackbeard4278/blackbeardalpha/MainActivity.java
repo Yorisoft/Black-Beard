@@ -95,15 +95,16 @@ public class MainActivity extends AppCompatActivity {
 
         petPicture = (ImageView) findViewById(R.id.imageView2);
 
+        //  TODO change TestDeviceID if testing on new Android Device/Emulator for the first time
+
         AdView adView =  (AdView)this.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("0F833BB01FC8E0A5D3592824FD6F0322")
+                .addTestDevice("0F833BB01FC8E0A5D3592824FD6F0322")//DeviceID
                 .build();
         adView.loadAd(adRequest);
 
 
-//
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String profile = prefs.getString("image_path", "choose image");
 

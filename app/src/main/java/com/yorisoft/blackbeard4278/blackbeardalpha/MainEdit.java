@@ -55,9 +55,9 @@ public class MainEdit extends AppCompatActivity {
     private int sMonth = 0;
     private int sDay = 1;
     private String futureDay;
-    TextView ageSmall, agePreUpdate, imgFile, bathSmall, bathView,veggieView,veggSmallView,sheddingView,shedSmall,BMView,bmSmall,UVBEditView,uvbSmall,vetVisitView,visitSmall;
+    TextView ageSmall, agePreUpdate,bathSmall, bathView,veggieView,veggSmallView,sheddingView,shedSmall,BMView,bmSmall,UVBEditView,uvbSmall,vetVisitView,visitSmall;
     EditText nameEdit, weightEdit, lengthEdit;
-    Button bttnSave, ageEditBttn, bathEditBttn,veggieEdit,sheddingEdit,bmEdit,UVBEditBttn,vetVisitEdit;
+    Button genBttnF,genBttnM, bttnSave, ageEditBttn, bathEditBttn,veggieEdit,sheddingEdit,bmEdit,UVBEditBttn,vetVisitEdit;
     ImageButton imgEditBttn;
 
 
@@ -80,7 +80,7 @@ public class MainEdit extends AppCompatActivity {
 
         ageSmall = (TextView) findViewById(R.id.ageSmall); // label with age calculation
         agePreUpdate = (TextView) findViewById(R.id.agePreUpdate);
-        imgFile = (TextView) findViewById(R.id.imgFile);
+      //  imgFile = (TextView) findViewById(R.id.imgFile);
         bathSmall = (TextView) findViewById(R.id.bathSmall);
         bathView = (TextView) findViewById(R.id.bathView);
         veggSmallView = (TextView) findViewById(R.id.vegSmall);
@@ -102,6 +102,8 @@ public class MainEdit extends AppCompatActivity {
         bmEdit = (Button) findViewById(R.id.bmEdit);
         UVBEditBttn = (Button)findViewById(R.id.UVBEditBttn);
         vetVisitEdit= (Button)findViewById(R.id.vetVisitEdit);
+        genBttnF =(Button)findViewById(R.id.genBttnF);
+        genBttnM =(Button)findViewById(R.id.genBttnM);
 
 
         bttnSave = (Button) findViewById(R.id.bttnSave);
@@ -213,6 +215,24 @@ public class MainEdit extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
 
+    }
+
+    public void genderOnClick(View v){
+        switch(v.getId()) {
+            case R.id.genBttnF:
+                genBttnF.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                genBttnF.setTextColor(getResources().getColor(R.color.colorWhiteText));
+                genBttnM.setBackgroundColor(getResources().getColor(R.color.transparentB));
+                genBttnM.setTextColor(getResources().getColor(R.color.colorPrimaryText));
+                break;
+
+            case R.id.genBttnM:
+                genBttnM.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                genBttnM.setTextColor(getResources().getColor(R.color.colorWhiteText));
+                genBttnF.setBackgroundColor(getResources().getColor(R.color.transparentB));
+                genBttnF.setTextColor(getResources().getColor(R.color.colorPrimaryText));
+                break;
+        }
     }
 
     @Override
@@ -563,7 +583,7 @@ public class MainEdit extends AppCompatActivity {
             File path = new File (imgUri.getPath());
 
             String imgName = path.getName();
-            imgFile.setText(imgName);
+        //    imgFile.setText(imgName);
 
           //  String path = imgUri.getPath();
           //  String fileName = path.substring(path.lastIndexOf("/") + 1);

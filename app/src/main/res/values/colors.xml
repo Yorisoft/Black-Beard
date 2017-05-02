@@ -12,4 +12,5 @@
     <color name="ButtonBackground">#d6ffffff</color>
     <color name="Buttons">#4cffffff</color>
     <color name="white_on_white">#d6dcdcdc</color>
+    <color name="transparentB">#00000000</color>
 </resources>
