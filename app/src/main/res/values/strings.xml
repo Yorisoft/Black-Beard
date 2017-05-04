@@ -36,29 +36,19 @@
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n </string>
 
 
-    <string name="sizeFirst">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
+    <string name="sizeFirst">\t \t A baby bearded dragons should live in a 20-gal* tank. Juveniles should live in a minimum of 40-gal* tank. Adult beardies should live in a minimum of 75-gal* tank, with 120-gal* being the perfect size. \n
+\n
+\t \t	Bearded dragons are great escape artist – and even better at Hide &amp; Go-Seek, make sure the enclosure comes with a top cover. \n
+      \n *Per bearded dragon. \n  </string>
 
-    <string name="lightingOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
+    <string name="numOfDrag">\t \t  In the wild, Bearded Dragons are solitary animals. Males in particular are extremely territorial and will almost never share an enclosure with each other. \n \n  \t \t It is not recommended you house multiple males together, as they will try to establish dominance over each other. \n \n \t \t A Male + Female enclosure can also lead to the male over-stressing the female with mating attempts. \n \n \t \t Females are the most likely to share an enclosure with each other without instances of aggression or stressing. Still you should only house beardies that are around the same size and always keep an eye out for sign of stress or aggression. \n </string>
 
-    <string name="heatingTempOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n   </string>
+    <string name="lightingOne">\t \t Bearded Dragons should receive lighting for 12 – 14 hours a day. This light source will need to produce both UVA and UVB light. This is important for beardies as it help them properly utilize calcium, and without it they will develop Metabolic Bone Disease. \n \n \t \t The UVA/UVB source decays over time and should be replaced every 6 month or as directed by instructions on the package. \n	  </string>
 
-    <string name="humidityOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
+    <string name="heatingTempOne">\t \t Bearded Dragons do not produce their own body heat and need an external heat source to help them warm up and metabolize their food. \n \n \t \t  The most popular type of heat source is a basking light, but there are other options such as heat mats and ceramic heating bulb. Heating mats are not recommended as the main heating source because they can cause burning or discomfort on the underside of the beardie. \n \n The Basking Spot (warm side of the enclosure) should be 95°F – 110°F. The enclosure should also have a cooler side for when your bearded dragon want to cool off. The cooler side should be 80°F -85°F. At night the temperature can range between 65°F-70°F.
+\n   </string>
+
+    <string name="humidityOne">\t \t Bearded dragons have adapted to live in dry or low humidity climates. To high of a humidity may cause beardies to develop Repertory Infection. Humidity should be kept around 35 – 40% . Humidity Gauges are highly recommended for proper bearded dragon care \n  </string>
 
     <string name="substrateOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf

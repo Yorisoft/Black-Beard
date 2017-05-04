@@ -14,7 +14,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".EnclosureGuide"
     android:background="@drawable/desert02"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
 
     <LinearLayout
 
@@ -54,7 +57,8 @@
         <RelativeLayout android:id="@+id/sectionOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -65,7 +69,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Size. Number of Dragons"
+                android:text="Size of enclosure"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
@@ -83,8 +87,50 @@
                 android:layout_below="@+id/divideTwo"
                 android:layout_margin="8dp"
                 android:text="@string/sizeFirst"
+                android:textAlignment="textStart"
+                android:gravity="start"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout android:id="@+id/sectionOneAndAHalf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/ButtonBackground">
+
+            <TextView
+                android:id="@+id/titleOneAndHalf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:text="Number of Dragons"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divideTwoAndHalf"
+                style="@style/dividerGreen"
+                android:layout_below="@id/titleOneAndHalf"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/infoOneAndHalf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divideTwoAndHalf"
+                android:layout_margin="8dp"
+                android:text="@string/numOfDrag"
+                android:textAlignment="textStart"
+                android:gravity="start"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -121,7 +167,7 @@
                 android:layout_margin="8dp"
                 android:text="@string/lightingOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -158,7 +204,7 @@
             android:layout_margin="8dp"
             android:text="@string/heatingTempOne"
             android:textColor="@color/colorPrimaryText"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
     </RelativeLayout>
 
@@ -195,7 +241,7 @@
                 android:layout_margin="8dp"
                 android:text="@string/humidityOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
     </RelativeLayout>
 

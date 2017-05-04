@@ -38,6 +38,8 @@ import org.w3c.dom.Text;
 import java.io.File;
 import java.util.prefs.PreferenceChangeListener;
 
+import static android.R.attr.drawable;
+import static android.R.attr.gestureColor;
 import static android.R.attr.tag;
 
 
@@ -128,6 +130,10 @@ public class MainActivity extends AppCompatActivity {
         newDrawerLayout.addDrawerListener(newToggle);
 
         newNavigation = (NavigationView) findViewById(R.id.navView);
+        View hView =  newNavigation.getHeaderView(0);
+        TextView navPetName = (TextView)hView.findViewById(R.id.navPetName1);
+        ImageView  navPetGen = (ImageView)hView.findViewById(R.id.navPetGen1);
+
         newNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -169,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        DrawerLayout.LayoutParams params = new DrawerLayout.LayoutParams(DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.MATCH_PARENT);
+       // DrawerLayout.LayoutParams params = new DrawerLayout.LayoutParams(DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.MATCH_PARENT);
       //  newDrawerLayout.addView(adView);
 
         editBttn.setOnClickListener(new View.OnClickListener() {
@@ -187,9 +193,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getValues() {
+//getting nav layout + Header
+        newNavigation = (NavigationView) findViewById(R.id.navView);
+        View hView =  newNavigation.getHeaderView(0);
+        TextView navPetName = (TextView)hView.findViewById(R.id.navPetName1);
+        ImageView  navPetGen = (ImageView)hView.findViewById(R.id.navPetGen1);
+
 
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String name = prefs.getString("dragon_name", "Pet name!");
+
+//navGender
+        String petGender = prefs.getString("dragon_gender", "Pet Gender");
+
+
 //Age
         int birth_month = prefs.getInt("birth_month", 0);
         int birth_day = prefs.getInt("birth_day", 0);
@@ -229,36 +246,39 @@ public class MainActivity extends AppCompatActivity {
         String old_VET = prefs.getString("VET_date", "oldVET");
 
 
+
+//set Birthday
+
         if (birth_day == 0 && birth_month == 0) {
             //Keep Hint
         } else {
             calculateAge();
         }
-
+//set Bathday
         if (old_bath.equals("Last Bathed?")) {
             //Keep Hint
         } else {
             lastBath.setText(old_bath);
         }
-
+//set Petname
         if (name.equals("Pet name!")) {
             //Keep Hint
         } else {
             petName.setText(name);
         }
-
+//set weight
         if (weight.equals("weight")) {
             //Keep Hint
         } else {
             weightOne.setText(weight);
         }
-
+//set length
         if (length.equals("length")) {
             //Keep Hint
         } else {
             lengthOne.setText(length);
         }
-
+//set bath new date
         if (bathDay == 0 && bathMonth == 0) {
 
         } else {
@@ -266,65 +286,87 @@ public class MainActivity extends AppCompatActivity {
             calculateBath();
 
         }
+ //set veggies new  date
         if (veggDay == 0 && veggMonth == 0) {
 
         } else {
 
             calculateVegg();
         }
-
+//set veggies
         if (old_vegg.equals("oldVegg")) {
 
         } else {
             oldVeggie.setText(old_vegg);
         }
-
+//set shedd new date
         if (sheddDay == 0 && sheddMonth == 0) {
 
         } else {
             calculateShedd();
         }
-
+//set shedd
         if (old_Shedd.equals("oldShedd")) {
 
         } else {
 
-            oldShedd.setText(sheddMonth + "/" + sheddDay);
+            oldShedd.setText(old_Shedd);
         }
+
+ //set bm new date
         if (bmDay == 0 && bmMonth == 0) {
 
         } else {
             calculateBM();
         }
+//set bm
         if (old_BM.equals("oldBM")) {
 
         } else {
             lastBM.setText(old_BM);
         }
-
+//set uvb new date
         if (uvbDay == 0 && uvbMonth == 0) {
 
         } else {
             calculateUVB();
         }
+//set uvb
         if (old_UVB.equals("oldUVB")) {
 
         } else {
             oldUvb.setText(old_UVB);
         }
-
+//set vet day new
         if(vetDay == 0 && vetMonth == 0){
 
         } else {
             calculateVET();
         }
+//set vet day
+
         if(old_VET.equals("oldVET")){
 
         } else {
             oldVisit.setText(old_VET);
         }
+//set Nav gender
+        if (petGender.equals("Pet Gender")){
+
+        } if (petGender.equals("FEMALE")) {
+          navPetGen.setImageResource(R.drawable.female);
 
 
+        } else if (petGender.equals("MALE")) {
+          navPetGen.setImageResource(R.drawable.male);
+
+        }
+//set Nav pet name
+        if (name.equals("Pet name!")) {
+            //Keep Hint
+        } else {
+           navPetName.setText(name);
+        }
     }
 
 

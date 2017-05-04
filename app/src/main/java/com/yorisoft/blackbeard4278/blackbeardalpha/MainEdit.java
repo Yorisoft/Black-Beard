@@ -130,6 +130,7 @@ public class MainEdit extends AppCompatActivity {
         String bmHint = prefs.getString("BM_date", "Bowel Movement");
         String uvbHint = prefs.getString("UVB_date", "UVB Last Change");
         String vetHint = prefs.getString("VET_date", "Last Vet Visit");
+        String genderHint = prefs.getString("pet_gender", "Pet Gender");
 
         String lastBathHint = prefs.getString("bath_future", "Last bathed:Every 7 days");
         String smallVeggHint = prefs.getString("veggies_small", "Last veggie feeding:Every 4 days");
@@ -144,6 +145,15 @@ public class MainEdit extends AppCompatActivity {
 
         } else {
             nameEdit.setText(nameHint);
+        }
+
+
+        if (genderHint.equals("Pet Gender")) {
+
+        } else  if (genderHint.equals("MALE")){
+            genBttnM.isFocused();
+        } else  if (genderHint.equals("FEMALE")) {
+            genBttnF.isFocused();
         }
 
         if (ageHint.equals("Birthday")) {
@@ -218,12 +228,21 @@ public class MainEdit extends AppCompatActivity {
     }
 
     public void genderOnClick(View v){
+        String petGender = null;
+
+
         switch(v.getId()) {
+
             case R.id.genBttnF:
                 genBttnF.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 genBttnF.setTextColor(getResources().getColor(R.color.colorWhiteText));
                 genBttnM.setBackgroundColor(getResources().getColor(R.color.transparentB));
                 genBttnM.setTextColor(getResources().getColor(R.color.colorPrimaryText));
+
+               petGender = "FEMALE";
+
+
+
                 break;
 
             case R.id.genBttnM:
@@ -231,8 +250,21 @@ public class MainEdit extends AppCompatActivity {
                 genBttnM.setTextColor(getResources().getColor(R.color.colorWhiteText));
                 genBttnF.setBackgroundColor(getResources().getColor(R.color.transparentB));
                 genBttnF.setTextColor(getResources().getColor(R.color.colorPrimaryText));
+
+
+                petGender = "MALE";
+
+
+
                 break;
         }
+
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefEdit = prefs.edit();
+        prefEdit.putString("dragon_gender", petGender);
+        prefEdit.apply();
+
+
     }
 
     @Override
@@ -551,6 +583,7 @@ public class MainEdit extends AppCompatActivity {
         prefEdit.putString("VET_date", vetVisitView.getText().toString());
 
 
+
         prefEdit.apply();
 
         Intent update = new Intent(this, MainActivity.class);
@@ -558,6 +591,7 @@ public class MainEdit extends AppCompatActivity {
 
         Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
     }
+
 
     public void pickImage(View view) {
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
@@ -618,6 +652,12 @@ public class MainEdit extends AppCompatActivity {
                 Toast.makeText(this, "Unable to open", Toast.LENGTH_LONG).show();
             }
         }
+
+
+
+
+
+
     }
 
 
