@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.preference.PreferenceManager;
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle newToggle;
     NavigationView newNavigation;
 
+    Typeface billyOhio;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         bath = new Schedules();
         notific = new NotificationCompat.Builder(this);
         notific.setAutoCancel(true);
+        billyOhio = Typeface.createFromAsset(getAssets(),"font/BillyOhio.ttf" );
 
         ageOne = (TextView) findViewById(R.id.ageOne);
         weightOne = (TextView) findViewById(R.id.weightOne);
@@ -130,9 +134,6 @@ public class MainActivity extends AppCompatActivity {
         newDrawerLayout.addDrawerListener(newToggle);
 
         newNavigation = (NavigationView) findViewById(R.id.navView);
-        View hView =  newNavigation.getHeaderView(0);
-        TextView navPetName = (TextView)hView.findViewById(R.id.navPetName1);
-        ImageView  navPetGen = (ImageView)hView.findViewById(R.id.navPetGen1);
 
         newNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -265,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
             //Keep Hint
         } else {
             petName.setText(name);
+            petName.setTypeface(billyOhio);
         }
 //set weight
         if (weight.equals("weight")) {
@@ -366,6 +368,7 @@ public class MainActivity extends AppCompatActivity {
             //Keep Hint
         } else {
            navPetName.setText(name);
+            navPetName.setTypeface(billyOhio);
         }
     }
 
