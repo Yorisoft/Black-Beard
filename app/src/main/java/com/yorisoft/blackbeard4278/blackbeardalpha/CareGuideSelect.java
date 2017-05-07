@@ -1,48 +1,34 @@
 package com.yorisoft.blackbeard4278.blackbeardalpha;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.target.ViewTarget;
-
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.net.URI;
-import java.nio.charset.StandardCharsets;
+import android.widget.TextView;
 
 public class CareGuideSelect extends AppCompatActivity {
 
     DrawerLayout nDrawerLayout;
     ActionBarDrawerToggle nToggle;
-    NavigationView nNavigation;
+    NavigationView newNavigation;
     LinearLayout guideLayout;
 
     Bitmap BM;
 
     Button enclosure,food,handling,behavior,genInfo ;
 
-    Typeface odinFont,coffee_tea;
+    Typeface odinFont,coffee_tea,coco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +37,7 @@ public class CareGuideSelect extends AppCompatActivity {
 
         odinFont = Typeface.createFromAsset(getAssets(),"font/OdinBold.ttf" );
         coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
+        coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
 
 
         enclosure =(Button)findViewById(R.id.enclosureButton);
@@ -69,17 +56,19 @@ public class CareGuideSelect extends AppCompatActivity {
         guideLayout = (LinearLayout)findViewById(R.id.guideLayout);
 
 
+//back button
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+//drawer and nav view
 
         nDrawerLayout = (DrawerLayout)findViewById(R.id.drawerMain);
         nToggle = new ActionBarDrawerToggle(this,nDrawerLayout,R.string.open,R.string.close);
         nDrawerLayout.addDrawerListener(nToggle);
 
-        nNavigation = (NavigationView) findViewById(R.id.navView);
+        newNavigation = (NavigationView) findViewById(R.id.navView);
 
-        nNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        newNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 int id = item.getItemId();
@@ -117,6 +106,7 @@ public class CareGuideSelect extends AppCompatActivity {
 
         nToggle.syncState();
 
+        getValues();
     }
 
     @Override
@@ -129,6 +119,43 @@ public class CareGuideSelect extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
+
+    private void getValues(){
+//SharedPreferences
+        SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
+        String navName = prefs.getString("dragon_name","Pet name");
+        String navGender = prefs.getString("dragon_gender","GENDER");
+//NavHeader
+        newNavigation = (NavigationView) findViewById(R.id.navView);
+        View hView =  newNavigation.getHeaderView(0);
+        TextView navPetName = (TextView)hView.findViewById(R.id.navPetName1);
+        ImageView navPetGen = (ImageView)hView.findViewById(R.id.navPetGen1);
+
+
+//set Nav gender
+        if (navGender.equals("GENDER")){
+
+        } if (navGender.equals("FEMALE")) {
+            navPetGen.setImageResource(R.drawable.female);
+
+
+        } else if (navGender.equals("MALE")) {
+            navPetGen.setImageResource(R.drawable.male);
+
+        }
+//set Nav pet name
+        if (navName.equals("Pet name")) {
+            //Keep Hint
+        } else {
+            navPetName.setText(" "+ navName +" ");
+            navPetName.setAllCaps(true);
+            navPetName.setTypeface(coco);
+            navPetName.setTextSize(32);
+        }
+
+
+    }
+
 
     public void guideClick(View v) {
         switch(v.getId()) {

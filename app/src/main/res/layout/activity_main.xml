@@ -41,8 +41,7 @@
             <FrameLayout
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="9dp">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -50,7 +49,7 @@
                     android:layout_height="207dp"
                     android:background="@android:color/darker_gray"
                     android:contentDescription="Pet Image"
-                    android:elevation="0dp" />
+                     />
 
                 <TextView
                     android:id="@+id/petName"
@@ -58,7 +57,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:layout_marginBottom="16dp"
-                    android:layout_marginLeft="16dp"
                     android:editable="false"
                     android:hint="Pet Name"
                     android:singleLine="true"
@@ -298,6 +296,25 @@
                     android:layout_below="@id/newBath" />
 
                 <TextView
+                    android:id="@+id/top_bar_new1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div3"
+                    android:layout_centerHorizontal="true"
+                    android:hint="new" />
+
+                <TextView
+                    android:id="@+id/top_bar_old1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/div3"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginRight="50dp"
+                    android:hint="old" />
+
+                <TextView
                     android:id="@+id/foodView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -407,6 +424,27 @@
                     style="@style/editDivider"
                     android:layout_below="@id/newShed" />
 
+
+                <TextView
+                    android:id="@+id/top_bar_time1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/div5"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Time:" />
+
+
+                <TextView
+                    android:id="@+id/top_bar_since1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/div5"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:hint="Since:" />
+
                 <TextView
                     android:id="@+id/bmView"
                     android:layout_width="wrap_content"
@@ -453,6 +491,27 @@
                     style="@style/editDivider"
                     android:layout_below="@id/newBM" />
 
+
+                <TextView
+                    android:id="@+id/top_bar_time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/div6"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Time:" />
+
+                <TextView
+                    android:id="@+id/top_bar_since2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/div6"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:hint="Since:" />
+
+
                 <TextView
                     android:id="@+id/uvbView"
                     android:layout_width="wrap_content"
@@ -498,6 +557,27 @@
                     android:id="@+id/div7"
                     style="@style/editDivider"
                     android:layout_below="@id/newUvb" />
+
+
+                <TextView
+                    android:id="@+id/top_bar_since3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/div7"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:hint="Since:" />
+
+                <TextView
+                    android:id="@+id/top_bar_time3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/div7"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Time:" />
+
 
                 <TextView
                     android:id="@+id/vetView"

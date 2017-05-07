@@ -130,7 +130,8 @@ public class MainEdit extends AppCompatActivity {
         String bmHint = prefs.getString("BM_date", "Bowel Movement");
         String uvbHint = prefs.getString("UVB_date", "UVB Last Change");
         String vetHint = prefs.getString("VET_date", "Last Vet Visit");
-        String genderHint = prefs.getString("pet_gender", "Pet Gender");
+        String genderHint = prefs.getString("dragon_gender", "Pet Gender");
+
 
         String lastBathHint = prefs.getString("bath_future", "Last bathed:Every 7 days");
         String smallVeggHint = prefs.getString("veggies_small", "Last veggie feeding:Every 4 days");
@@ -150,10 +151,10 @@ public class MainEdit extends AppCompatActivity {
 
         if (genderHint.equals("Pet Gender")) {
 
-        } else  if (genderHint.equals("MALE")){
-            genBttnM.isFocused();
-        } else  if (genderHint.equals("FEMALE")) {
-            genBttnF.isFocused();
+        }  if (genderHint.equals("MALE")){
+            genBttnM.callOnClick();
+        }  if (genderHint.equals("FEMALE")) {
+            genBttnF.callOnClick();
         }
 
         if (ageHint.equals("Birthday")) {
@@ -161,6 +162,7 @@ public class MainEdit extends AppCompatActivity {
         } else {
             agePreUpdate.setText(ageHint);
         }
+
 
         ageSmall.setText(birthHint);
         bathSmall.setText(lastBathHint);

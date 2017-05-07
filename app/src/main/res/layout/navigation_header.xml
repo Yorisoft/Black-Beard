@@ -3,15 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="170dp"
     android:background="@color/colorPrimary"
-    android:padding="20dp">
+    android:padding="10dp">
 
     <ImageView android:id="@+id/navPetGen1"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/navPetName1"
         android:layout_toRightOf="@+id/navPetName1"
         android:layout_toEndOf="@+id/navPetName1"
-        android:layout_alignParentBottom="true"
-        />
+        android:layout_margin="8dp"/>
 
     <TextView
         android:id="@+id/navPetName1"
@@ -24,5 +24,7 @@
         android:hint="Pet Name"
         android:textColor="@color/colorWhiteText"
         android:textSize="38sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+
+        />
 </RelativeLayout>

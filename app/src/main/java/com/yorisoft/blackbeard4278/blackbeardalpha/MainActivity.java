@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle newToggle;
     NavigationView newNavigation;
 
-    Typeface billyOhio;
+    Typeface billyOhio,coco,cocoLight;
 
 
     @Override
@@ -76,7 +76,11 @@ public class MainActivity extends AppCompatActivity {
         bath = new Schedules();
         notific = new NotificationCompat.Builder(this);
         notific.setAutoCancel(true);
+
+
         billyOhio = Typeface.createFromAsset(getAssets(),"font/BillyOhio.ttf" );
+        coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
+        cocoLight = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
 
         ageOne = (TextView) findViewById(R.id.ageOne);
         weightOne = (TextView) findViewById(R.id.weightOne);
@@ -102,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         petPicture = (ImageView) findViewById(R.id.imageView2);
 
         //  TODO change TestDeviceID if testing on new Android Device/Emulator for the first time
-
+//Google ads
         AdView adView =  (AdView)this.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
@@ -114,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String profile = prefs.getString("image_path", "choose image");
 
-//populating views with values. if statements in case they are empty.
-        getValues();
+
 
 
         Uri picturePath = Uri.parse(profile);
@@ -132,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
         newDrawerLayout = (DrawerLayout) findViewById(R.id.drawerMain);
         newToggle = new ActionBarDrawerToggle(this, newDrawerLayout, R.string.open, R.string.close);
         newDrawerLayout.addDrawerListener(newToggle);
-
         newNavigation = (NavigationView) findViewById(R.id.navView);
 
         newNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -174,11 +176,6 @@ public class MainActivity extends AppCompatActivity {
         newToggle.syncState();
 
 
-
-
-       // DrawerLayout.LayoutParams params = new DrawerLayout.LayoutParams(DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.MATCH_PARENT);
-      //  newDrawerLayout.addView(adView);
-
         editBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,6 +185,10 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+
+        //populating views with values. if statements in case they are empty.
+        getValues();
 
     }
 
@@ -265,8 +266,9 @@ public class MainActivity extends AppCompatActivity {
         if (name.equals("Pet name!")) {
             //Keep Hint
         } else {
-            petName.setText(name);
-            petName.setTypeface(billyOhio);
+            petName.setText(" "+ name +" ");
+            petName.setTypeface(coco);
+            petName.setTextSize(48);
         }
 //set weight
         if (weight.equals("weight")) {
@@ -367,8 +369,10 @@ public class MainActivity extends AppCompatActivity {
         if (name.equals("Pet name!")) {
             //Keep Hint
         } else {
-           navPetName.setText(name);
-            navPetName.setTypeface(billyOhio);
+           navPetName.setText(" "+ name +" ");
+            navPetName.setAllCaps(true);
+            navPetName.setTypeface(coco);
+            navPetName.setTextSize(32);
         }
     }
 
