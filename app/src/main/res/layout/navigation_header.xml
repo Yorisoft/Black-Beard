@@ -6,8 +6,8 @@
     android:padding="10dp">
 
     <ImageView android:id="@+id/navPetGen1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_alignTop="@+id/navPetName1"
         android:layout_toRightOf="@+id/navPetName1"
         android:layout_toEndOf="@+id/navPetName1"

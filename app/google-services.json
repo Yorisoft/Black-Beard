@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "466564918715-jfojojp7i2ng9ihr9a0vor1a0acdr6r7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yorisoft.blackbeard4278.blackbeardalpha",
+            "certificate_hash": "3a9ebf54775dc5e1a96d508e5f009652fed87221"
+          }
+        },
+        {
           "client_id": "466564918715-413gn3v4unhekhphhlnu09agtd0hjebe.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466564918715-413gn3v4unhekhphhlnu09agtd0hjebe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

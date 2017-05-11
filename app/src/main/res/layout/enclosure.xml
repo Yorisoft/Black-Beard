@@ -98,7 +98,8 @@
         <RelativeLayout android:id="@+id/sectionOneAndAHalf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -137,7 +138,8 @@
         <RelativeLayout android:id="@+id/sectionTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -174,7 +176,8 @@
         <RelativeLayout android:id="@+id/sectionThree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
         android:background="@color/ButtonBackground">
 
         <TextView
@@ -211,7 +214,8 @@
     <RelativeLayout android:id="@+id/sectionFour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -248,7 +252,8 @@
     <RelativeLayout android:id="@+id/sectionFive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -278,14 +283,15 @@
                 android:layout_margin="8dp"
                 android:text="@string/substrateOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
     </RelativeLayout>
 
     <RelativeLayout android:id="@+id/sectionSix"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -307,15 +313,15 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp" />
 
-            <TextView
-                android:id="@+id/infoSix"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/divideSeven"
-                android:layout_margin="8dp"
-                android:text="@string/substrateOne"
-                android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+        <TextView
+            android:id="@+id/infoSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divideSeven"
+            android:layout_margin="8dp"
+            android:text="@string/accessoriesOne"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp" />
 
         </RelativeLayout>
 

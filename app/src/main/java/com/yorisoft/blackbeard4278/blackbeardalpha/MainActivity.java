@@ -372,7 +372,7 @@ public class MainActivity extends AppCompatActivity {
            navPetName.setText(" "+ name +" ");
             navPetName.setAllCaps(true);
             navPetName.setTypeface(coco);
-            navPetName.setTextSize(32);
+           // navPetName.setTextSize(32);
         }
     }
 

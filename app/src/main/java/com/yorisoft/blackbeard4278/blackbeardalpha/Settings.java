@@ -128,7 +128,7 @@ public class Settings extends AppCompatActivity {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
             navPetName.setTypeface(coco);
-            navPetName.setTextSize(32);
+          //  navPetName.setTextSize(32);
         }
 
     }

@@ -125,7 +125,7 @@ public class AboutUs extends AppCompatActivity {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
             navPetName.setTypeface(coco);
-            navPetName.setTextSize(38);
+           // navPetName.setTextSize(38);
         }
 
 

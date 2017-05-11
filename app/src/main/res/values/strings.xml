@@ -1,6 +1,10 @@
 <resources xmlns:android="http://schemas.android.com/tools"
-   xmlns:tools="http://schemas.android.com/tools">
+   xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ExtraText">
+
     <string name="app_name">Black Beard</string>
+
+                            <!-- String/Values used in activity_main.xml ONLY FOR DEMONSTRATIVE PURPOSES  -->
     <string name="PetName">Draco</string>
     <string name="petAge">9</string>
     <string name="petWeight">1.5</string>
@@ -15,51 +19,76 @@
     <string name="oldFood">2/28</string>
     <string name="avrgShed">32 days</string>
 
+                                            <!-- Drawer & Navigation values. -->
     <string name="open">Open</string>
     <string name="close">Close</string>
 
+<!-- Strings/Values for navigation  -->
     <string name="drawer_care_guide">Care Guide!</string>
     <string name="petDragons">PET DRAGONS!</string>
+    <string name="settings_Nav">Settings</string>
+    <string name="about_Us">About Us</string>
+
+
+                                            <!-- Strings/Values for CareGuideSelect.java -->
     <string name="firstBttn">Enclosure</string>
     <string name="secondBttn"><![CDATA[Food & Diet]]></string>
     <string name="thirdBttn">Handling</string>
     <string name="fourthBttn">Behavior</string>
     <string name="fithBttn">General info.</string>
 
+
+                                            <!-- Strings/Values for Enclosure.java -->
+
     <string name="enclosureIntro">\t\t\tSetting up the appropriate enclosure is often considered the most difficult and expensive aspect of Bearded dragon care.
         Once in place however, a suitable enclosure will be the place your pet calls home for the entirety its life.</string>
+
+    <string name="sizeFirst">\t \t A baby bearded dragons should live in a 20-gal* tank. Juveniles should live in a minimum of 40-gal* tank. Adult beardies should live in a minimum of 75-gal* tank, with 120-gal* being the perfect size. \n \n
+            \t \t	Bearded dragons are great escape artist – and even better at Hide &amp; Go-Seek, make sure the enclosure comes with a top cover. \n
+             \n *Per bearded dragon. \n  </string>
+
+    <string name="numOfDrag">\t \t  In the wild, Bearded Dragons are solitary animals. Males in particular are extremely territorial and will almost never share an enclosure with each other. \n \n  \t \t It is not recommended you house multiple males together, as they will try to establish dominance over each other. \n \n \t \t A Male + Female enclosure can also lead to the male over-stressing the female with mating attempts. \n \n \t \t Females are the most likely to share an enclosure with each other without instances of aggression or stressing. Still you should only house beardies that are around the same size and always keep an eye out for sign of stress or aggression. \n </string>
+
+    <string name="lightingOne">\t \t Bearded Dragons should receive lighting for 12 – 14 hours a day. This light source will need to produce both UVA and UVB light. This is important for beardies as it help them properly utilize calcium, and without it they will develop Metabolic Bone Disease. \n \n \t \t The UVA/UVB source decays over time and should be replaced every 6 month or as directed by instructions on the package. \n	  </string>
+
+    <string name="heatingTempOne">\t \t Bearded Dragons do not produce their own body heat and need an external heat source to help them warm up and metabolize their food. \n \n \t \t  The most popular type of heat source is a basking light, but there are other options such as heat mats and ceramic heating bulb. Heating mats are not recommended as the main heating source because they can cause burning or discomfort on the underside of the beardie. \n \n \t \t The Basking Spot (warm side of the enclosure) should be 95°F – 110°F. The enclosure should also have a cooler side for when your bearded dragon want to cool off. The cooler side should be 80°F -85°F. At night the temperature can range between 65°F-70°F. \n   </string>
+
+    <string name="humidityOne">\t \t Bearded dragons have adapted to live in dry or low humidity climates. To high of a humidity may cause beardies to develop Repertory Infection. Humidity should be kept around 35 – 40% . Humidity Gauges are highly recommended for proper bearded dragon care \n  </string>
+
+    <string name="substrateOne">\t \t Substrates highly vary based on the owner preference, with several options to choose from. When choosing a substrate consider picking one that will not cause digestive discomfort/internal damage if ingested by your bearded dragon. Try to go for a substrate that is not just suitable for your beardies , but also easy for you to properly maintain. \n \n
+    —Sand is probably the most popular. My advice is to use only fine sand, nothing with rough edges like crushed sea shells: this may cause impaction and or internal damage. \n
+    —Carpet is very common and it has a cleaner look. It also eliminates the nuisance of dust that comes form shifting sand. \n
+    —Newspaper sheets are also safe. They are cheap option, easy to place inside the enclosure and makes clean up a breeze.
+    (Baby beardies are curious creatures as may try eating shredded newspaper ) \n
+    —Tiles are another safe option. They are not as convenient to replace but make cleaning easy. Like carpets, they also give the enclosure a clean look. \n
+    —Bark and/or Mulch has also been used as substrate - however it may lead to diarrhea or impaction if swallowed.\n
+    \n
+    </string>
+
+    <string name="accessoriesOne">\t \t    Bearded dragon enclosure will need to provide a couple more accessories to tie it all together. Accessories can also be a great way to stimulate your bearded dragon by giving them something new to examine. \n \n
+    —A HIDE is important. It gives a beardie a place to get away from others and can be used to get away from light. \n
+    —WATER DISH is also important , bearded dragons should be given access to water if they ever feel the need to drink. However some owners have issues maintaining proper humidity and remove the water dishes from the tank. If you do not provide a water dish be sure to provide plenty of baths/opportunities for your beardie to get hydrated.  \n
+    —FOOD DISH is recommended. Many owners feed their beardies by throwing the insects inside the cage but many other recommend using a good dish. Food dish help maintain the enclosure clean and makes it easier for beardies to catch their food. \n
+    —THERMOMETERS are essential for making sure that the enclosure is providing the right heating and temperatures for the bearded dragon. I suggest staying away from gauge thermometers because they are known to me inaccurate and/or take too much time to get a proper temp reading. Digital thermometers are more reliable and accurate, thus have been established as the “go-to” thermometers in the reptile world.  Many beardie owners have two thermometers, one on each side of the tank. \n
+    —HUMIDITY GAUGES are also essential. It is important the enclosure is maintained at the proper humidity — 30-40%. Humidity gauges have been used widely and for a long time, proving them to be reliable for monitoring humidity for reptile care. \n
+    —HAMMOCK are a really cool to have and bearded dragon seem to really enjoy them.  Bearded dragons prefer to be elevated off the ground , as close to the sun and in a spot where they can spread and relax. Hammocks are perfect for this, as well as make the enclosure look a bit cooler.\n
+     \n
+    </string>
+
+    <!-- Strings/Values for FoodGuide.java -->
+
+
+
+
+
+
+
+<!-- Strings/Values for AboutUs.java -->
 
     <string name="about_us_Intro">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n </string>
-
-
-    <string name="sizeFirst">\t \t A baby bearded dragons should live in a 20-gal* tank. Juveniles should live in a minimum of 40-gal* tank. Adult beardies should live in a minimum of 75-gal* tank, with 120-gal* being the perfect size. \n
-\n
-\t \t	Bearded dragons are great escape artist – and even better at Hide &amp; Go-Seek, make sure the enclosure comes with a top cover. \n
-      \n *Per bearded dragon. \n  </string>
-
-    <string name="numOfDrag">\t \t  In the wild, Bearded Dragons are solitary animals. Males in particular are extremely territorial and will almost never share an enclosure with each other. \n \n  \t \t It is not recommended you house multiple males together, as they will try to establish dominance over each other. \n \n \t \t A Male + Female enclosure can also lead to the male over-stressing the female with mating attempts. \n \n \t \t Females are the most likely to share an enclosure with each other without instances of aggression or stressing. Still you should only house beardies that are around the same size and always keep an eye out for sign of stress or aggression. \n </string>
-
-    <string name="lightingOne">\t \t Bearded Dragons should receive lighting for 12 – 14 hours a day. This light source will need to produce both UVA and UVB light. This is important for beardies as it help them properly utilize calcium, and without it they will develop Metabolic Bone Disease. \n \n \t \t The UVA/UVB source decays over time and should be replaced every 6 month or as directed by instructions on the package. \n	  </string>
-
-    <string name="heatingTempOne">\t \t Bearded Dragons do not produce their own body heat and need an external heat source to help them warm up and metabolize their food. \n \n \t \t  The most popular type of heat source is a basking light, but there are other options such as heat mats and ceramic heating bulb. Heating mats are not recommended as the main heating source because they can cause burning or discomfort on the underside of the beardie. \n \n The Basking Spot (warm side of the enclosure) should be 95°F – 110°F. The enclosure should also have a cooler side for when your bearded dragon want to cool off. The cooler side should be 80°F -85°F. At night the temperature can range between 65°F-70°F.
-\n   </string>
-
-    <string name="humidityOne">\t \t Bearded dragons have adapted to live in dry or low humidity climates. To high of a humidity may cause beardies to develop Repertory Infection. Humidity should be kept around 35 – 40% . Humidity Gauges are highly recommended for proper bearded dragon care \n  </string>
-
-    <string name="substrateOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
-
-    <string name="accessoriesOne">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n  </string>
 
 </resources>

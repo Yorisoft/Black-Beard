@@ -13,7 +13,7 @@
     tools:ignore="ExtraText"
     android:background="@android:color/transparent">
 
-    //bake //
+
 <RelativeLayout android:id="@+id/relContainer"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:paddingLeft="8dp"
-                android:text="Basic info."
+                android:text="Basic info"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -211,7 +211,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="8dp"
-                android:text="Schedules."
+                android:text="Schedules"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
