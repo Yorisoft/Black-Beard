@@ -4,66 +4,53 @@ package com.yorisoft.blackbeard4278.blackbeardalpha;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
-import android.text.InputType;
-import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 
-import org.w3c.dom.Text;
-
-import java.io.File;
-import java.util.prefs.PreferenceChangeListener;
-
-import static android.R.attr.drawable;
-import static android.R.attr.gestureColor;
-import static android.R.attr.tag;
-
-
 public class MainActivity extends AppCompatActivity {
 
+//Notification, Schedule.java and AgeCalculation.java
     NotificationCompat.Builder notific;
     private static final int notificID = 26535346;
     private AgeCalculation age = null;
     private Schedules bath = null;
 
-    Button editBttn;
-    Button saveButton;
-    ImageButton moreEdits;
+//Declaring edit buttons
+    Button bttmEdit;
+    ImageButton topEdit;
 
-    TextView ageOne, weightOne, lengthOne, petName, newBath, lastBath, newVeggie, oldVeggie, newShedd, oldShedd, newBM, lastBM, newUvb, oldUvb,
-            newVisit,oldVisit;
+//Declaring all TextViews
+    TextView ageOne, weightOne, lengthOne, petName, newBath, lastBath, newVeggie, oldVeggie,
+            newShedd, oldShedd, newBM, lastBM, newUvb, oldUvb,newVisit,oldVisit;
 
+//Declaring all TextViews
     ImageView petPicture;
 
+//Declaring Drawer and Nav
     DrawerLayout newDrawerLayout;
     ActionBarDrawerToggle newToggle;
     NavigationView newNavigation;
 
+//Declaring Typeface
     Typeface billyOhio,coco,cocoLight;
 
 
@@ -72,16 +59,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//Initializing variables for AgeCalculation.java and Schedule.java
         age = new AgeCalculation();
         bath = new Schedules();
+
+//Initializing variables for Notifications
         notific = new NotificationCompat.Builder(this);
         notific.setAutoCancel(true);
 
-
+//Initializing variables for Typeface
         billyOhio = Typeface.createFromAsset(getAssets(),"font/BillyOhio.ttf" );
         coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
         cocoLight = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
 
+//Initializing variables for Pet Image
+        petPicture = (ImageView) findViewById(R.id.imageView2);
+
+//Initializing variables for all TextViews
         ageOne = (TextView) findViewById(R.id.ageOne);
         weightOne = (TextView) findViewById(R.id.weightOne);
         lengthOne = (TextView) findViewById(R.id.lengthOne);
@@ -99,26 +93,28 @@ public class MainActivity extends AppCompatActivity {
         newVisit= (TextView) findViewById(R.id.newVisit);
         oldVisit= (TextView) findViewById(R.id.oldVisit);
 
-        editBttn = (Button) findViewById(R.id.editBttn);
-        saveButton = (Button) findViewById(R.id.saveButton);
-        moreEdits = (ImageButton) findViewById(R.id.moreButton);
-
-        petPicture = (ImageView) findViewById(R.id.imageView2);
-
-        //  TODO change TestDeviceID if testing on new Android Device/Emulator for the first time
-//Google ads
-        AdView adView =  (AdView)this.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("0F833BB01FC8E0A5D3592824FD6F0322")//DeviceID
-                .build();
-        adView.loadAd(adRequest);
+//Initializing variables for Top and Button Edit button
+        bttmEdit = (Button) findViewById(R.id.editBttn);
+        topEdit = (ImageButton) findViewById(R.id.moreButton);
 
 
+//populating views with values. Using if-else statements in case they are empty.
+        getValues();
+
+//Bottom Edit Button
+        bttmEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent launchEditActivity = new Intent("com.yorisoft.blackbeard4278.blackbeard.MAINEDIT");
+                startActivity(launchEditActivity);
+            }
+
+        });
+
+//Main Pet Image - Turning image path(From SharedPreferences) into URI. Positioning with Glide.
         SharedPreferences prefs = getSharedPreferences("basic_dragon_info", Context.MODE_PRIVATE);
         String profile = prefs.getString("image_path", "choose image");
-
-
 
 
         Uri picturePath = Uri.parse(profile);
@@ -175,22 +171,50 @@ public class MainActivity extends AppCompatActivity {
 
         newToggle.syncState();
 
+        //  TODO change TestDeviceID if testing on new Android Device/Emulator for the first time
+//Google ads
+        AdView adView =  (AdView)this.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("0F833BB01FC8E0A5D3592824FD6F0322")//DeviceID
+                .build();
+        adView.loadAd(adRequest);
 
-        editBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent launchEditActivity = new Intent("com.yorisoft.blackbeard4278.blackbeard.MAINEDIT");
-                startActivity(launchEditActivity);
-            }
-
-        });
-
-
-        //populating views with values. if statements in case they are empty.
-        getValues();
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (newToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
+
+//Top Edit Button
+public void imageAndNameEdit(View v) {
+
+    PopupMenu popUp = new PopupMenu(MainActivity.this, topEdit);
+    popUp.getMenuInflater().inflate(R.menu.popup_img_name, popUp.getMenu());
+
+
+    popUp.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+        public boolean onMenuItemClick(MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.imaNameEdit:
+                    Intent img_name_edit = new Intent(MainActivity.this, MainEdit.class);
+                    startActivity(img_name_edit);
+                    break;
+            }
+            return true;
+        }
+    });
+    popUp.show();
+
+}
 
 
 
@@ -376,40 +400,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if (newToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-
-    }
-
-    public void imageAndNameEdit(View v) {
-
-        PopupMenu popUp = new PopupMenu(MainActivity.this, moreEdits);
-        popUp.getMenuInflater().inflate(R.menu.popup_img_name, popUp.getMenu());
-
-
-        popUp.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.imaNameEdit:
-                        Intent img_name_edit = new Intent(MainActivity.this, MainEdit.class);
-                        startActivity(img_name_edit);
-                        break;
-                }
-                return true;
-            }
-        });
-        popUp.show();
-
-    }
 
     //Age
     private void calculateAge() {

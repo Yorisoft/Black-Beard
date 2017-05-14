@@ -14,7 +14,7 @@ public class EnclosureGuide extends AppCompatActivity {
 
 
 
-    TextView enclosureTittle,titleOne,titleOneAndHalf, titleTwo, titleThree,titleFour,titleFive,titleSix, infoOne, infoOneAndHalf, infoTwo, infoThree, infoFour, infoFive, infoSix;
+    TextView enclosureTitle,titleOne,titleOneAndHalf, titleTwo, titleThree,titleFour,titleFive,titleSix, infoOne, infoOneAndHalf, infoTwo, infoThree, infoFour, infoFive, infoSix;
     Typeface Roboto,Congratulations,coffee_tea,coco,coco_light;
 
     @Override
@@ -29,8 +29,8 @@ public class EnclosureGuide extends AppCompatActivity {
         coco_light = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
 
 
-        enclosureTittle = (TextView)findViewById(R.id.enclosureTittle);
-        enclosureTittle.setTypeface(coco);
+        enclosureTitle = (TextView)findViewById(R.id.enclosureTitle);
+        enclosureTitle.setTypeface(coco);
 
 
         titleOne = (TextView)findViewById(R.id.titleOne);

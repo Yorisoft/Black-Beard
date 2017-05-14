@@ -13,7 +13,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".FoodGuide"
     android:background="@drawable/desert02"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -24,7 +27,7 @@
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/dietTittle"
+            android:id="@+id/dietTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -45,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:gravity="start"
-            android:text="@string/enclosureIntro"
+            android:text="@string/foodIntro"
             android:textAlignment="textStart"
             android:textColor="@color/colorLayout"
             android:textSize="14sp" />
@@ -53,11 +56,12 @@
         <RelativeLayout android:id="@+id/sectionOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
-                android:id="@+id/titleOne"
+                android:id="@+id/titleOneOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -71,30 +75,31 @@
             <View
                 android:id="@+id/divideTwo"
                 style="@style/dividerGreen"
-                android:layout_below="@id/titleOne"
+                android:layout_below="@id/titleOneOne"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp" />
 
             <TextView
-                android:id="@+id/infoOne"
+                android:id="@+id/infoOneOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideTwo"
                 android:layout_margin="8dp"
-                android:text="@string/sizeFirst"
+                android:text="@string/waterOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
-                android:id="@+id/titleTwo"
+                android:id="@+id/titleOneTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -108,67 +113,107 @@
             <View
                 android:id="@+id/divideThree"
                 style="@style/dividerGreen"
-                android:layout_below="@id/titleTwo"
+                android:layout_below="@id/titleOneTwo"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp" />
 
             <TextView
-                android:id="@+id/infoTwo"
+                android:id="@+id/infoOneTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideThree"
                 android:layout_margin="8dp"
-                android:text="@string/lightingOne"
+                android:text="@string/vitaminsOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionThree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
-                android:id="@+id/titleThree"
+                android:id="@+id/titleOneThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Proteins &amp; Veggies"
+                android:text="Proteins / Insects"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
             <View
                 android:id="@+id/divideFour"
                 style="@style/dividerGreen"
-                android:layout_below="@id/titleThree"
+                android:layout_below="@id/titleOneThree"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp" />
 
             <TextView
-                android:id="@+id/infoThree"
+                android:id="@+id/infoOneThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideFour"
                 android:layout_margin="8dp"
-                android:text="@string/heatingTempOne"
+                android:text="@string/insectProteinOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/sectionThreeAndHalf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/ButtonBackground">
+
+            <TextView
+                android:id="@+id/titleThreeAndHalf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:text="Fruits &amp; Veggies"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divideFourAndHalf"
+                style="@style/dividerGreen"
+                android:layout_below="@id/titleThreeAndHalf"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/infoThreeAndHalf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divideFourAndHalf"
+                android:layout_margin="8dp"
+                android:text="@string/veggiesFruitsOne"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionFour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
-                android:id="@+id/titleFour"
+                android:id="@+id/titleOneFour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -182,20 +227,19 @@
             <View
                 android:id="@+id/divideFive"
                 style="@style/dividerGreen"
-                android:layout_below="@id/titleFour"
+                android:layout_below="@id/titleOneFour"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp" />
 
             <TextView
-                android:id="@+id/infoFour"
+                android:id="@+id/infoOneFour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideFive"
                 android:layout_margin="8dp"
-                android:text="NO HOME CAUGHT INSECTS!! \n
-        Only feed Pinky mice to adult bearded dragons."
+                android:text="@string/moreInfoOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 

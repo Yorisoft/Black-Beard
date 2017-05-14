@@ -24,7 +24,7 @@
     <string name="close">Close</string>
 
 <!-- Strings/Values for navigation  -->
-    <string name="drawer_care_guide">Care Guide!</string>
+    <string name="drawer_care_guide">Care Tips!</string>
     <string name="petDragons">PET DRAGONS!</string>
     <string name="settings_Nav">Settings</string>
     <string name="about_Us">About Us</string>
@@ -75,17 +75,68 @@
      \n
     </string>
 
-    <!-- Strings/Values for FoodGuide.java -->
+
+                                        <!-- Strings/Values for FoodGuide.java -->
 
 
+    <string name="foodIntro"> \t \t You will need to provide the appropriate foods and vitamins to make sure your bearded dragon is healthy and happy. Providing all the right foods and all the right vitamins your beardie needs can be a bit expensive and a perhaps even expensive. But! Once you get the hang of it, it becomes fun and a great way to bond with your beardie. \n \n
+    \t \t When feeding your beardie be sure that the size of the food doesn\'t exceed the size of the space between your beardies eyes.
+     \n
+    </string>
 
+    <string name="waterOne"> \t \t Do your best to make sure your Bearded dragon is getting enough water, they’re use to going long periods of time without any water and can sometimes overdo it. \n \n
+        \t \t Bearded dragons will rarely drink water directly from the water dish, although it should still be made available for those rare times that they decide to do so. Most of their water will come from the insects, fruits and veggies that they eat. \n \n
+    — Baths are great for hydrating your bearded dragon, many times they will drink water between swims. They also absorb liquid through their vent (the opening under their tail) so give them at least 15 minutes when putting them in the water. \n \n
+    —Another great method is spraying water on the fruits and veggies right before offering them to your bearded dragon. This combination is great because it knocks two birds with one stone! \n \n
+    \t \t -no birds were hurt while developing this app. \n
+    </string>
+    
+    <string name="vitaminsOne">\t \t Bearded dragons need to be given vitamins such as Vitamin D3 and Calcium. These along with other vitamins and minerals are essential for proper development. Multivitamin supplements are a great resource as they usually balance out all the various vitamins and minerals. \n \n
+    —Baby bearded dragons should be given vitamins daily and with every meal. \n \n
+    —Juvenile or early adult bearded dragons should be given vitamin supplements every 3rd or 4th feeding. \n \n
+    —Adult dragons or fully grown bearded dragon should be given their vitamin supplements only once or twice a week. \n
+    </string>
+
+    <string name="insectProteinOne">\t \t Bearded dragons are omnivores, they will eat both plant matter and animals, or insects.  Younger beardies should eat insect daily – making up most of their diet. Still try to feed them fruits and veggies every couple of days: it’s not only healthy and a great source of hydration, but it helps them get use to and eventually develop a preference in veggies. \n \n
+    \t \t Adults on the other hand will eat mostly vegetation, but you should still offer insects. Most adult bearded dragons enjoy to eat a few insects, like super worms, on the side of their vegetables. \n \n
+    \t \t When it comes to staple food, or daily feed, the big three are crickets, cockroaches, &amp; Super worms - Note super worms as a daily food is only recommended for early adult or fully grown because they may cause impaction in younger bearded dragons if fed too often. These are the most common and easy to find insects, also the most commonly bred insects in the bearded dragon  community. \n \n
+	\t \t \t \t \t  This is a small list of safe to feed insects! \n
+    —Butter worms \t \t —Super worms\n
+    —Cockroaches \t \t —Crickets\n
+    —Earth worms \t \t —Horn worms\n
+    —Kings worms \t \t —Meal worms\n
+    —Phoenix worms \t \t —Silk worms\n
+    —Grass Hoppers \t \t —Wax worms \n \n
+    \t \t NO HOME CAUGHT INSECTS! They may carry parasites that are harmful to your bearded dragon. \n \n
+    \t \t NO FIREFLIES! They carry a substance very toxic to bearded dragons. \n \n
+
+    </string>
+
+    <string name="veggiesFruitsOne">\t \t Fruits &amp; Veggies provide much needed liquid and are important for a balanced diet. Many bearded dragon owners have a difficult time getting their younger beardies to eat vegetables. However, overtime bearded dragons develop a preference to greens over insects. Bearded dragons will be able to eat most foods in moderate quantities. \n \n
+    —Try adding colorful fruits or veggies on top of the greens to make the meal more attractive. \n \n
+    —Lettuce is not recommended, it has almost no nutritional value. \n \n
+    —Be sure to add vitamin to the fruits and vegetables as needed. \n \n
+    \t \t \t \t This is a short list of safe to feed fruits and veggies. \n \n
+    —Kiwis \t\t —Watermelon \n
+    —Apples \t \t —Butternut squash \n
+    —Mango \t \t —Mustard greens \n
+    —Dandelion greens \t \t —Broccoli \n
+    —Collard greens \t \t —Peach \n
+
+    </string>
+
+    <string name="moreInfoOne">—It never hurts to make a google search to make sure all the food you offer is safe to feed. \n \n
+	—Bearded dragons will eat Pinky Mice, but you should wait until they’re at least a year before offering them one. \n \n
+	—Many owner breed their own feeder insect and recommend others to do the same. Breeding insects saves money and helps make sure your beardies always have food. \n \n
+
+    </string>
 
 
 
 
 <!-- Strings/Values for AboutUs.java -->
 
-    <string name="about_us_Intro">\t \t \t \t asdfsdfsdfasdfasdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
+    <string name="about_us_Intro">\t \t \t \t Section under devel  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
     asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
