@@ -19,10 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:layout_marginBottom="50dp">
 
         <TextView
-            android:id="@+id/dietTittle"
+            android:id="@+id/handlingTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -43,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:gravity="start"
-            android:text="@string/enclosureIntro"
+            android:text="@string/handlingIntro"
             android:textAlignment="textStart"
             android:textColor="@color/colorLayout"
             android:textSize="14sp" />
@@ -51,7 +52,8 @@
         <RelativeLayout android:id="@+id/sectionOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -79,16 +81,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideTwo"
                 android:layout_margin="8dp"
-                android:text="@string/sizeFirst"
+                android:text="@string/hygieneOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -116,16 +119,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideThree"
                 android:layout_margin="8dp"
-                android:text="@string/lightingOne"
+                android:text="@string/bathingOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionThree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -136,7 +140,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Holding. Play Time"
+                android:text="Holding &amp; Handling"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
@@ -153,16 +157,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideFour"
                 android:layout_margin="8dp"
-                android:text="@string/heatingTempOne"
+                android:text="@string/holdingHandling"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionFour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -190,16 +195,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideFive"
                 android:layout_margin="8dp"
-                android:text="@string/substrateOne"
+                android:text="@string/trimmingClawsOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionFive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -227,9 +233,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideSix"
                 android:layout_margin="8dp"
-                android:text="@string/substrateOne"
+                android:text="@string/outdoorsOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/scrollAndEnclosure"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:googleads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+    <ScrollView android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@drawable/desert02"
+        tools:context=".Behavior">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/enclosureLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_marginBottom="50dp">
+
+            <TextView
+                android:id="@+id/extraInfoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="More Information"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/divideOne"
+                style="@style/Divider"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/enclosureSumm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="start"
+                android:text="@string/ExtraInfoIntro"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorLayout"
+                android:textSize="14sp" />
+
+            <RelativeLayout android:id="@+id/sectionOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                android:background="@color/ButtonBackground">
+
+                <TextView
+                    android:id="@+id/titleOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="8dp"
+                    android:text="Vet Visits"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="30sp" />
+
+                <View
+                    android:id="@+id/divideTwo"
+                    style="@style/dividerGreen"
+                    android:layout_below="@id/titleOne"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/infoOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/divideTwo"
+                    android:layout_margin="8dp"
+                    android:text="@string/vetVisitsOne"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout android:id="@+id/sectionTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                android:background="@color/ButtonBackground">
+
+                <TextView
+                    android:id="@+id/titleTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="8dp"
+                    android:text="Lifespan"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="30sp" />
+
+                <View
+                    android:id="@+id/divideThree"
+                    style="@style/dividerGreen"
+                    android:layout_below="@id/titleTwo"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/infoTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/divideThree"
+                    android:layout_margin="8dp"
+                    android:text="@string/lifeSpanOne"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout android:id="@+id/sectionThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                android:background="@color/ButtonBackground">
+
+                <TextView
+                    android:id="@+id/titleThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="8dp"
+                    android:text="Insect Breeding"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="30sp" />
+
+                <View
+                    android:id="@+id/divideFour"
+                    style="@style/dividerGreen"
+                    android:layout_below="@id/titleThree"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/infoThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/divideFour"
+                    android:layout_margin="8dp"
+                    android:text="@string/InsectBreedingOne"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:descendantFocusability="blocksDescendants"
+        android:elevation="10dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-4542204585673533/6066052007"
+        googleads:loadAdOnCreate="true"
+        googleads:testDevices="TEST_EMULATOR" />
+
+</RelativeLayout>

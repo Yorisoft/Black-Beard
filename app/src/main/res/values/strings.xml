@@ -35,7 +35,7 @@
     <string name="secondBttn"><![CDATA[Food & Diet]]></string>
     <string name="thirdBttn">Handling</string>
     <string name="fourthBttn">Behavior</string>
-    <string name="fithBttn">General info.</string>
+    <string name="fithBttn">Extra info.</string>
 
 
                                             <!-- Strings/Values for Enclosure.java -->
@@ -126,10 +126,134 @@
     </string>
 
     <string name="moreInfoOne">—It never hurts to make a google search to make sure all the food you offer is safe to feed. \n \n
-	—Bearded dragons will eat Pinky Mice, but you should wait until they’re at least a year before offering them one. \n \n
+	—Bearded dragons will eat Pinky-Mice, but you should wait until they’re at least a year before offering them one. \n \n
 	—Many owner breed their own feeder insect and recommend others to do the same. Breeding insects saves money and helps make sure your beardies always have food. \n \n
 
     </string>
+
+
+                                      <!-- Strings/Values for Handling.java -->
+    
+    
+    <string name="handlingIntro"> \t \t \t \t Handling a bearded dragon can be intimidating for new owners but in reality beardies enjoy being held and it is easy.
+        Holding and playing with your bearded dragon, especially the younger ones, is important for building a bond between you both and it reinforces the feeling of safety when being picked up and held by people.
+    </string>
+
+    <string name="hygieneOne">\t \t A Clean bearded dragon is a Happy bearded dragon! Maintaining a clean environment will help protect your bearded dragon from harmful germs. Having proper hygiene rules in place will also help prevent you from accidentally passing on a disease to your beardie and vice versa – beardies can have salmonella and not show any signs of infection. \n \n
+	—Try sanitizing your hands before handling your bearded dragon: Keep in mind we use are hands many times throughout the day. This protects them from your germs and protects you from theirs. \n \n
+	—Try maintaining the enclosure, especially the flooring or substrate, as clean as possible. Consider having a set schedule for cleaning the entire enclosure, such as twice a month. However, the substrate contains bits of feces and should be inspected and cleaned more thoroughly. \n \n
+	—All items: the enclosure walls, accessories, substrate etc. , should be cleaned! These can all hold bacteria and germ and cleaning them once or twice a week will help keep your bearded dragon healthy! \n \n
+	—DO NOT USE HARSH CHEMICALS! Beardies lick things often and they may ingest some of those chemicals. Try using non-harsh chemicals such as lemon based cleaning agents. \n \n
+    </string>
+
+    <string name="bathingOne">\t \t Despite being desert animals, bearded dragons seem to enjoy bathing! They will often go for swims, drink water but mostly they enjoy submerging their bodies in the water and relaxing while they absorb liquid. Try not skipping baths as it helps hydrate your bearded dragon - amongst other benefits! This should only take 15 minutes and goes a long way to ensuring your beardie is healthy. \n \n
+	—Avoid fill up the tub or sink all the way to the top. This can stress out bearded dragons if they aren’t use to swimming and requires them to always be balancing themselves in the water. Try making sure that the water reaches around their elbows. \n \n
+	—The water should be body temperature, just a bit warm. It should not be hot to the touch, remember baths are meant to be relaxing and cooling. It should not be too cold neither, if your beardie is losing body heat they will not be able to enjoy their baths. \n \n
+	—Some bearded dragon will defecate while bathing. In fact, bathing is a great method for dealing with impaction. Also, this isn’t confirmed, but many owners: such as myself, believe bearded dragons learn to wait until they are bathing to defecate and avoid the smell of feces in their enclosure. \n \n
+	—Do not let your bearded dragon dry out in their enclosure as it will most likely raise the humidity. Try letting them dry off elsewhere or drying them with a towel and then place them in the enclosure. \n \n
+	—The exact amount of times a bearded dragon should be bathed is highly debated amongst beardie owners, but it is generally agreed that once or twice every week is healthy. Bating your beardie more regularly than this is also alright, especially if they are shedding or having trouble with bowel movements. \n \n
+    </string>
+
+    <string name="holdingHandling">\t \t If your bearded dragon is new to his enclosure – they will sometimes take time to adapt to the change and become comfortable and active. If this is the case, allow your bearded dragon a couple of days to themselves until they feel safe and in control. Bearded dragons are very friendly and curios animals, they are easy to handle and do not mind being held. \n \n
+	—Bearded dragon prefer to be lifted from the chest. Then try placing your forearm or another hand under the rest of their body. When picking up a bearded dragon the main thing to keep in mind is: am I offering enough support? Bearded dragons usually stay put in one place as long as they do not feel unbalanced.  \n \n
+	—Everyone has their own way of petting their bearded dragon but most beardies seem to enjoy massages on their beards and strokes along their back. Some beardies however would rather just be placed on a shoulder without being pet. \n \n
+	—Once an owner has spent a sufficient amount of time with a bearded dragon they will be able to read the subtle signs a beardie gives, and know if a bearded dragon is in a good or grumpy mood. \n \n
+	—Bearded dragons are not particularly aggressive animals and will only become as such if they feel threatened or if their owner has failed to establish a positive bond. Overall bearded dragons have no problem being lifted and held for long periods of times, or even by strangers. \n \n
+	—If you have an aggressive bearded dragon don’t be dismayed and don’t lose faith. There are a couple things you can do to help show a bearded dragon that you are not a threat but a friend. Feeding by hand for example is a great way to bond with your beardie. You can use food to trick them and bait them to get on you. Then just juggle them in your hands as they try climbing away. There are more tricks to help turn an aggressive bearded dragon into a friendly one and I encourage anyone with this issue to search for more information as it is out there and it works. \n \n
+    </string>
+
+    <string name="trimmingClawsOne">\t \t It is not uncommon for an owner to want to trim a bearded dragons claw. They can get big and really pointy. This makes playing with beardies a bit painful, especially when they refuse to let go of you! It’s perfectly save to trim your beardies claws, just be careful as you can hurt them. If you don’t feel comfortable however, most pet stores have groomers who have experience trimming lizard claws. \n \n
+    —Before you begin cutting your beardies claws, make sure you are holding them properly. Your grip on them should be firm and allows you to have full control of their limb. You should also make sure your bearded dragon is comfortable in the position you’re holding them to lessen the chances them moving around.\n \n
+    —When trimming the claws only cut the tips of the claw. Most bearded dragons have a black layer on top of a clear-see through- layer. It is recommended you cut only the black tip that protrudes past the clear layer.\n \n
+    —Keep in mind that bearded dragons relay on their claws. Do not cut so much that they will not be able to climb or dig properly. Your aim should be to cut the very small tips and expose a small flat surface. If you cut too much your bearded dragon can get hurt and will start bleeding.\n \n
+ 	—Having a rock in the enclosure can also help with trimming the claws. As your bearded dragon scratches, it and walks on it, the rock with grind away a little of the claws.\n \n
+    </string>
+
+    <string name="outdoorsOne">\t \t Bearded dragon love the outdoors! There is no substitute for the heat and light that they get from being directly under the sun. Many bearded dragon owner report their beardies intensifying their colors and displaying new shades when taken outside. Most owners carry their bearded dragon on their shoulder or under their sweater. When taking your bearded dragon outdoors make sure you keep a close eye on your beardie. \n \n
+	—Avoid taking your bearded dragon outside on cold or rainy days. Being out in cold temperature makes it difficult for beardies to retain their heat. If bearded dragons don’t have enough heat that taking them outside is pointless as they will not be in the mood to move and explore. 	\n \n
+	—Maintain an eye on your beardie the whole time! Some owner recommend buying a vest or leash (they’re cool and useful) to help make sure your beardie does not go running too far. \n \n
+	—Waiting until your bearded dragon is a juvenile or young adult to take him out doors is a good idea because they will be larger and easier to spot if they run off for some reason. \n \n
+    </string>
+
+
+                                         <!-- Strings/Values for Behavior.java -->
+
+
+    <string name="behaviorIntro">\t \t \t Missing intro \n
+    Setting up the appropriate enclosure is often considered the most difficult and expensive aspect of Bearded dragon care.
+        Once in place however, a suitable enclosure will be the place your pet calls home for the entirety its life. </string>
+
+    <string name="blackBeardOne">\t \t Probably their most notable characteristics, bearded dragons sometimes turn the scales on their beard completely black in just a matter of moments. It is super cool!  \n \n
+    —This is usually a sign of aggression towards another bearded dragon. This makes them look more intimidating to both other beaded dragons and other animals in the wild. \n \n
+    —This also happens when bearded dragons are trying to mate. It is more common in male which could be interpreted as a display. \n \n
+    —Although it is more common in male bearded dragon, female bearded dragons have also been known to turn their beards black.\n \n
+    </string>
+
+    <string name="headBobbingOne">\t \t Head-bobbing is when a bearded dragon moves or “bobs” their head up and down. Like the black beard behavior, this can happen for several reasons. \n \n
+    —Head-bobbing is most common in males, but has also been observed in females. \n \n
+    —It can also e a sign of aggression and/or a display of dominance. \n \n
+    —A Bearded dragons will bob their head at other dragons from either gender, as well as bob their head while there are no other beardies around. This makes it difficult to know the real meaning behind head-bobbing. But generally, it’s a sign of grumpiness. \n \n
+    —Bearded dragon, most commonly females, will sometimes perform a more subtle and slower head bob. Again, this behavior isn’t completely understood. \n \n
+    </string>
+
+    <string name="armWavingOne">\t \t Bearded dragon sometimes wave their arms, one at a time, in a circular motion. It is actually really cool to observe the first couple times! They usually only wave to another bearded dragon but younger bearded dragons have been known to wave their arms randomly, kind of like testing out a new skill. \n \n
+    —Arm waving is a sign of stress and only usually only happens if a bearded dragon feels threatened. \n \n
+    —Bearded dragon will may also wave at each other, as a display of truce. This arm wave is performed counter clock-wise as opposed to the more often seen  clock-wise. \n \n
+    </string>
+
+    <string name="lickingOne">\t \t Bearded dragon don’t have as good of an eye sight as other animals do. Bearded dragons lick object in order to get a better understanding of their surroundings. \n
+        \t \t Licking is nothing to be worried about and beardies will lick almost every new object they encounter and even ones they’ve licked before. Avoid using harmful chemicals when cleaning your beardies enclosure and running the risk of your beardie ingesting it by licking.
+    </string>
+
+    <string name="sheddingOne">\t \t Bearded dragons have scales and in order to grow they must shed layers of their skin at a time. Shedding occurs more often with younger bearded dragons and as they get older they shed less. \n
+        \t \t Shedding is a lifelong process and it is important you make sure your bearded dragon sheds their skin evenly (the entire body). Providing proper hydration and baths helps with shedding. Lastly do not peel he old skin off your bearded dragon. Let it fall of by it self and only help them if they are having a hard time brushing it off (around their eyes or ears). \n
+    </string>
+
+    <string name="diggingOne">\t \t Bearded dragons are great diggers! In the wild they lay their eggs in holes dug out using those spiky claws and create a softly insulted nursery.
+        They also dig to get away from the heat or to build themselves a hide.  Bearded dragons also use digging to trim their nails as well as  to rub against the dirt and remove their shedding skin.
+    </string>
+
+    <string name="glassSurfingOne">\t \t Glass surfing is when a bearded dragon claws at or tries climbing up the walls of his enclosure. Like the other behaviors, this can mean multiple things and need to be taken into context. \n \n
+    —Glass surfing can be a sign of stress and a signal from your beardie that they do not want to be in their enclosure. Keep an eye and see if they looked stressed or just curios. Glass surfing can also just be your bearded dragon fooling around. \n \n
+    —A Bearded dragon may also just be bored and want to explore the world outside their enclosure. \n \n
+    —Lastly some bearded dragon will start glass surfing right before they defecate. This is impossible to assure but some owners have reported owning bearded dragon who refuse to defecate in their enclose, and will start glass surfing until placed in a body of water or outside their enclosure to defecate. \n \n
+    </string>
+
+    <string name="territorialOne">\t \t Bearded dragon are generally solitary animals, living out most of their life alone, only meeting to procreate.
+        Bearded dragon will often not share spaces with each other’s without fighting over dominance and territory.  Younger bearded dragon will often have no problem enjoying other bearded dragons company but as they grow into juvenile they should be separated into separate enclosure.
+    </string>
+
+    <string name="BrumationOne">\t \t Like other animals, bearded dragons also have a form of hibernation called brumation.  This is hibernating state in which a bearded dragon becomes lethargic, sleep most of the day, and eats far less. Bearded dragons usually do not go into brumation until they are at least 1 year old.  \n \n
+    —If you are sure your bearded dragon is bromating, avoid bothering them. They stop eating as much and need to reserve as much energy as possible to get them through brumation.  \n \n
+    —It is important as an owner to make food and water available always during the brumation phase.  \n \n
+    —Bearded dragons will not die from brumation and do not need to be assisted to end their brumation phase. Bearded dragon decide to bromate depending on the season or  if they believe there is not enough food to eat and will thus go into brumation allowing them to wait for better circumstances.  \n \n
+    </string>
+
+
+
+                                    <!-- Strings/Values for GeneralInfo.java -->
+
+
+    <string name="ExtraInfoIntro">\t \t \t Missing intro \n
+    Setting up the appropriate enclosure is often considered the most difficult and expensive aspect of Bearded dragon care.
+        Once in place however, a suitable enclosure will be the place your pet calls home for the entirety its life. </string>
+
+    <string name="vetVisitsOne">\t \t Veterinary visits are an essential part of owning and carrying for a bearded dragon. As an owner, you should allow a vicenarian to inspect your bearded dragon at least once a year. \n \n
+    \t \t Before owning a bearded dragon, you may want to investigate if there is an Exotic animal specialist in your area. These are veterinarians specialized in lizards and other exotic animals and are better suited to diagnose common and uncommon health problems your bearded dragon may encounter. \n \n
+    \t \t Veterinarian visits can be expensive, especially if a bearded dragon happens to get sick. Be sure you are willing and able to afford these visits before taking one the responsibility of caring for these animals. \n \n
+    </string>
+
+    <string name="lifeSpanOne">\t \t Bearded dragons have an estimated lifespan of 10-15 years! That means bearded dragon will need an owners love and attention for a pretty long time. Be sure you are ready for the commitment! \n
+    </string>
+
+    <string name="InsectBreedingOne">\t \t Providing food for a bearded dragon can become expensive, even before factoring in the drives to pet store or the cost of shipping. Many owners breed their own insect, primarily roaches.  This may sound disgusting or repulsive at first but insect breeding can be performed in a properly hygienic and clean matter.  This app does not focus on insect breeding, merely we would just like to offer a couple reason for why owners should. \n \n
+	—Breeding saves money! And when you think about it.. isn’t that the name of the game?\n \n
+	—Breeding your own insect ensure you always have food and your bearded dragons never have to go a day waiting for that shipping to come in.\n \n
+    —There are various insect that make good breeders. Dubia roaches are the more commonly bred as they are healthier than crickets yet are rarely every sold at local pet stores.\n \n
+    —Many insects, like dubia roaches, die if they escape the breeding set up. This means you don’t have to worry about your house being infested with insects. \n \n
+    —Once set up, a breeding project pays for itself and is well worth it. If you have other friends with lizards, you may find yourself selling them insects, as you will most likely have more than enough for your own bearded dragon.  \n \n
+    </string>
+
 
 
 

@@ -21,14 +21,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:layout_marginBottom="50dp">
 
         <TextView
-            android:id="@+id/enclosureTittle"
+            android:id="@+id/behaviorTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:text="Enclosure"
+            android:text="Behavior"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="36sp"
@@ -45,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:gravity="start"
-            android:text="@string/enclosureIntro"
+            android:text="@string/behaviorIntro"
             android:textAlignment="textStart"
             android:textColor="@color/colorLayout"
             android:textSize="14sp" />
@@ -53,7 +54,8 @@
         <RelativeLayout android:id="@+id/sectionOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -64,8 +66,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Size. Number of Dragons"
-                android:textColor="@color/colorAccent"
+                android:text="Black Beard"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryText"
                 android:textSize="30sp" />
 
             <View
@@ -81,16 +84,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideTwo"
                 android:layout_margin="8dp"
-                android:text="@string/sizeFirst"
+                android:text="@string/blackBeardOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -101,7 +105,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Lighting"
+                android:text="Head Bobbing"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
@@ -118,16 +122,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideThree"
                 android:layout_margin="8dp"
-                android:text="@string/lightingOne"
+                android:text="@string/headBobbingOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionThree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -138,7 +143,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Heating &amp; Temperature"
+                android:text="Arm Waving"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
@@ -155,16 +160,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideFour"
                 android:layout_margin="8dp"
-                android:text="@string/heatingTempOne"
+                android:text="@string/armWavingOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionFour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -175,7 +181,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Humidity"
+                android:text="Licking"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
@@ -192,16 +198,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideFive"
                 android:layout_margin="8dp"
-                android:text="@string/humidityOne"
+                android:text="@string/lickingOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionFive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -212,7 +219,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Substrate"
+                android:text="Shedding"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
@@ -229,16 +236,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideSix"
                 android:layout_margin="8dp"
-                android:text="@string/substrateOne"
+                android:text="@string/sheddingOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
         <RelativeLayout android:id="@+id/sectionSix"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
             android:background="@color/ButtonBackground">
 
             <TextView
@@ -249,7 +257,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="8dp"
-                android:text="Accessories"
+                android:text="Digging"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp" />
 
@@ -266,9 +274,123 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideSeven"
                 android:layout_margin="8dp"
-                android:text="@string/substrateOne"
+                android:text="@string/diggingOne"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/sectionSeven"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/ButtonBackground">
+
+            <TextView
+                android:id="@+id/titleSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:text="Glass Surfing"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divideEight"
+                style="@style/dividerGreen"
+                android:layout_below="@id/titleSeven"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/infoSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divideEight"
+                android:layout_margin="8dp"
+                android:text="@string/glassSurfingOne"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/sectionEight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/ButtonBackground">
+
+            <TextView
+                android:id="@+id/titleEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:text="Solitary"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divideNine"
+                style="@style/dividerGreen"
+                android:layout_below="@id/titleEight"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/infoEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divideNine"
+                android:layout_margin="8dp"
+                android:text="@string/territorialOne"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/sectionNine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/ButtonBackground">
+
+            <TextView
+                android:id="@+id/titleNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:text="Brumation"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divideTen"
+                style="@style/dividerGreen"
+                android:layout_below="@id/titleNine"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/infoNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divideTen"
+                android:layout_margin="8dp"
+                android:text="@string/BrumationOne"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
