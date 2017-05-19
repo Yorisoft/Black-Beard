@@ -164,6 +164,15 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(aboutUs);
 
                         break;
+
+                    case R.id.premium:
+
+                        break;
+
+                    case R.id.supportUs:
+
+                        break;
+
                 }
                 return false;
             }

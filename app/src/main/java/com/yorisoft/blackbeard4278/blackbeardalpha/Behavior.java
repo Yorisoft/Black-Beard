@@ -13,8 +13,9 @@ import com.google.android.gms.ads.AdView;
 public class Behavior extends AppCompatActivity {
 
     //Declaring all TextViews
-    TextView behaviorTitle,infoOne,infoTwo,infoThree,infoFour,infoFive,infoSix,infoSeven,infoEight,infoNine,titleOne,titleTwo,
-            titleThree,titleFour,titleFive,titleSix,titleSeven,titleEight,titleNine;
+    TextView behaviorTitle,infoOne,infoTwo,infoThree,infoFour,infoFive,infoSix,infoSeven,infoEight,
+            infoNine, infoSixAndHalf,infoSixTwoThird,titleOne,titleTwo,titleThree,titleFour,titleFive,titleSix,titleSeven,
+            titleEight,titleNine,titleSixAndHalf,titleSixTwoThird;
 
     //Declaring all Typefaces
     Typeface Roboto,Congratulations,coffee_tea,coco,coco_light;
@@ -49,6 +50,10 @@ public class Behavior extends AppCompatActivity {
         titleFive.setTypeface(Congratulations);
         titleSix = (TextView)findViewById(R.id.titleSix);
         titleSix.setTypeface(Congratulations);
+        titleSixAndHalf = (TextView)findViewById(R.id.titleSixHalf);
+        titleSixAndHalf.setTypeface(Congratulations);
+        titleSixTwoThird = (TextView)findViewById(R.id.titleSixTwoThirds);
+        titleSixTwoThird.setTypeface(Congratulations);
         titleSeven = (TextView)findViewById(R.id.titleSeven);
         titleSeven.setTypeface(Congratulations);
         titleEight = (TextView)findViewById(R.id.titleEight);
@@ -68,6 +73,10 @@ public class Behavior extends AppCompatActivity {
         infoFive.setTypeface(Roboto);
         infoSix = (TextView)findViewById(R.id.infoSix);
         infoSix.setTypeface(Congratulations);
+        infoSixAndHalf = (TextView)findViewById(R.id.infoSixHalf);
+        infoSixAndHalf.setTypeface(Congratulations);
+        infoSixTwoThird = (TextView)findViewById(R.id.infoSixTwoThirds);
+        infoSixTwoThird.setTypeface(Congratulations);
         infoSeven = (TextView)findViewById(R.id.infoSeven);
         infoSeven.setTypeface(Congratulations);
         infoEight = (TextView)findViewById(R.id.infoEight);
@@ -81,7 +90,7 @@ public class Behavior extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-//AdView for Ads - change device ID whenusing a new testing device.
+//AdView for Ads - change device ID when using a new testing device.
         AdView adView =  (AdView)this.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)

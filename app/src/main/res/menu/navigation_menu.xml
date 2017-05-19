@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:scrollbars="horizontal">
 
     <item android:id="@+id/petDragons"
         android:title="@string/petDragons"
@@ -16,6 +17,14 @@
     <item android:id="@+id/aboutUS"
         android:icon="@mipmap/ic_people_black_24dp"
         android:title="About Us"/>
+
+    <item android:id="@+id/premium"
+        android:icon="@mipmap/ic_people_black_24dp"
+        android:title="Premium"/>
+
+    <item android:id="@+id/supportUs"
+        android:icon="@mipmap/ic_people_black_24dp"
+        android:title="SUPPORT US!"/>
 
 
 </menu>

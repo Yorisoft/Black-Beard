@@ -318,6 +318,85 @@
 
         </RelativeLayout>
 
+
+        <RelativeLayout android:id="@+id/sectionSixHalf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/ButtonBackground">
+
+            <TextView
+                android:id="@+id/titleSixHalf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:text="Mouth Gaping"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divideOneOne"
+                style="@style/dividerGreen"
+                android:layout_below="@id/titleSixHalf"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/infoSixHalf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divideOneOne"
+                android:layout_margin="8dp"
+                android:text="@string/mouthGapingOne"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout android:id="@+id/sectionSixTwoThirds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/ButtonBackground">
+
+            <TextView
+                android:id="@+id/titleSixTwoThirds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:text="Hissing"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divideOneTwo"
+                style="@style/dividerGreen"
+                android:layout_below="@id/titleSixTwoThirds"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/infoSixTwoThirds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divideOneTwo"
+                android:layout_margin="8dp"
+                android:text="@string/hissingOne"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
         <RelativeLayout android:id="@+id/sectionEight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

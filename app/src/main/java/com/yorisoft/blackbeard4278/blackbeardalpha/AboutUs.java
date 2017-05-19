@@ -22,7 +22,10 @@ public class AboutUs extends AppCompatActivity {
     ActionBarDrawerToggle nToggle;
     NavigationView newNavigation;
 
-    Typeface odinFont,coffee_tea,coco;
+    Typeface Roboto,coffee_tea,coco,Congratulations,coco_light;
+
+    TextView mainTitle, aboutDevTitle,missionTitle,sourcesTitle,aboutInfo,missionInfo,sourcesInfo, sourceContainer,sourceExtra;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +33,38 @@ public class AboutUs extends AppCompatActivity {
         setContentView(R.layout.about_us);
 
 //TypeFace
-        odinFont = Typeface.createFromAsset(getAssets(),"font/OdinBold.ttf" );
+        Roboto = Typeface.createFromAsset(getAssets(),"font/Roboto-Light.ttf" );
+        Congratulations = Typeface.createFromAsset(getAssets(),"font/Congratulations_DEMO.ttf" );
         coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
         coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
+        coco_light = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
+
+
+        mainTitle = (TextView)findViewById(R.id.aboutMainTitle);
+        mainTitle.setTypeface(coco);
+        aboutDevTitle= (TextView)findViewById(R.id.devTitle);
+        aboutDevTitle.setTypeface(coco);
+        missionTitle= (TextView)findViewById(R.id.missionTitle);
+        missionTitle.setTypeface(coco);
+        sourcesTitle= (TextView)findViewById(R.id.sourceTitle);
+        sourcesTitle.setTypeface(coco);
+
+
+
+        aboutInfo = (TextView)findViewById(R.id.devSumm);
+        aboutInfo.setTypeface(Roboto);
+        missionInfo = (TextView)findViewById(R.id.missionSumm);
+        missionInfo.setTypeface(Roboto);
+        sourcesInfo = (TextView)findViewById(R.id.sourceSumm);
+        sourcesInfo.setTypeface(Roboto);
+        sourceContainer = (TextView)findViewById(R.id.sourceContainer);
+        sourceContainer.setTypeface(Roboto);
+        sourceExtra = (TextView)findViewById(R.id.sourceContainerExtra);
+        sourceExtra.setTypeface(Roboto);
+
+
+
+
 //Back Button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //Drawer and Nav.

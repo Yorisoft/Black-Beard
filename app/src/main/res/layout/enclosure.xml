@@ -54,12 +54,13 @@
             android:textColor="@color/colorLayout"
             android:textSize="14sp" />
 
-        <RelativeLayout android:id="@+id/sectionOne"
+        <RelativeLayout
+            android:id="@+id/sectionOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
-            android:background="@color/ButtonBackground">
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corners_alpha">
 
             <TextView
                 android:id="@+id/titleOne"
@@ -86,21 +87,23 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideTwo"
                 android:layout_margin="8dp"
+                android:gravity="start"
+                android:padding="8dp"
                 android:text="@string/sizeFirst"
                 android:textAlignment="textStart"
-                android:gravity="start"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="18sp" />
 
         </RelativeLayout>
 
 
-        <RelativeLayout android:id="@+id/sectionOneAndAHalf"
+        <RelativeLayout
+            android:id="@+id/sectionOneAndAHalf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
-            android:background="@color/ButtonBackground">
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corners_alpha">
 
             <TextView
                 android:id="@+id/titleOneAndHalf"
@@ -127,9 +130,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/divideTwoAndHalf"
                 android:layout_margin="8dp"
+                android:gravity="start"
+                android:padding="8dp"
                 android:text="@string/numOfDrag"
                 android:textAlignment="textStart"
-                android:gravity="start"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="18sp" />
 

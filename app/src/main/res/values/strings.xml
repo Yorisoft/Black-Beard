@@ -179,9 +179,9 @@
                                          <!-- Strings/Values for Behavior.java -->
 
 
-    <string name="behaviorIntro">\t \t \t Missing intro \n
-    Setting up the appropriate enclosure is often considered the most difficult and expensive aspect of Bearded dragon care.
-        Once in place however, a suitable enclosure will be the place your pet calls home for the entirety its life. </string>
+    <string name="behaviorIntro">\t \t \t All animals have their unique characteristics and behaviors which set them apart from all other animals: Bearded dragons are no different! Bearded dragon are funny and impressive creatures, and observing their behaviors is very interesting.
+        Owners should be aware of the meaning behind these behaviors in order to better respond to them, and asses a bearded dragons mood. \n
+    </string>
 
     <string name="blackBeardOne">\t \t Probably their most notable characteristics, bearded dragons sometimes turn the scales on their beard completely black in just a matter of moments. It is super cool!  \n \n
     —This is usually a sign of aggression towards another bearded dragon. This makes them look more intimidating to both other beaded dragons and other animals in the wild. \n \n
@@ -210,7 +210,15 @@
     </string>
 
     <string name="diggingOne">\t \t Bearded dragons are great diggers! In the wild they lay their eggs in holes dug out using those spiky claws and create a softly insulted nursery.
-        They also dig to get away from the heat or to build themselves a hide.  Bearded dragons also use digging to trim their nails as well as  to rub against the dirt and remove their shedding skin.
+        They also dig to get away from the heat or to build themselves a hide.  Bearded dragons also use digging to trim their nails as well as  to rub against the dirt and remove their shedding skin.\n
+    </string>
+
+    <string name="mouthGapingOne">\t \t Bearded dragons will sometimes sit in place with their mouth wide open. They do this in order to ventilate their internal body and shed excess heat.
+        There is no need to worry about this behavior and it is most likely a bearded dragon too comfortable to move or not wanting to give up their spot. Make sure the bearded dragon always has the ability to move to a cooler area if it desires to. \n
+    </string>
+
+    <string name="hissingOne">\t \t  This may or may not be shocking, but bearded dragon can hiss. They do this when they are mad or feel threatened. Like previously mentioned, bearded dragons aren’t generally aggressive animals and will rarely ever hiss at owner or people in general.
+        Bearded dragons primarily hiss at other bearded dragons when aggravated, and at other animals when the feel threatened. \n
     </string>
 
     <string name="glassSurfingOne">\t \t Glass surfing is when a bearded dragon claws at or tries climbing up the walls of his enclosure. Like the other behaviors, this can mean multiple things and need to be taken into context. \n \n
@@ -234,9 +242,9 @@
                                     <!-- Strings/Values for GeneralInfo.java -->
 
 
-    <string name="ExtraInfoIntro">\t \t \t Missing intro \n
-    Setting up the appropriate enclosure is often considered the most difficult and expensive aspect of Bearded dragon care.
-        Once in place however, a suitable enclosure will be the place your pet calls home for the entirety its life. </string>
+    <string name="ExtraInfoIntro">\t \t \t There is a ton more that be said on caring for bearded dragons. This application is just a small taste, and the mere basics of owning and caring for beardies.
+        Owners are encouraged to continue learning more and broaden their knowledge as much as possible! Here are some last tips and fact we find worth mentioning. \n
+    </string>
 
     <string name="vetVisitsOne">\t \t Veterinary visits are an essential part of owning and carrying for a bearded dragon. As an owner, you should allow a vicenarian to inspect your bearded dragon at least once a year. \n \n
     \t \t Before owning a bearded dragon, you may want to investigate if there is an Exotic animal specialist in your area. These are veterinarians specialized in lizards and other exotic animals and are better suited to diagnose common and uncommon health problems your bearded dragon may encounter. \n \n
@@ -260,10 +268,33 @@
 
 <!-- Strings/Values for AboutUs.java -->
 
-    <string name="about_us_Intro">\t \t \t \t Section under devel  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf  asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf
-    asdfsdfsdfasdfasdfasdfasdfsdfsdfasdfasdfsdfsdf \n \n </string>
+    <string name="about_title">  About\n
+        Black Beard</string>
+
+    <string name="about_us_Intro">\t \t \t \t Black Beard was created by a Bearded dragon owner – for Bearded dragon owners. The reptile community is large and has always been very helpful! \n \n
+        \t \t \t \t Whether it be in blogs, on websites, or on YouTube: many reptile owners generously share their knowledge and experiences with the rest of us. This app was made in part as a thank you to those members, as well as my way of contributing to the community.  \n
+    </string>
+
+    <string name="about_us_mission">\t \t \t \t Black Beard was developed with the primary focus in mind being scheduling. Most exotic animals require owners to learn a ton of new information and keep track of various needs and activities required to keep their pets healthy.
+        Black Beard was developed to help bearded dragon owners keep track of some of the duties associated with owning a bearded dragon.   \n
+    </string>
+
+    <string name="about_us_sources">\t \t \t \t All the information used for making this app was gathered through research and personal experience. All the sources I have decided to use are sources that have long been relied on by the bearded dragon community and/or sources which I believe promote accurate information. Included are additional resources I believe may be useful to bearded dragon owners.
+        I have used all these sources and information to care for my own bearded dragons and encourage other bearded dragon owners to visit and share these websites and videos.  \n
+    </string>
+
+    <string name="sources_values">The Bearded Dragon \n http://www.thebeardeddragon.org \n \n
+    Bearded Dragon .org \n https://www.beardeddragon.org \n \n
+    Bearded Dragon Care101 \n http://www.beardeddragoncare101.com \n \n
+    Pet Education \n http://www.peteducation.com \n \n
+    </string>
+
+    <string name="sources_values_extra">\t \t \t \t Additional Resources \n \n
+    Raising Reptiles \n https://www.youtube.com/user/RaisingReptilesCo \n \n
+    Michel Behrends \n https://www.youtube.com/user/mbehrends3277 \n \n
+    Earthling1984 \n https://www.youtube.com/playlist?list=PL1wnVWttAh-MQJftEt1VAL-sXhY7uhEEj \n \n
+    DaltonsDragons \n https://www.youtube.com/user/ReptiKent \n \n
+    </string>
+
 
 </resources>
