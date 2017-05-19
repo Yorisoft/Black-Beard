@@ -179,8 +179,8 @@
                                          <!-- Strings/Values for Behavior.java -->
 
 
-    <string name="behaviorIntro">\t \t \t All animals have their unique characteristics and behaviors which set them apart from all other animals: Bearded dragons are no different! Bearded dragon are funny and impressive creatures, and observing their behaviors is very interesting.
-        Owners should be aware of the meaning behind these behaviors in order to better respond to them, and asses a bearded dragons mood. \n
+    <string name="behaviorIntro">\t \t \t All animals have their unique characteristics and behaviors which set them apart from all other animals: Bearded dragons are no different! Bearded dragon are funny and impressive creatures, observing their behaviors is very exiting the first couple of times.
+        Owners should be aware of the meaning behind these behaviors in order to better respond to them, and asses a bearded dragons mood.
     </string>
 
     <string name="blackBeardOne">\t \t Probably their most notable characteristics, bearded dragons sometimes turn the scales on their beard completely black in just a matter of moments. It is super cool!  \n \n
@@ -243,7 +243,7 @@
 
 
     <string name="ExtraInfoIntro">\t \t \t There is a ton more that be said on caring for bearded dragons. This application is just a small taste, and the mere basics of owning and caring for beardies.
-        Owners are encouraged to continue learning more and broaden their knowledge as much as possible! Here are some last tips and fact we find worth mentioning. \n
+        Owners are encouraged to continue learning more and broaden their knowledge as much as possible! Here are some last tips and fact we find worth mentioning.
     </string>
 
     <string name="vetVisitsOne">\t \t Veterinary visits are an essential part of owning and carrying for a bearded dragon. As an owner, you should allow a vicenarian to inspect your bearded dragon at least once a year. \n \n
