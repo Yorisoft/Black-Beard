@@ -28,7 +28,7 @@ public class CareGuideSelect extends AppCompatActivity {
 
     Button enclosure,food,handling,behavior,genInfo ;
 
-    Typeface odinFont,coffee_tea,coco;
+    Typeface odinFont,coffee_tea,coco,coolvetica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class CareGuideSelect extends AppCompatActivity {
         odinFont = Typeface.createFromAsset(getAssets(),"font/OdinBold.ttf" );
         coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
         coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
+        coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
 
 
         enclosure =(Button)findViewById(R.id.enclosureButton);
@@ -99,6 +100,14 @@ public class CareGuideSelect extends AppCompatActivity {
                         startActivity(aboutUs);
 
                         break;
+
+                    case R.id.premium:
+                        nDrawerLayout.closeDrawers();
+                        Intent premium = new Intent(CareGuideSelect.this, Premium.class);
+                        startActivity(premium);
+
+                        break;
+
                 }
                 return false;
             }
@@ -149,7 +158,7 @@ public class CareGuideSelect extends AppCompatActivity {
         } else {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
-            navPetName.setTypeface(coco);
+            navPetName.setTypeface(coolvetica);
            // navPetName.setTextSize(32);
         }
 

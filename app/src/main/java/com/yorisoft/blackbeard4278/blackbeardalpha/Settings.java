@@ -23,7 +23,7 @@ public class Settings extends AppCompatActivity {
     ActionBarDrawerToggle nToggle;
     NavigationView newNavigation;
 
-    Typeface odinFont,coffee_tea,coco;
+    Typeface odinFont,coffee_tea,coco,coolvetica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class Settings extends AppCompatActivity {
         odinFont = Typeface.createFromAsset(getAssets(),"font/OdinBold.ttf" );
         coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
         coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
+        coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -73,6 +74,13 @@ public class Settings extends AppCompatActivity {
                         nDrawerLayout.closeDrawers();
                         Intent aboutUs = new Intent(Settings.this,AboutUs.class);
                         startActivity(aboutUs);
+
+                        break;
+
+                    case R.id.premium:
+                        nDrawerLayout.closeDrawers();
+                        Intent premium = new Intent(Settings.this, Premium.class);
+                        startActivity(premium);
 
                         break;
                 }
@@ -127,7 +135,7 @@ public class Settings extends AppCompatActivity {
         } else {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
-            navPetName.setTypeface(coco);
+            navPetName.setTypeface(coolvetica);
           //  navPetName.setTextSize(32);
         }
 

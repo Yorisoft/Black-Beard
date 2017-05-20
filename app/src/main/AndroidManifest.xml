@@ -172,6 +172,29 @@
             </intent-filter>
         </activity>
 
+
+        <activity android:name=".Premium"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.PREMIUM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SupportUs"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.yorisoft.blackbeard4278.blackbeard.SUPPORTUS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+            </intent-filter>
+        </activity>
+
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"

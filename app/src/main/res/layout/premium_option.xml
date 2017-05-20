@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerMain"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".Premium"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white_on_white"
+        android:clipToPadding="false"
+        android:padding="8dp">
+
+    <TextView
+        android:id="@+id/premiumMainTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:text="@string/premium_title"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        />
+
+    <View
+        android:id="@+id/about_divider"
+        style="@style/Divider"
+        android:layout_marginBottom="8dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/premiumDev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_views"
+        android:clipToPadding="false"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/premiumTopTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:gravity="start"
+            android:paddingLeft="4dp"
+            android:text="Need more profiles?"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="36sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/premiumBottomTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/premiumTopTitle"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:paddingLeft="8dp"
+            android:text="Go Premium!"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="36sp" />
+
+        <ImageButton android:id="@+id/profileImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_queue_green_36dp"
+            android:layout_below="@+id/premiumBottomTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"/>
+
+
+
+        <TextView
+            android:id="@+id/premiumSumm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileImageView"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/premiumSummOne"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp" />
+
+        <ImageButton android:id="@+id/bonusSectionImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_new_releases_green_48dp"
+            android:layout_below="@+id/premiumSumm"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/premiumSummTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bonusSectionImageView"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/premiumSummTwo"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp" />
+
+
+        <ImageButton android:id="@+id/noAdsImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_sentiment_very_satisfied_green_48dp"
+            android:layout_below="@+id/premiumSummTwo"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp" />
+
+        <TextView
+            android:id="@+id/premiumSummThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noAdsImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/premiumSummThree"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:maxLines="2"/>
+
+        <Button android:id="@+id/premiumBttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/premiumSummThree"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:hint="COMING SOON!"
+            android:textSize="32dp"
+            android:clickable="false" />
+
+
+    </RelativeLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.NavigationView android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/navigation_menu" android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header">
+
+    </android.support.design.widget.NavigationView>
+
+
+
+</android.support.v4.widget.DrawerLayout>

@@ -30,7 +30,7 @@
     <string name="about_Us">About Us</string>
 
 
-                                            <!-- Strings/Values for CareGuideSelect.java -->
+                                            <!-- Strings/Values for CareGuideSelect.xml -->
     <string name="firstBttn">Enclosure</string>
     <string name="secondBttn"><![CDATA[Food & Diet]]></string>
     <string name="thirdBttn">Handling</string>
@@ -38,7 +38,7 @@
     <string name="fithBttn">Extra info.</string>
 
 
-                                            <!-- Strings/Values for Enclosure.java -->
+                                            <!-- Strings/Values for Enclosure.xml -->
 
     <string name="enclosureIntro">\t\t\tSetting up the appropriate enclosure is often considered the most difficult and expensive aspect of Bearded dragon care.
         Once in place however, a suitable enclosure will be the place your pet calls home for the entirety its life.</string>
@@ -76,7 +76,7 @@
     </string>
 
 
-                                        <!-- Strings/Values for FoodGuide.java -->
+                                        <!-- Strings/Values for FoodGuide.xml -->
 
 
     <string name="foodIntro"> \t \t You will need to provide the appropriate foods and vitamins to make sure your bearded dragon is healthy and happy. Providing all the right foods and all the right vitamins your beardie needs can be a bit expensive and a perhaps even expensive. But! Once you get the hang of it, it becomes fun and a great way to bond with your beardie. \n \n
@@ -132,7 +132,7 @@
     </string>
 
 
-                                      <!-- Strings/Values for Handling.java -->
+                                      <!-- Strings/Values for Handling.xml -->
     
     
     <string name="handlingIntro"> \t \t \t \t Handling a bearded dragon can be intimidating for new owners but in reality beardies enjoy being held and it is easy.
@@ -176,7 +176,7 @@
     </string>
 
 
-                                         <!-- Strings/Values for Behavior.java -->
+                                         <!-- Strings/Values for Behavior.xml -->
 
 
     <string name="behaviorIntro">\t \t \t All animals have their unique characteristics and behaviors which set them apart from all other animals: Bearded dragons are no different! Bearded dragon are funny and impressive creatures, observing their behaviors is very exiting the first couple of times.
@@ -239,7 +239,7 @@
 
 
 
-                                    <!-- Strings/Values for GeneralInfo.java -->
+                                    <!-- Strings/Values for GeneralInfo.xml -->
 
 
     <string name="ExtraInfoIntro">\t \t \t There is a ton more that be said on caring for bearded dragons. This application is just a small taste, and the mere basics of owning and caring for beardies.
@@ -266,7 +266,7 @@
 
 
 
-<!-- Strings/Values for AboutUs.java -->
+<!-- Strings/Values for AboutUs.xml -->
 
     <string name="about_title">  About\n
         Black Beard</string>
@@ -294,6 +294,29 @@
     Michel Behrends \n https://www.youtube.com/user/mbehrends3277 \n \n
     Earthling1984 \n https://www.youtube.com/playlist?list=PL1wnVWttAh-MQJftEt1VAL-sXhY7uhEEj \n \n
     DaltonsDragons \n https://www.youtube.com/user/ReptiKent \n \n
+    </string>
+
+
+
+
+                                                 <!-- Strings/Values for premium.xml -->
+
+
+    <string name="premium_title">  Premium\n
+        COMING SOON
+    </string>
+
+    <string name="premiumSummOne">\t \t \t \t Black Beard offers additional profiles,
+        for users who want to keep track of more than one bearded dragon. \n
+    </string>
+
+    <string name="premiumSummTwo">\t \t \t \t Premium users will also receive a bonus section in the Care Tips. \n
+        This is to show our appreciation for your support! \n
+    </string>
+
+    <string name="premiumSummThree"> No more ads! \n
+        Enjoy all the content in this app, ad free.
+
     </string>
 
 

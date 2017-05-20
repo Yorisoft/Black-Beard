@@ -6,67 +6,68 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
-
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AboutUs extends AppCompatActivity {
+public class Premium extends AppCompatActivity {
 
     DrawerLayout nDrawerLayout;
     ActionBarDrawerToggle nToggle;
     NavigationView newNavigation;
 
-    Typeface Roboto,coffee_tea,coco,Congratulations,coco_light,coolvetica;
 
-    TextView mainTitle, aboutDevTitle,missionTitle,sourcesTitle,aboutInfo,missionInfo,sourcesInfo, sourceContainer,sourceExtra;
+    Typeface Roboto,coffee_tea,coco,Congratulations,coco_light, coolvetica;
+
+    TextView premiumMainTitle,premiumTopTitle,premiumBottomTitle,premiumSumm,premiumSummTwo,premiumSummThree;
+
+    Button premiumBttn;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about_us);
+        setContentView(R.layout.premium_option);
 
-//TypeFace
+
+
+        //TypeFace
         Roboto = Typeface.createFromAsset(getAssets(),"font/Roboto-Light.ttf" );
         Congratulations = Typeface.createFromAsset(getAssets(),"font/Congratulations_DEMO.ttf" );
         coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
         coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
         coco_light = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
         coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
+//TextViews
+        premiumMainTitle = (TextView)findViewById(R.id.premiumMainTitle);
+        premiumMainTitle.setTypeface(coolvetica);
+        premiumTopTitle = (TextView)findViewById(R.id.premiumTopTitle);
+        premiumTopTitle.setTypeface(coolvetica);
+        premiumBottomTitle = (TextView)findViewById(R.id.premiumBottomTitle);
+        premiumBottomTitle.setTypeface(coolvetica);
+        premiumSumm = (TextView)findViewById(R.id.premiumSumm);
+        premiumSumm.setTypeface(Roboto);
+        premiumSummTwo = (TextView)findViewById(R.id.premiumSummTwo);
+        premiumSummTwo.setTypeface(Roboto);
+        premiumSummThree = (TextView)findViewById(R.id.premiumSummThree);
+        premiumSummThree.setTypeface(Roboto);
 
-
-        mainTitle = (TextView)findViewById(R.id.aboutMainTitle);
-        mainTitle.setTypeface(coco);
-        aboutDevTitle= (TextView)findViewById(R.id.devTitle);
-        aboutDevTitle.setTypeface(coco);
-        missionTitle= (TextView)findViewById(R.id.missionTitle);
-        missionTitle.setTypeface(coco);
-        sourcesTitle= (TextView)findViewById(R.id.sourceTitle);
-        sourcesTitle.setTypeface(coco);
-
-
-
-        aboutInfo = (TextView)findViewById(R.id.devSumm);
-        aboutInfo.setTypeface(Roboto);
-        missionInfo = (TextView)findViewById(R.id.missionSumm);
-        missionInfo.setTypeface(Roboto);
-        sourcesInfo = (TextView)findViewById(R.id.sourceSumm);
-        sourcesInfo.setTypeface(Roboto);
-        sourceContainer = (TextView)findViewById(R.id.sourceContainer);
-        sourceContainer.setTypeface(Roboto);
-        sourceExtra = (TextView)findViewById(R.id.sourceContainerExtra);
-        sourceExtra.setTypeface(Roboto);
+//Button
+        premiumBttn = (Button)findViewById(R.id.premiumBttn);
+        premiumBttn.setTypeface(coco);
 
 
 
 
-//Back Button
+
+        //Back Button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //Drawer and Nav.
         nDrawerLayout = (DrawerLayout)findViewById(R.id.drawerMain);
@@ -82,21 +83,21 @@ public class AboutUs extends AppCompatActivity {
                     case R.id.petDragons:
                         //Do some thing here
                         nDrawerLayout.closeDrawers();
-                        Intent userPets = new Intent(AboutUs.this,MainActivity.class);
+                        Intent userPets = new Intent(Premium.this,MainActivity.class);
                         startActivity(userPets);
 
                         break;
                     case R.id.careTips:
                         //Do some thing here
                         nDrawerLayout.closeDrawers();
-                        Intent careGuide = new Intent(AboutUs.this,CareGuideSelect.class);
+                        Intent careGuide = new Intent(Premium.this,CareGuideSelect.class);
                         startActivity(careGuide);
 
                         break;
 
                     case R.id.settings:
                         nDrawerLayout.closeDrawers();
-                        Intent nSetting = new Intent(AboutUs.this,Settings.class);
+                        Intent nSetting = new Intent(Premium.this,Settings.class);
                         startActivity(nSetting);
 
                         break;
@@ -109,7 +110,7 @@ public class AboutUs extends AppCompatActivity {
 
                     case R.id.premium:
                         nDrawerLayout.closeDrawers();
-                        Intent premium = new Intent(AboutUs.this, Premium.class);
+                        Intent premium = new Intent(Premium.this, Premium.class);
                         startActivity(premium);
 
                         break;
@@ -121,11 +122,10 @@ public class AboutUs extends AppCompatActivity {
         });
         nToggle.syncState();
 
-
-//NavHeader and/or other values
         getValues();
 
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -133,7 +133,6 @@ public class AboutUs extends AppCompatActivity {
         return(nToggle.onOptionsItemSelected(item));
 
     }
-
 
     private void getValues() {
 
@@ -166,7 +165,7 @@ public class AboutUs extends AppCompatActivity {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
             navPetName.setTypeface(coolvetica);
-           // navPetName.setTextSize(38);
+            // navPetName.setTextSize(38);
         }
 
 
@@ -175,3 +174,5 @@ public class AboutUs extends AppCompatActivity {
 
 
 }
+
+

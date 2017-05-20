@@ -49,12 +49,13 @@
             android:textColor="@color/colorLayout"
             android:textSize="14sp" />
 
-        <RelativeLayout android:id="@+id/sectionOne"
+        <RelativeLayout
+            android:id="@+id/sectionOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
-            android:background="@color/ButtonBackground">
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corners_alpha">
 
             <TextView
                 android:id="@+id/titleOne"
@@ -87,12 +88,13 @@
 
         </RelativeLayout>
 
-        <RelativeLayout android:id="@+id/sectionTwo"
+        <RelativeLayout
+            android:id="@+id/sectionTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
-            android:background="@color/ButtonBackground">
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corners_alpha">
 
             <TextView
                 android:id="@+id/titleTwo"
@@ -125,12 +127,13 @@
 
         </RelativeLayout>
 
-        <RelativeLayout android:id="@+id/sectionThree"
+        <RelativeLayout
+            android:id="@+id/sectionThree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
-            android:background="@color/ButtonBackground">
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corners_alpha">
 
             <TextView
                 android:id="@+id/titleThree"
@@ -163,12 +166,13 @@
 
         </RelativeLayout>
 
-        <RelativeLayout android:id="@+id/sectionFour"
+        <RelativeLayout
+            android:id="@+id/sectionFour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
-            android:background="@color/ButtonBackground">
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corners_alpha">
 
             <TextView
                 android:id="@+id/titleFour"
@@ -201,12 +205,13 @@
 
         </RelativeLayout>
 
-        <RelativeLayout android:id="@+id/sectionFive"
+        <RelativeLayout
+            android:id="@+id/sectionFive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
-            android:background="@color/ButtonBackground">
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corners_alpha">
 
             <TextView
                 android:id="@+id/titleFive"

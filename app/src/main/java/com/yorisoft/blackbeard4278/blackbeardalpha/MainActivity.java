@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView newNavigation;
 
 //Declaring Typeface
-    Typeface billyOhio,coco,cocoLight;
+    Typeface billyOhio,coco,cocoLight,coolvetica;
 
 
     @Override
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         billyOhio = Typeface.createFromAsset(getAssets(),"font/BillyOhio.ttf" );
         coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
         cocoLight = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
+        coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
 
 //Initializing variables for Pet Image
         petPicture = (ImageView) findViewById(R.id.imageView2);
@@ -166,10 +167,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.premium:
-
-                        break;
-
-                    case R.id.supportUs:
+                        newDrawerLayout.closeDrawers();
+                        Intent premium = new Intent(MainActivity.this, Premium.class);
+                        startActivity(premium);
 
                         break;
 
@@ -404,7 +404,7 @@ public void imageAndNameEdit(View v) {
         } else {
            navPetName.setText(" "+ name +" ");
             navPetName.setAllCaps(true);
-            navPetName.setTypeface(coco);
+            navPetName.setTypeface(coolvetica);
            // navPetName.setTextSize(32);
         }
     }
