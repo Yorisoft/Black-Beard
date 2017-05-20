@@ -24,7 +24,7 @@ public class Premium extends AppCompatActivity {
     NavigationView newNavigation;
 
 
-    Typeface Roboto,coffee_tea,coco,Congratulations,coco_light, coolvetica;
+    Typeface Roboto,gravity,Congratulations, bebasKai,gravityBold;
 
     TextView premiumMainTitle,premiumTopTitle,premiumBottomTitle,premiumSumm,premiumSummTwo,premiumSummThree;
 
@@ -41,17 +41,16 @@ public class Premium extends AppCompatActivity {
         //TypeFace
         Roboto = Typeface.createFromAsset(getAssets(),"font/Roboto-Light.ttf" );
         Congratulations = Typeface.createFromAsset(getAssets(),"font/Congratulations_DEMO.ttf" );
-        coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
-        coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
-        coco_light = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
-        coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
+        gravity = Typeface.createFromAsset(getAssets(),"font/Gravity-Regular.ttf" );
+        gravityBold = Typeface.createFromAsset(getAssets(),"font/Gravity-Bold.ttf" );
+        bebasKai = Typeface.createFromAsset(getAssets(),"font/BebasKai-Regular.ttf" );
 //TextViews
         premiumMainTitle = (TextView)findViewById(R.id.premiumMainTitle);
-        premiumMainTitle.setTypeface(coolvetica);
+        premiumMainTitle.setTypeface(gravity);
         premiumTopTitle = (TextView)findViewById(R.id.premiumTopTitle);
-        premiumTopTitle.setTypeface(coolvetica);
+        premiumTopTitle.setTypeface(gravity);
         premiumBottomTitle = (TextView)findViewById(R.id.premiumBottomTitle);
-        premiumBottomTitle.setTypeface(coolvetica);
+        premiumBottomTitle.setTypeface(gravity);
         premiumSumm = (TextView)findViewById(R.id.premiumSumm);
         premiumSumm.setTypeface(Roboto);
         premiumSummTwo = (TextView)findViewById(R.id.premiumSummTwo);
@@ -61,7 +60,7 @@ public class Premium extends AppCompatActivity {
 
 //Button
         premiumBttn = (Button)findViewById(R.id.premiumBttn);
-        premiumBttn.setTypeface(coco);
+        premiumBttn.setTypeface(gravity);
 
 
 
@@ -164,7 +163,7 @@ public class Premium extends AppCompatActivity {
         } else {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
-            navPetName.setTypeface(coolvetica);
+            navPetName.setTypeface(gravityBold);
             // navPetName.setTextSize(38);
         }
 

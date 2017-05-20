@@ -20,7 +20,7 @@ public class GenInformation extends AppCompatActivity {
 
 
     //Declaring all Typefaces
-    Typeface Roboto,Congratulations,coffee_tea,coco,coco_light;
+    Typeface Roboto,Congratulations,gravity;
 
 
 
@@ -32,13 +32,11 @@ public class GenInformation extends AppCompatActivity {
         //Initializing variables for Typefaces
         Roboto = Typeface.createFromAsset(getAssets(),"font/Roboto-Light.ttf" );
         Congratulations = Typeface.createFromAsset(getAssets(),"font/Congratulations_DEMO.ttf" );
-        coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
-        coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
-        coco_light = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
+        gravity = Typeface.createFromAsset(getAssets(),"font/Gravity-Regular.ttf" );
 
         //Initializing variables for Textviews
         extraInfoTitle = (TextView)findViewById(R.id.extraInfoTitle);
-        extraInfoTitle.setTypeface(coco);
+        extraInfoTitle.setTypeface(gravity);
 
         titleOne = (TextView)findViewById(R.id.titleOne);
         titleOne.setTypeface(Congratulations);

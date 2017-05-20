@@ -23,7 +23,9 @@ public class Settings extends AppCompatActivity {
     ActionBarDrawerToggle nToggle;
     NavigationView newNavigation;
 
-    Typeface odinFont,coffee_tea,coco,coolvetica;
+    Typeface odinFont, gravity ,bebasKai;
+
+    TextView settingTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +33,14 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.setting_main);
 
 
+
         odinFont = Typeface.createFromAsset(getAssets(),"font/OdinBold.ttf" );
-        coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
-        coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
-        coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
+        gravity = Typeface.createFromAsset(getAssets(),"font/Gravity-Regular.ttf" );
+        bebasKai = Typeface.createFromAsset(getAssets(),"font/BebasKai-Regular.ttf" );
+
+
+        settingTitle = (TextView)findViewById(R.id.settingTitle);
+        settingTitle.setTypeface(gravity);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -135,7 +141,7 @@ public class Settings extends AppCompatActivity {
         } else {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
-            navPetName.setTypeface(coolvetica);
+            navPetName.setTypeface(bebasKai);
           //  navPetName.setTextSize(32);
         }
 

@@ -28,7 +28,7 @@ public class CareGuideSelect extends AppCompatActivity {
 
     Button enclosure,food,handling,behavior,genInfo ;
 
-    Typeface odinFont,coffee_tea,coco,coolvetica;
+    Typeface odinFont,casual,gravity, bebasKai,gravityBold;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,21 +36,22 @@ public class CareGuideSelect extends AppCompatActivity {
         setContentView(R.layout.care_guide_options);
 
         odinFont = Typeface.createFromAsset(getAssets(),"font/OdinBold.ttf" );
-        coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
-        coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
-        coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
+        casual = Typeface.createFromAsset(getAssets(),"font/SemiCasual.ttf" );
+        gravity = Typeface.createFromAsset(getAssets(),"font/Gravity-Regular.ttf" );
+        gravityBold = Typeface.createFromAsset(getAssets(),"font/Gravity-Bold.ttf" );
+        bebasKai = Typeface.createFromAsset(getAssets(),"font/BebasKai-Regular.ttf" );
 
 
         enclosure =(Button)findViewById(R.id.enclosureButton);
-        enclosure.setTypeface(coffee_tea);
+        enclosure.setTypeface(casual);
         food =(Button)findViewById(R.id.foodButton);
-        food.setTypeface(coffee_tea);
+        food.setTypeface(casual);
         handling =(Button)findViewById(R.id.handlingButton);
-        handling.setTypeface(coffee_tea);
+        handling.setTypeface(casual);
         behavior =(Button)findViewById(R.id.behaviorButton);
-        behavior.setTypeface(coffee_tea);
+        behavior.setTypeface(casual);
         genInfo =(Button)findViewById(R.id.generalInfoButton);
-        genInfo.setTypeface(coffee_tea);
+        genInfo.setTypeface(casual);
 
 
 
@@ -158,7 +159,7 @@ public class CareGuideSelect extends AppCompatActivity {
         } else {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
-            navPetName.setTypeface(coolvetica);
+            navPetName.setTypeface(gravityBold);
            // navPetName.setTextSize(32);
         }
 

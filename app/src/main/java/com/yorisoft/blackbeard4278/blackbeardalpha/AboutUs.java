@@ -22,7 +22,7 @@ public class AboutUs extends AppCompatActivity {
     ActionBarDrawerToggle nToggle;
     NavigationView newNavigation;
 
-    Typeface Roboto,coffee_tea,coco,Congratulations,coco_light,coolvetica;
+    Typeface Roboto,coffee_tea,Congratulations,bebasKai,gravity,gravityBold;
 
     TextView mainTitle, aboutDevTitle,missionTitle,sourcesTitle,aboutInfo,missionInfo,sourcesInfo, sourceContainer,sourceExtra;
 
@@ -35,20 +35,19 @@ public class AboutUs extends AppCompatActivity {
 //TypeFace
         Roboto = Typeface.createFromAsset(getAssets(),"font/Roboto-Light.ttf" );
         Congratulations = Typeface.createFromAsset(getAssets(),"font/Congratulations_DEMO.ttf" );
-        coffee_tea = Typeface.createFromAsset(getAssets(),"font/coffee_tea.ttf" );
-        coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
-        coco_light = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
-        coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
+        gravity = Typeface.createFromAsset(getAssets(),"font/Gravity-Regular.ttf" );
+        gravityBold = Typeface.createFromAsset(getAssets(),"font/Gravity-Bold.ttf" );
+        bebasKai = Typeface.createFromAsset(getAssets(),"font/BebasKai-Regular.ttf" );
 
 
         mainTitle = (TextView)findViewById(R.id.aboutMainTitle);
-        mainTitle.setTypeface(coco);
+        mainTitle.setTypeface(gravity);
         aboutDevTitle= (TextView)findViewById(R.id.devTitle);
-        aboutDevTitle.setTypeface(coco);
+        aboutDevTitle.setTypeface(gravity);
         missionTitle= (TextView)findViewById(R.id.missionTitle);
-        missionTitle.setTypeface(coco);
+        missionTitle.setTypeface(gravity);
         sourcesTitle= (TextView)findViewById(R.id.sourceTitle);
-        sourcesTitle.setTypeface(coco);
+        sourcesTitle.setTypeface(gravity);
 
 
 
@@ -165,7 +164,7 @@ public class AboutUs extends AppCompatActivity {
         } else {
             navPetName.setText(" "+ navName +" ");
             navPetName.setAllCaps(true);
-            navPetName.setTypeface(coolvetica);
+            navPetName.setTypeface(gravityBold);
            // navPetName.setTextSize(38);
         }
 

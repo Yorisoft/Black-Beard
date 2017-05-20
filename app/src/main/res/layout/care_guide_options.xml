@@ -11,7 +11,7 @@
         android:id="@+id/guideLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/desert03"
+        android:background="@drawable/desert02"
         android:orientation="vertical">
 
 
@@ -61,7 +61,7 @@
                     android:text="@string/secondBttn"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhiteText"
-                    android:textSize="60sp"
+                    android:textSize="50sp"
                     android:textStyle="bold" />
 
 
@@ -83,15 +83,17 @@
                     android:id="@+id/behaviorButton"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:layout_below="@id/handlingButton"
-                    android:layout_margin="8dp"
                     android:background="@color/Buttons"
                     android:onClick="guideClick"
                     android:paddingTop="8dp"
                     android:text="@string/fourthBttn"
                     android:textColor="@color/colorWhiteText"
                     android:textSize="60sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginTop="9dp"
+                    android:layout_below="@+id/handlingButton"
+                    android:layout_alignLeft="@+id/generalInfoButton"
+                    android:layout_alignStart="@+id/generalInfoButton" />
 
                 <Button
                     android:id="@+id/generalInfoButton"

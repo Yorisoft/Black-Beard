@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
 //Declaring all TextViews
     TextView ageOne, weightOne, lengthOne, petName, newBath, lastBath, newVeggie, oldVeggie,
-            newShedd, oldShedd, newBM, lastBM, newUvb, oldUvb,newVisit,oldVisit;
+            newShedd, oldShedd, newBM, lastBM, newUvb, oldUvb,newVisit,oldVisit, infoTextView,schdlTextView;
 
 //Declaring all TextViews
     ImageView petPicture;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView newNavigation;
 
 //Declaring Typeface
-    Typeface billyOhio,coco,cocoLight,coolvetica;
+    Typeface gravity,bebasKai,gravityBold;
 
 
     @Override
@@ -68,10 +68,11 @@ public class MainActivity extends AppCompatActivity {
         notific.setAutoCancel(true);
 
 //Initializing variables for Typeface
-        billyOhio = Typeface.createFromAsset(getAssets(),"font/BillyOhio.ttf" );
-        coco = Typeface.createFromAsset(getAssets(),"font/CocoGothic_trial.ttf" );
-        cocoLight = Typeface.createFromAsset(getAssets(),"font/CocoGothic-Light_trial.ttf" );
-        coolvetica = Typeface.createFromAsset(getAssets(),"font/coolvetica_rg.ttf" );
+
+
+        gravity = Typeface.createFromAsset(getAssets(),"font/Gravity-Regular.ttf" );
+        gravityBold = Typeface.createFromAsset(getAssets(),"font/Gravity-Bold.ttf" );
+        bebasKai = Typeface.createFromAsset(getAssets(),"font/BebasKai-Regular.ttf" );
 
 //Initializing variables for Pet Image
         petPicture = (ImageView) findViewById(R.id.imageView2);
@@ -93,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
         oldUvb = (TextView) findViewById(R.id.oldUvb);
         newVisit= (TextView) findViewById(R.id.newVisit);
         oldVisit= (TextView) findViewById(R.id.oldVisit);
+        infoTextView = (TextView) findViewById(R.id.infoTextView);
+        infoTextView.setTypeface(gravity);
+        schdlTextView = (TextView) findViewById(R.id.schdlTextView);
+        schdlTextView.setTypeface(gravity);
 
 //Initializing variables for Top and Button Edit button
         bttmEdit = (Button) findViewById(R.id.editBttn);
@@ -299,9 +304,9 @@ public void imageAndNameEdit(View v) {
         if (name.equals("Pet name!")) {
             //Keep Hint
         } else {
-            petName.setText(" "+ name +" ");
-            petName.setTypeface(coco);
-            petName.setTextSize(48);
+            petName.setText(name);
+            petName.setTypeface(gravityBold);
+            petName.setTextSize(38);
         }
 //set weight
         if (weight.equals("weight")) {
@@ -402,10 +407,10 @@ public void imageAndNameEdit(View v) {
         if (name.equals("Pet name!")) {
             //Keep Hint
         } else {
-           navPetName.setText(" "+ name +" ");
+           navPetName.setText(name);
             navPetName.setAllCaps(true);
-            navPetName.setTypeface(coolvetica);
-           // navPetName.setTextSize(32);
+            navPetName.setTypeface(gravityBold);
+            navPetName.setTextSize(32);
         }
     }
 
