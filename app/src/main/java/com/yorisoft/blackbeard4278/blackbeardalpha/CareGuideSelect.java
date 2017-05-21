@@ -17,7 +17,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 public class CareGuideSelect extends AppCompatActivity {
+
 
     DrawerLayout nDrawerLayout;
     ActionBarDrawerToggle nToggle;
@@ -73,6 +78,7 @@ public class CareGuideSelect extends AppCompatActivity {
         newNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
+
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.petDragons:
@@ -162,7 +168,6 @@ public class CareGuideSelect extends AppCompatActivity {
             navPetName.setTypeface(gravityBold);
            // navPetName.setTextSize(32);
         }
-
 
     }
 

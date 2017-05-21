@@ -102,15 +102,15 @@ public class Premium extends AppCompatActivity {
                         break;
 
                     case R.id.aboutUS:
-
                         nDrawerLayout.closeDrawers();
+                        Intent aboutUs = new Intent(Premium.this,AboutUs.class);
+                        startActivity(aboutUs);
 
                         break;
 
                     case R.id.premium:
+
                         nDrawerLayout.closeDrawers();
-                        Intent premium = new Intent(Premium.this, Premium.class);
-                        startActivity(premium);
 
                         break;
 

@@ -133,8 +133,8 @@ public class MainEdit extends AppCompatActivity {
         String genderHint = prefs.getString("dragon_gender", "Pet Gender");
 
 
-        String lastBathHint = prefs.getString("bath_future", "Last bathed:Every 7 days");
-        String smallVeggHint = prefs.getString("veggies_small", "Last veggie feeding:Every 4 days");
+        String lastBathHint = prefs.getString("bath_future", "Last bathed:Every 4 days");
+        String smallVeggHint = prefs.getString("veggies_small", "Last veggie feeding:Every 3 days");
         String smallSheddHint = prefs.getString("Shedd_small", "Shedding Start-date");
         String smallBmHint = prefs.getString("bm_small", "Last B.M.");
         String smallUvbHint = prefs.getString("uvb_small", "Date First Used");
@@ -518,7 +518,7 @@ public class MainEdit extends AppCompatActivity {
         schd.calculateMonth();
         schd.calculateDay();
         schd.calculateWeek();
-        Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "set to" + schd.getFutureBath(), Toast.LENGTH_SHORT).show();
         bathSmall.setText(schd.getResult());
 
     }
@@ -527,7 +527,7 @@ public class MainEdit extends AppCompatActivity {
         schd.calculateMonth();
         schd.calculateDay();
         schd.calculateWeek();
-        Toast.makeText(getBaseContext(), "set to" + schd.getResult(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "set to" + schd.getFutureVegg(), Toast.LENGTH_SHORT).show();
         veggSmallView.setText(schd.getResult());
 
     }

@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .addTestDevice("0F833BB01FC8E0A5D3592824FD6F0322")//DeviceID
                 .build();
-        adView.loadAd(adRequest);
+       adView.loadAd(adRequest);
 
 
     }
