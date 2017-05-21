@@ -7,13 +7,17 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 
 //TODO add margin bottom to GUI
 
 public class FoodGuide extends AppCompatActivity {
+
+    private InterstitialAd nInterstitialAd;
 
     //Declaring all TextViews
     TextView dietTitle,infoOne,infoTwo,infoThree,infoThreeAndHalf,infoFour,titleOne,titleTwo,
@@ -64,6 +68,20 @@ public class FoodGuide extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        nInterstitialAd = new InterstitialAd(this);
+        nInterstitialAd.setAdUnitId("ca-app-pub-4542204585673533/8753016406");
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("0F833BB01FC8E0A5D3592824FD6F0322")//DeviceID
+                .build();
+        nInterstitialAd.loadAd(request);
+
+        nInterstitialAd.setAdListener(new AdListener(){
+            public void onAdLoaded(){
+                displayInterstitial();
+            }
+        });
+
 
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
@@ -71,6 +89,16 @@ public class FoodGuide extends AppCompatActivity {
                 .build();
         AdView adView =  (AdView)this.findViewById(R.id.adView);
         adView.loadAd(adRequest);
+
+    }
+
+    //Interstitial Ad
+    private void displayInterstitial() {
+        if(nInterstitialAd.isLoaded()){
+            nInterstitialAd.show();
+        } else {
+            //if interstitial is not loaded, do something.
+        }
 
     }
 }
