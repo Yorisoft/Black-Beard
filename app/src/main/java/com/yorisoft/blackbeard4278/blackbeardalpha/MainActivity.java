@@ -230,8 +230,6 @@ public void imageAndNameEdit(View v) {
 
 }
 
-
-
     private void getValues() {
 //getting nav layout + Header
         newNavigation = (NavigationView) findViewById(R.id.navView);

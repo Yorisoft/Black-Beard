@@ -83,17 +83,15 @@
                     android:id="@+id/behaviorButton"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
+                    android:layout_below="@+id/handlingButton"
+                    android:layout_margin="8dp"
                     android:background="@color/Buttons"
                     android:onClick="guideClick"
                     android:paddingTop="8dp"
                     android:text="@string/fourthBttn"
                     android:textColor="@color/colorWhiteText"
                     android:textSize="60sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="9dp"
-                    android:layout_below="@+id/handlingButton"
-                    android:layout_alignLeft="@+id/generalInfoButton"
-                    android:layout_alignStart="@+id/generalInfoButton" />
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/generalInfoButton"

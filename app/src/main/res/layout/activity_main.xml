@@ -58,7 +58,6 @@
                     android:layout_gravity="bottom|left"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="8dp"
-                    android:editable="false"
                     android:hint="Pet Name"
                     android:singleLine="true"
                     android:textAllCaps="true"
@@ -230,7 +229,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:hint="next" />
+                    android:hint="Next" />
 
                 <TextView
                     android:id="@+id/top_bar_old"
@@ -241,7 +240,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginEnd="50dp"
                     android:layout_marginRight="50dp"
-                    android:hint="last" />
+                    android:hint="Last" />
 
                 <TextView
                     android:id="@+id/bathView"
@@ -294,7 +293,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/div3"
                     android:layout_centerHorizontal="true"
-                    android:hint="next" />
+                    android:hint="Next" />
 
                 <TextView
                     android:id="@+id/top_bar_old1"
@@ -305,7 +304,7 @@
                     android:layout_below="@+id/div3"
                     android:layout_marginEnd="50dp"
                     android:layout_marginRight="50dp"
-                    android:hint="last" />
+                    android:hint="Last" />
 
                 <TextView
                     android:id="@+id/foodView"

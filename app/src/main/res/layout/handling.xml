@@ -12,6 +12,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/desert02"
+    android:scrollbars="none"
     tools:context=".Handling">
 
     <LinearLayout
