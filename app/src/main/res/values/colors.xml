@@ -13,6 +13,30 @@
     <color name="Buttons">#4cffffff</color>
     <color name="white_on_white">#d6dcdcdc</color>
     <color name="transparentB">#00000000</color>
-	
-	
+
+<!-- AppIntro color values -->
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#20d2bb</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#14a895</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#8cf9eb</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+    </array>
+
 </resources>

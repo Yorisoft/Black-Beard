@@ -319,5 +319,28 @@
 
     </string>
 
+                                                <!-- Strings/Values for AppIntro -->
+    <string name="appName">Intro Slider</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello, Dragon owners!</string>
+    <string name="slide_1_desc">Welcome! Let\'s help you get started.</string>
+
+    <string name="slide_2_title">Basic Info</string>
+    <string name="slide_2_desc">Create a profile for your bearded dragon!
+        Easily add and edit information when you need to, no matter where you are. </string>
+
+    <string name="slide_3_title">Keep Up!</string>
+    <string name="slide_3_desc">Never forget important information and keep track of recent activities.</string>
+
+    <string name="slide_4_title">Care Tip!</string>
+    <string name="slide_4_desc">Use our caring tips as your personal pocket reference. Have it with you on the go. </string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
 
 </resources>
